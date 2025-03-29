@@ -1,8 +1,12 @@
-import Home from "./Home";
+import { BrowserRouter } from "react-router";
+import MyChart from "./components/chart/Chart";
+
 function App() {
   return (
     <>
-      <Home />
+      <BrowserRouter>
+        <MyChart />
+      </BrowserRouter>
     </>
   );
 }
