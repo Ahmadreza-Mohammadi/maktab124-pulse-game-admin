@@ -1,16 +1,17 @@
-import { Outlet } from "react-router"
-import Header from "../header/Header"
-import AsideMenu from "../aside-bar/AsideMenu"
+import { Outlet } from "react-router";
+import Header from "../header/Header";
+import AsideMenu from "../aside-bar/AsideMenu";
 
 function Layout() {
   return (
     <>
-    <Header />
-    <AsideMenu />
-    <Outlet />
-
+      <Header />
+      <div className="flex">
+        <AsideMenu />
+        <Outlet />
+      </div>
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
