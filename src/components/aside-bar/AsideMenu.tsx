@@ -29,18 +29,18 @@ function AsideMenu() {
           { icon: <ListAltIcon />, text: "فروش" },
           { icon: <LocalShippingIcon />, text: "تحویل شده/نشده" },
           { icon: <PersonIcon />, text: "پروفایل" },
-        ].map((item, index) => (
+        ].map((page, index) => (
           <li
             key={index}
-            className="text-xl font-bold text-gray-300 flex gap-2 items-center justify-center cursor-pointer 
+            className="text-xl font-bold text-[#ed6464] flex gap-2 items-center justify-center cursor-pointer 
                       transition-all duration-300 hover:text-white hover:bg-gray-800/50 py-3 px-4 rounded-lg
                       hover:translate-x-2 hover:shadow-md hover:shadow-indigo-500/20"
           >
             <span className="transition-all duration-500 hover:scale-125">
-              {item.icon}
+              {page.icon}
             </span>
             <span className="transition-all duration-300">
-              {item.text}
+              {page.text}
             </span>
           </li>
         ))}

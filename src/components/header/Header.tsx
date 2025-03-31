@@ -1,5 +1,6 @@
 function Header() {
   return (
+
     <div className="text-white p-20 flex justify-between navbar">
       <div className="flex items-center gap-4">
         <img
@@ -9,6 +10,7 @@ function Header() {
         />
         <img className="h-16 cursor-pointer" src="https://www.svgrepo.com/show/212422/pencil-edit.svg" alt="" />
       </div>
+
 
       <div className="flex items-center gap-4">
         <span className="font-bold text-2xl">پنل ادمین پالس گیم</span>

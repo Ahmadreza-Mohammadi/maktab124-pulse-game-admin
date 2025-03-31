@@ -1,13 +1,11 @@
 import { BrowserRouter } from "react-router";
-import Header from "./components/header/Header";
-import AsideMenu from "./components/aside-bar/AsideMenu";
+import Routing from "./router/routing";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
-        <AsideMenu />
+        <Routing />
       </BrowserRouter>
     </>
   );

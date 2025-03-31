@@ -6,20 +6,23 @@ import Products from "../pages/products/Products";
 import Inventory from "../pages/inventory/Inventory";
 import Orders from "../pages/orders/Orders";
 import DeliveryLogs from "../pages/delivery-logs/DeliveryLogs";
+import Layout from "../components/layout/Layout";
 
-function Roating() {
+function Routing() {
   return (
     <>
       <Routes>
-        <Route path={routes.home} element={<Home />} />
         <Route path={routes.login} element={<Login />} />
-        <Route path={routes.products} element={<Products />} />
-        <Route path={routes.inventory} element={<Inventory />} />
-        <Route path={routes.orders} element={<Orders />} />
-        <Route path={routes.delivery_logs} element={<DeliveryLogs />} />
+        <Route path={"/"} element={<Layout />}>
+          <Route path={routes.home} element={<Home />} />
+          <Route path={routes.products} element={<Products />} />
+          <Route path={routes.inventory} element={<Inventory />} />
+          <Route path={routes.orders} element={<Orders />} />
+          <Route path={routes.delivery_logs} element={<DeliveryLogs />} />
+        </Route>
       </Routes>
     </>
   );
 }
 
-export default Roating;
+export default Routing;
