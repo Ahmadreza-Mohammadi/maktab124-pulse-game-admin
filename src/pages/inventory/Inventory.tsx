@@ -1,5 +1,5 @@
 function Inventory() {
-  return <div className="bg-gray-400 h-screen w-full">Inventory</div>;
+  return <div className="bg-gray-400">Inventory</div>;
 }
 
 export default Inventory;

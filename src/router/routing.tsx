@@ -7,6 +7,7 @@ import Inventory from "../pages/inventory/Inventory";
 import Orders from "../pages/orders/Orders";
 import DeliveryLogs from "../pages/delivery-logs/DeliveryLogs";
 import Layout from "../components/layout/Layout";
+import Profile from "../pages/profile/Profile";
 
 function Routing() {
   return (
@@ -19,6 +20,7 @@ function Routing() {
           <Route path={routes.inventory} element={<Inventory />} />
           <Route path={routes.orders} element={<Orders />} />
           <Route path={routes.delivery_logs} element={<DeliveryLogs />} />
+          <Route path={routes.profile} element={<Profile />} />
         </Route>
       </Routes>
     </>
