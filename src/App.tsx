@@ -1,11 +1,13 @@
 import { BrowserRouter } from "react-router";
-import MyChart from "./components/chart/Chart";
+import Header from "./components/header/Header";
+import AsideMenu from "./components/aside-bar/AsideMenu";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <MyChart />
+        <Header />
+        <AsideMenu />
       </BrowserRouter>
     </>
   );
