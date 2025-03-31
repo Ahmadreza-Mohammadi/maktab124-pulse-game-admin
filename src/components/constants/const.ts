@@ -1,7 +1,8 @@
-export const pages:any = [
-  { name: "خانه" },
-  { name: "محصولات" },
-  { name: "لیست فروش" },
-  { name: "موجودی" },
-  { name: "تحویل شده/نشده" },
-];
+export const pages = [
+    { icon: <HomeIcon />, text: "خانه" },
+    { icon: <InventoryIcon />, text: "محصولات" },
+    { icon: <StorageIcon />, text: "موجودی" },
+    { icon: <ListAltIcon />, text: "فروش" },
+    { icon: <LocalShippingIcon />, text: "تحویل شده/نشده" },
+    { icon: <PersonIcon />, text: "پروفایل" },
+  ]
