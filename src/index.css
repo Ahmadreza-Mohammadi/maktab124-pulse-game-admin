@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+.navbar {
+  background-image: url("/src/assets/gif/download.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
