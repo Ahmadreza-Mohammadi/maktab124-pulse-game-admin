@@ -5,4 +5,5 @@ export const routes: any = {
   inventory: "inventory",
   orders: "orders",
   delivery_logs: "deliver_logs",
+  profile:"profile"
 };
