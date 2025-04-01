@@ -9,7 +9,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { data } from "react-router";
 
 ChartJS.register(
   CategoryScale,
