@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <div className="navbar text-white py-12 px-8 flex justify-between items-center sticky top-0 z-10 shadow-lg">
+    <div className="navbar text-white py-12 px-8 flex justify-between items-center sticky top-0 z-10 shadow-lg after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[3px] after:bg-blue-500 after:transition-all after:duration-1000 hover:after:w-full">
       <div className="flex items-center gap-6 backdrop-blur-sm p-2 rounded-lg">
         <img
           className="h-14 cursor-pointer transform hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.7)] transition-all duration-300"
