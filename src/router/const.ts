@@ -1,5 +1,5 @@
 export const routes: any = {
-  home: "home",
+  home: "/",
   login: "login",
   products: "products",
   inventory: "inventory",
