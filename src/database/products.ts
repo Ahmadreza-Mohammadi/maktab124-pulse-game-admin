@@ -936,11 +936,11 @@ export const products = [
     description:
       "اکشن علمی-تخیلی که توش زمان رو دستکاری می‌کنی و با دشمنا می‌جنگی. داستانش با یه سریال قاطی شده و برای گیمرای خاص یه تجربه ناب و عجیبه!",
     img: "https://example.com/quantumbreak.jpg",
-    quantity: 8,
+    quantity: 0,
     price: 750000,
     category: "game",
     creator: "Remedy Entertainment",
-    stock: true,
+    stock: false,
     discount: 25,
     rating: 4.2,
     platforms: ["Xbox One", "PC"],
