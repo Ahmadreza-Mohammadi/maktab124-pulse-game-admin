@@ -1,5 +1,11 @@
+import InventoryTable from "../../components/tables/InventoryTable";
+
 function Inventory() {
-  return <div className="bg-gray-400">Inventory</div>;
+  return (
+    <>
+      <InventoryTable />
+    </>
+  );
 }
 
 export default Inventory;
