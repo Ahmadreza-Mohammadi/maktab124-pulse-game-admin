@@ -28,6 +28,16 @@ function ProductsTable() {
   };
 
   // Get unique categories
+  const categoryLabels: { [key: string]: string } = {
+    game: "بازی",
+    chair: "صندلی گیمینگ",
+    keyboard: "کیبورد",
+    headset: "هدست",
+    mouse: "ماوس",
+    monitor: "مانیتور",
+    console: "کنسول",
+  };
+
   const categories = ["همه", ...new Set(products.map((product) => product.category))];
 
   // Handle page change
@@ -39,7 +49,7 @@ function ProductsTable() {
 
   function renderPageNumbers() {
     const pageNumbers = [];
-    const maxVisiblePages = 5; // Adjust this number as needed
+    const maxVisiblePages = 5;
 
     pageNumbers.push(1);
 
@@ -71,14 +81,14 @@ function ProductsTable() {
     return pageNumbers.map((pageNumber, index) => {
       if (pageNumber === "...") {
         return (
-          <span key={index} className="px-3 py-1">
+          <span key={`ellipsis-${index}`} className="px-3 py-1">
             ...
           </span>
         );
       }
       return (
         <button
-          key={index}
+          key={`page-${pageNumber}`}
           onClick={() => goToPage(pageNumber as number)}
           className={`px-3 py-1 rounded-md cursor-pointer ${
             currentPage === pageNumber
@@ -96,20 +106,22 @@ function ProductsTable() {
 
   return (
     <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-80">
-      {/* Filter Bar */}
-      <div className="mb-4">
-        <select
-          value={selectedCategory}
-          onChange={(e) => handleCategoryChange(e.target.value)}
-          className="px-4 py-2 rounded-md bg-gray-200 focus:outline-none"
-        >
-          {categories.map((category, index) => (
-            <option key={index} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
-      </div>
+  {/* Filter Bar */}
+<div className="flex justify-between items-center w-full max-w-6xl bg-gray-800 p-4 rounded-lg shadow-md mb-4">
+  <span className="text-white text-lg font-semibold">دسته‌بندی:</span>
+  <select
+    value={selectedCategory}
+    onChange={(e) => handleCategoryChange(e.target.value)}
+    className="px-4 py-2 rounded-md bg-gray-200 focus:outline-none text-gray-800 hover:bg-gray-300 transition ease-in-out duration-200"
+  >
+    {categories.map((category, index) => (
+      <option key={`category-${index}`} value={category}>
+        {category === "همه" ? "همه" : categoryLabels[category] || category}
+      </option>
+    ))}
+  </select>
+</div>
+
 
       <div className="w-full max-w-6xl bg-white rounded-lg shadow-md overflow-hidden mb-4">
         <table className="w-full">
@@ -126,11 +138,13 @@ function ProductsTable() {
           <tbody className="divide-y divide-gray-200">
             {currentProducts.map((product: any, index: number) => (
               <tr
-                key={index}
+                key={`product-${index}`}
                 className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
               >
                 <td className="py-3 px-4 text-right">{product.title}</td>
-                <td className="py-3 px-4 text-right">{product.category}</td>
+                <td className="py-3 px-4 text-right">
+                  {categoryLabels[product.category] || product.category}
+                </td>
                 <td className="py-3 px-4 text-right">{product.creator}</td>
                 <td className="py-3 px-4 text-right">
                   {digitsEnToFa(product.quantity)}
@@ -143,7 +157,7 @@ function ProductsTable() {
                         : "bg-red-100 text-red-800"
                     }`}
                   >
-                    {(product.stock && "موجود") || "ناموجود"}
+                    {product.stock ? "موجود" : "ناموجود"}
                   </span>
                 </td>
                 <td className="py-3 px-4 text-right">
