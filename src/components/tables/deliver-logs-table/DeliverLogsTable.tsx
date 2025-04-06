@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { products } from "../../database/products";
-import { digitsEnToFa } from "../utils/helper";
+import { categoryLabels, digitsEnToFa, formatPrice } from "../../utils/helper";
+import { deliverStatusLogs } from "../../../database/deliverStatusLogs"; // Import deliver status data
 
-function InventoryTable() {
+function DeliverLogsTable() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
   const productsPerPage = 10;
@@ -10,8 +10,10 @@ function InventoryTable() {
   // Filter products by category
   const filteredProducts =
     selectedCategory === "همه"
-      ? products
-      : products.filter((product) => product.category === selectedCategory);
+      ? deliverStatusLogs
+      : deliverStatusLogs.filter(
+          (product) => product.category === selectedCategory
+        );
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -30,7 +32,7 @@ function InventoryTable() {
   // Get unique categories
   const categories = [
     "همه",
-    ...new Set(products.map((product) => product.category)),
+    ...new Set(deliverStatusLogs.map((product) => product.category)),
   ];
 
   // Handle page change
@@ -120,8 +122,10 @@ function InventoryTable() {
           <thead className="bg-gray-800 text-white">
             <tr>
               <th className="py-3 px-4 text-right">نام</th>
-              <th className="py-3 px-4 text-right">تعداد موجود</th>
-              <th className="py-3 px-4 text-right">وضعیت</th>
+              <th className="py-3 px-4 text-right">دسته‌بندی</th>
+              <th className="py-3 px-4 text-right">تعداد</th>
+              <th className="py-3 px-4 text-right">قیمت</th>
+              <th className="py-3 px-4 text-right">وضعیت تحویل</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
@@ -130,19 +134,25 @@ function InventoryTable() {
                 key={`product-${index}`}
                 className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
               >
-                <td className="py-3 px-4 text-right">{product.title}</td>
+                <td className="py-3 px-4 text-right">{product.name}</td>
+                <td className="py-3 px-4 text-right">
+                  {categoryLabels[product.category] || product.category}
+                </td>
                 <td className="py-3 px-4 text-right">
                   {digitsEnToFa(product.quantity)}
                 </td>
                 <td className="py-3 px-4 text-right">
+                  {formatPrice(product.price)} تومان
+                </td>
+                <td className="py-3 px-4 text-right">
                   <span
                     className={`px-2 py-1 rounded-full text-xs ${
-                      product.stock === true
+                      product.delivered
                         ? "bg-green-100 text-green-800"
                         : "bg-red-100 text-red-800"
                     }`}
                   >
-                    {product.stock ? "موجود" : "ناموجود"}
+                    {product.delivered ? "تحویل شده" : "در انتظار"}
                   </span>
                 </td>
               </tr>
@@ -187,4 +197,4 @@ function InventoryTable() {
   );
 }
 
-export default InventoryTable;
+export default DeliverLogsTable;

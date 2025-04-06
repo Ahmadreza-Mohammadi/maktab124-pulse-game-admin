@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { products } from "../../database/products";
-import { digitsEnToFa } from "../utils/helper";
+import { categoryLabels, digitsEnToFa } from "../../utils/helper";
+import { products } from "../../../database/Products";
 
 function ProductsTable() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,16 +27,7 @@ function ProductsTable() {
     setCurrentPage(1); // Reset to the first page when the category changes
   };
 
-  // Get unique categories
-  const categoryLabels: { [key: string]: string } = {
-    game: "بازی",
-    chair: "صندلی گیمینگ",
-    keyboard: "کیبورد",
-    headset: "هدست",
-    mouse: "ماوس",
-    monitor: "مانیتور",
-    console: "کنسول",
-  };
+
 
   const categories = [
     "همه",

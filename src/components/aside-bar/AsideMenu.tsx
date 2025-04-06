@@ -17,7 +17,7 @@ function AsideMenu() {
           { icon: <HomeIcon />, text: "خانه", endpoint: routes.home },
           { icon: <InventoryIcon />, text: "محصولات", endpoint: routes.products },
           { icon: <StorageIcon />, text: "موجودی", endpoint: routes.inventory },
-          { icon: <ListAltIcon />, text: "فروش", endpoint: routes.orders },
+          { icon: <ListAltIcon />, text: "فروش", endpoint: routes.sales },
           { icon: <LocalShippingIcon />, text: "تحویل شده/نشده", endpoint: routes.delivery_logs },
           { icon: <PersonIcon />, text: "پروفایل", endpoint: routes.profile },
         ].map((page, index) => (
