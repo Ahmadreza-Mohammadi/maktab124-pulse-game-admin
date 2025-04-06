@@ -146,10 +146,10 @@ function DeliverLogsTable() {
                 </td>
                 <td className="py-3 px-4 text-right">
                   <span
-                    className={`px-2 py-1 rounded-full text-xs ${
+                    className={`  rounded-full text-xs ${
                       product.delivered
-                        ? "bg-green-100 text-green-800"
-                        : "bg-red-100 text-red-800"
+                        ? " bg-green-100 text-green-800 px-2 py-1"
+                        : "bg-red-100 text-red-800 px-4 py-1"
                     }`}
                   >
                     {product.delivered ? "تحویل شده" : "در انتظار"}
