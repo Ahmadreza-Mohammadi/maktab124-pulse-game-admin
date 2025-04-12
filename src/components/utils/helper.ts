@@ -21,3 +21,5 @@ export function digitsEnToFa(input: number | string): string {
       monitor: "مانیتور",
       console: "کنسول",
     };
+
+    
