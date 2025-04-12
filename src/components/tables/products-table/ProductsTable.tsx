@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { products } from "../../database/products";
-import { digitsEnToFa } from "../utils/helper";
+import { categoryLabels, digitsEnToFa } from "../../utils/helper";
+import { products } from "../../../database/Products";
 
-function InventoryTable() {
+function ProductsTable() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
   const productsPerPage = 10;
@@ -27,7 +27,8 @@ function InventoryTable() {
     setCurrentPage(1); // Reset to the first page when the category changes
   };
 
-  // Get unique categories
+
+
   const categories = [
     "همه",
     ...new Set(products.map((product) => product.category)),
@@ -109,7 +110,9 @@ function InventoryTable() {
         >
           {categories.map((category, index) => (
             <option key={`category-${index}`} value={category}>
-              {category === "همه" ? "همه" : category}
+              {category === "همه"
+                ? "همه"
+                : categoryLabels[category] || category}
             </option>
           ))}
         </select>
@@ -120,8 +123,11 @@ function InventoryTable() {
           <thead className="bg-gray-800 text-white">
             <tr>
               <th className="py-3 px-4 text-right">نام</th>
+              <th className="py-3 px-4 text-right">دسته‌بندی</th>
+              <th className="py-3 px-4 text-right">سازنده</th>
               <th className="py-3 px-4 text-right">تعداد موجود</th>
               <th className="py-3 px-4 text-right">وضعیت</th>
+              <th className="py-3 px-4 text-right">سال انتشار</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
@@ -131,6 +137,10 @@ function InventoryTable() {
                 className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
               >
                 <td className="py-3 px-4 text-right">{product.title}</td>
+                <td className="py-3 px-4 text-right">
+                  {categoryLabels[product.category] || product.category}
+                </td>
+                <td className="py-3 px-4 text-right">{product.creator}</td>
                 <td className="py-3 px-4 text-right">
                   {digitsEnToFa(product.quantity)}
                 </td>
@@ -144,6 +154,9 @@ function InventoryTable() {
                   >
                     {product.stock ? "موجود" : "ناموجود"}
                   </span>
+                </td>
+                <td className="py-3 px-4 text-right">
+                  {digitsEnToFa(product.releaseYear)}
                 </td>
               </tr>
             ))}
@@ -187,4 +200,4 @@ function InventoryTable() {
   );
 }
 
-export default InventoryTable;
+export default ProductsTable;

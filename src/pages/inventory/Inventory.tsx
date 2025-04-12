@@ -1,4 +1,4 @@
-import InventoryTable from "../../components/tables/InventoryTable";
+import InventoryTable from "../../components/tables/inventory-table/InventoryTable";
 
 function Inventory() {
   return (

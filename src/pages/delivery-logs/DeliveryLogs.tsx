@@ -1,7 +1,8 @@
+import DeliverLogsTable from "../../components/tables/deliver-logs-table/DeliverLogsTable"
 
 function DeliveryLogs() {
   return (
-    <>DeliveryLogs</>
+    <><DeliverLogsTable /></>
   )
 }
 

@@ -3,7 +3,7 @@ export const routes: any = {
   login: "login",
   products: "products",
   inventory: "inventory",
-  orders: "orders",
+  sales: "sales",
   delivery_logs: "deliver_logs",
   profile:"profile"
 };
