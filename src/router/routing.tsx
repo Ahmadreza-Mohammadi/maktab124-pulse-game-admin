@@ -10,16 +10,15 @@ import DeliveryLogs from "../pages/delivery-logs/DeliveryLogs";
 import Layout from "../components/layout/Layout";
 import Profile from "../pages/profile/Profile";
 import { isLogin } from "../components/api/Login.api";
-import { ACCESS_TOKEN } from "../components/api/api";
 
 function Routing() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isLogin()) {
-      navigate(routes.login);
-    } else navigate(routes.home)
-  }, [ACCESS_TOKEN]);
+    if (isLogin()) {
+      navigate(routes.home);
+    } else navigate(routes.login)
+  }, [isLogin]);
 
   return (
     <Routes>

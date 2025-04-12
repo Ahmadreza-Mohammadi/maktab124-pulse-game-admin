@@ -31,6 +31,8 @@ function Login() {
     }
   };
 
+
+
   return (
     <div className="bg-gradient-to-r from-gray-700 via-gray-900 to-black h-screen flex justify-center items-center">
       <div className="flex flex-col items-center gap-6 p-8 bg-gray-800 rounded-xl shadow-2xl w-[520px]">
