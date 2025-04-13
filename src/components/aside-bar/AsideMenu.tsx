@@ -4,44 +4,35 @@ import ListAltIcon from "@mui/icons-material/ListAlt";
 import StorageIcon from "@mui/icons-material/Storage";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import PersonIcon from "@mui/icons-material/Person";
+import { routes } from "../../router/const";
+import { useNavigate } from "react-router";
 
 function AsideMenu() {
-  return (
-    <div className="bg-gray-900 p-10 w-66 h-screen flex flex-col gap-16 items-center text-center transition-all duration-300 hover:shadow-xl hover:shadow-gray-800/50">
-      {/* aside header with hover animation */}
-      <div className="flex items-center gap-4 group">
-        <span className="font-bold text-2xl text-white transition-all duration-300 group-hover:text-indigo-400">
-          پالس گیم
-        </span>
-        <img
-          src="https://www.svgrepo.com/show/232843/game-console-gamepad.svg"
-          alt="puls game"
-          className="h-16 transition-all duration-500 group-hover:rotate-12"
-        />
-      </div>
+  const navigate:any = useNavigate();
 
-      {/* aside menu links with hover animations */}
-      <ul className="flex flex-col gap-6 w-full">
+
+  return (
+    <div className="bg-gray-900 w-80 h-screen fixed top-44 right-0 p-12 flex flex-col gap-12 items-center text-center transition-all duration-500 hover:shadow-[0_0_20px_rgba(79,70,229,0.4)] z-20 overflow-y-auto">
+      <ul className="flex flex-col gap-8 w-full">
         {[
-          { icon: <HomeIcon />, text: "خانه" },
-          { icon: <InventoryIcon />, text: "محصولات" },
-          { icon: <StorageIcon />, text: "موجودی" },
-          { icon: <ListAltIcon />, text: "فروش" },
-          { icon: <LocalShippingIcon />, text: "تحویل شده/نشده" },
-          { icon: <PersonIcon />, text: "پروفایل" },
-        ].map((item, index) => (
+          { icon: <HomeIcon />, text: "خانه", endpoint: routes.home },
+          { icon: <InventoryIcon />, text: "محصولات", endpoint: routes.products },
+          { icon: <StorageIcon />, text: "موجودی", endpoint: routes.inventory },
+          { icon: <ListAltIcon />, text: "فروش", endpoint: routes.sales },
+          { icon: <LocalShippingIcon />, text: "تحویل شده/نشده", endpoint: routes.delivery_logs },
+          { icon: <PersonIcon />, text: "پروفایل", endpoint: routes.profile },
+        ].map((page, index) => (
           <li
+            onClick={() => navigate(page.endpoint)}
             key={index}
-            className="text-xl font-bold text-gray-300 flex gap-2 items-center justify-center cursor-pointer 
-                      transition-all duration-300 hover:text-white hover:bg-gray-800/50 py-3 px-4 rounded-lg
-                      hover:translate-x-2 hover:shadow-md hover:shadow-indigo-500/20"
+            className="text-lg font-semibold text-indigo-300 flex gap-3 items-center justify-start cursor-pointer 
+                      transition-all duration-300 hover:text-cyan-200 hover:bg-gray-800/70 py-4 px-6 rounded-xl
+                      hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] hover:-translate-y-1"
           >
-            <span className="transition-all duration-500 hover:scale-125">
-              {item.icon}
+            <span className="transition-all duration-500 hover:scale-110 text-indigo-400 hover:text-cyan-300">
+              {page.icon}
             </span>
-            <span className="transition-all duration-300">
-              {item.text}
-            </span>
+            <span className="transition-all duration-300">{page.text}</span>
           </li>
         ))}
       </ul>

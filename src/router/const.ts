@@ -1,8 +1,9 @@
 export const routes: any = {
-  home: "/home",
-  login: "/login",
-  products: "/products",
-  inventory: "/inventory",
-  orders: "/orders",
-  delivery_logs: "/deliver_logs",
+  home: "/",
+  login: "login",
+  products: "products",
+  inventory: "inventory",
+  sales: "sales",
+  delivery_logs: "deliver_logs",
+  profile:"profile"
 };

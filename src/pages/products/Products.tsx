@@ -1,5 +1,8 @@
+import ProductsTable from "../../components/tables/products-table/ProductsTable";
+
+
 function Products() {
-  return <>Products</>;
+return <ProductsTable />
 }
 
 export default Products;
