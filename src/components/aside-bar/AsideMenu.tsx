@@ -6,19 +6,14 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import PersonIcon from "@mui/icons-material/Person";
 import { routes } from "../../router/const";
 import { useNavigate } from "react-router";
-import LogoutIcon from "@mui/icons-material/Logout";
 
 function AsideMenu() {
   const navigate:any = useNavigate();
 
-  const logOutHandler = () => {
-    localStorage.removeItem("accessToken")
-    navigate(routes.login)
-  }
 
   return (
     <div className="bg-gray-900 w-80 h-screen fixed top-44 right-0 p-12 flex flex-col gap-12 items-center text-center transition-all duration-500 hover:shadow-[0_0_20px_rgba(79,70,229,0.4)] z-20 overflow-y-auto">
-      <ul className="flex flex-col gap-2 w-full">
+      <ul className="flex flex-col gap-8 w-full">
         {[
           { icon: <HomeIcon />, text: "خانه", endpoint: routes.home },
           { icon: <InventoryIcon />, text: "محصولات", endpoint: routes.products },
@@ -26,7 +21,6 @@ function AsideMenu() {
           { icon: <ListAltIcon />, text: "فروش", endpoint: routes.sales },
           { icon: <LocalShippingIcon />, text: "تحویل شده/نشده", endpoint: routes.delivery_logs },
           { icon: <PersonIcon />, text: "پروفایل", endpoint: routes.profile },
-          { icon: <LogoutIcon />, text: "خروج", endpoint: routes.profile },
         ].map((page, index) => (
           <li
             onClick={() => navigate(page.endpoint)}
