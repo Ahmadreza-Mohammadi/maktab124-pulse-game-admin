@@ -1,33 +1,26 @@
 import { useQuery } from "@tanstack/react-query";
 import ProductsTable from "../../components/tables/products-table/ProductsTable";
-import { ACCESS_TOKEN, BASE_URL, API_KEY } from "../../components/api/api";
+import { getProductsData } from "../../components/utils/helper";
 
 function Products() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["products"],
-    queryFn: async () => {
-      const response = await fetch(`${BASE_URL}/api/records/my-products`, {
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${ACCESS_TOKEN}`, 
-          "api_key": API_KEY, 
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      return response.json(); 
-    },
+    queryFn: getProductsData,
   });
 
+  if (isLoading) {
+    return (
+      <div className="w-full h-screen flex justify-center items-center bg-red-500">
+        Loading...
+      </div>
+    );
+  }
 
-  return (
-    <>
-      <ProductsTable products={data} />
-    </>
-  );
+  if (isError) {
+    return <div>Error fetching products.</div>;
+  }
+
+  return <ProductsTable products={data} />;
 }
 
 export default Products;

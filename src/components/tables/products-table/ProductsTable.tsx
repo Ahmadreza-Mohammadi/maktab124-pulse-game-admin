@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { categoryLabels, digitsEnToFa } from "../../utils/helper";
-import { products } from "../../../database/Products";
-
-function ProductsTable() {
+function ProductsTable({products}) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
   const productsPerPage = 10;
