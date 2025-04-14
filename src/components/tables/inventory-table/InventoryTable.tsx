@@ -7,11 +7,11 @@ function InventoryTable() {
   const [selectedCategory, setSelectedCategory] = useState("همه");
   const productsPerPage = 10;
 
-  // Filter products by category
+  // Filter products by category and stock
   const filteredProducts =
     selectedCategory === "همه"
-      ? products
-      : products.filter((product) => product.category === selectedCategory);
+      ? products.filter((product) => product.stock === true)
+      : products.filter((product) => product.category === selectedCategory && product.stock === true);
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -142,7 +142,7 @@ function InventoryTable() {
                         : "bg-red-100 text-red-800"
                     }`}
                   >
-                    {product.stock ? "موجود" : "ناموجود"}
+                    {product.stock && "موجود"}
                   </span>
                 </td>
               </tr>
