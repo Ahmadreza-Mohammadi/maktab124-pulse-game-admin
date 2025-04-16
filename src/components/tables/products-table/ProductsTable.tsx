@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import { categoryLabels, digitsEnToFa } from "../../utils/helper";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteProduct } from "../../utils/deleteProduct";
+import DeleteModal from "../../modal/DeleteModal";
 
 function ProductsTable({ products }: any) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [productToDelete, setProductToDelete] = useState<number | null>(null); // Track product to delete
   const queryClient = useQueryClient();
   const productsPerPage = 10;
 
@@ -14,8 +17,29 @@ function ProductsTable({ products }: any) {
     mutationFn: (id: number) => deleteProduct(id),
     onSuccess: () => {
       queryClient.invalidateQueries(["products"]); // Refresh product list
+      setShowDeleteModal(false); // Close modal on success
+      setProductToDelete(null); // Clear selected product
     },
   });
+
+  // Handle delete button click
+  const handleDeleteClick = (id: number) => {
+    setProductToDelete(id); // Set the product to delete
+    setShowDeleteModal(true); // Show the modal
+  };
+
+  // Handle modal cancel
+  const handleCancelDelete = () => {
+    setShowDeleteModal(false);
+    setProductToDelete(null); // Clear selected product
+  };
+
+  // Handle modal confirm
+  const handleConfirmDelete = () => {
+    if (productToDelete !== null) {
+      mutation.mutate(productToDelete); // Trigger deletion
+    }
+  };
 
   // Filter products by category
   const filteredProducts =
@@ -146,7 +170,10 @@ function ProductsTable({ products }: any) {
           </thead>
           <tbody className="divide-y divide-gray-200">
             {currentProducts.map((product: any, index: number) => (
-              <tr key={`product-${index}`} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+              <tr
+                key={`product-${index}`}
+                className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
+              >
                 <td className="py-3 px-4 text-right">{product.title}</td>
                 <td className="py-3 px-4 text-right">
                   {categoryLabels[product.category] || product.category}
@@ -156,19 +183,25 @@ function ProductsTable({ products }: any) {
                   {digitsEnToFa(product.quantity)}
                 </td>
                 <td className="py-3 px-4 text-right">
-                  <span className={`px-2 py-1 rounded-full text-xs ${
-                    product.stock ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
-                  }`}>
+                  <span
+                    className={`px-2 py-1 rounded-full text-xs ${
+                      product.stock
+                        ? "bg-green-100 text-green-800"
+                        : "bg-red-100 text-red-800"
+                    }`}
+                  >
                     {product.stock ? "موجود" : "ناموجود"}
                   </span>
                 </td>
-                <td className="py-3 px-4 text-right">{digitsEnToFa(product.releaseYear)}</td>
+                <td className="py-3 px-4 text-right">
+                  {digitsEnToFa(product.releaseYear)}
+                </td>
                 <td className="py-3 flex gap-2">
                   <img
                     className="h-6 cursor-pointer"
                     src="https://www.svgrepo.com/show/489907/delete.svg"
                     alt="delete"
-                    onClick={() => mutation.mutate(product.id)}
+                    onClick={() => handleDeleteClick(product.id)} // Trigger modal
                   />
                   <img
                     className="h-6 cursor-pointer"
@@ -181,6 +214,14 @@ function ProductsTable({ products }: any) {
           </tbody>
         </table>
       </div>
+
+      {/* Delete Modal */}
+      {showDeleteModal && (
+        <DeleteModal
+          onConfirm={handleConfirmDelete}
+          onCancel={handleCancelDelete}
+        />
+      )}
 
       {/* Pagination Controls */}
       <div className="flex items-center gap-2">
