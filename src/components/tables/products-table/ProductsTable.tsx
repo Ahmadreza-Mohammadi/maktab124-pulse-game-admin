@@ -1,9 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { categoryLabels, digitsEnToFa } from "../../utils/helper";
-function ProductsTable({products}) {
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { deleteProduct } from "../../utils/deleteProduct";
+
+function ProductsTable({ products }: any) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
+  const queryClient = useQueryClient();
   const productsPerPage = 10;
+
+  // Mutation to handle deletion
+  const mutation = useMutation({
+    mutationFn: (id: number) => deleteProduct(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries(["products"]); // Refresh product list
+    },
+  });
 
   // Filter products by category
   const filteredProducts =
@@ -19,26 +31,32 @@ function ProductsTable({products}) {
     startIndex + productsPerPage
   );
 
+  // Adjust pagination when a product is deleted
+  useEffect(() => {
+    if (currentProducts.length === 0 && currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  }, [currentProducts, currentPage]);
+
   // Handle category change
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
-    setCurrentPage(1); // Reset to the first page when the category changes
+    setCurrentPage(1);
   };
-
-
 
   const categories = [
     "همه",
     ...new Set(products.map((product) => product.category)),
   ];
 
-  // Handle page change
+  // Handle pagination navigation
   const goToPage = (page: number) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
     }
   };
 
+  // Render pagination numbers dynamically
   function renderPageNumbers() {
     const pageNumbers = [];
     const maxVisiblePages = 5;
@@ -88,9 +106,7 @@ function ProductsTable({products}) {
               : "bg-gray-200 hover:bg-gray-300"
           }`}
         >
-          {typeof pageNumber === "number"
-            ? digitsEnToFa(pageNumber)
-            : pageNumber}
+          {digitsEnToFa(pageNumber)}
         </button>
       );
     });
@@ -108,14 +124,13 @@ function ProductsTable({products}) {
         >
           {categories.map((category, index) => (
             <option key={`category-${index}`} value={category}>
-              {category === "همه"
-                ? "همه"
-                : categoryLabels[category] || category}
+              {categoryLabels[category] || category}
             </option>
           ))}
         </select>
       </div>
 
+      {/* Product Table */}
       <div className="w-full max-w-6xl bg-white rounded-lg shadow-md overflow-hidden mb-4">
         <table className="w-full">
           <thead className="bg-gray-800 text-white">
@@ -126,14 +141,12 @@ function ProductsTable({products}) {
               <th className="py-3 px-4 text-right">تعداد موجود</th>
               <th className="py-3 px-4 text-right">وضعیت</th>
               <th className="py-3 px-4 text-right">سال انتشار</th>
+              <th className="py-3 px-4 text-right">عملیات</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
             {currentProducts.map((product: any, index: number) => (
-              <tr
-                key={`product-${index}`}
-                className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
-              >
+              <tr key={`product-${index}`} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                 <td className="py-3 px-4 text-right">{product.title}</td>
                 <td className="py-3 px-4 text-right">
                   {categoryLabels[product.category] || product.category}
@@ -143,18 +156,25 @@ function ProductsTable({products}) {
                   {digitsEnToFa(product.quantity)}
                 </td>
                 <td className="py-3 px-4 text-right">
-                  <span
-                    className={`px-2 py-1 rounded-full text-xs ${
-                      product.stock === true
-                        ? "bg-green-100 text-green-800"
-                        : "bg-red-100 text-red-800"
-                    }`}
-                  >
+                  <span className={`px-2 py-1 rounded-full text-xs ${
+                    product.stock ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+                  }`}>
                     {product.stock ? "موجود" : "ناموجود"}
                   </span>
                 </td>
-                <td className="py-3 px-4 text-right">
-                  {digitsEnToFa(product.releaseYear)}
+                <td className="py-3 px-4 text-right">{digitsEnToFa(product.releaseYear)}</td>
+                <td className="py-3 flex gap-2">
+                  <img
+                    className="h-6 cursor-pointer"
+                    src="https://www.svgrepo.com/show/489907/delete.svg"
+                    alt="delete"
+                    onClick={() => mutation.mutate(product.id)}
+                  />
+                  <img
+                    className="h-6 cursor-pointer"
+                    src="https://www.svgrepo.com/show/422395/edit-interface-multimedia.svg"
+                    alt="edit"
+                  />
                 </td>
               </tr>
             ))}

@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { products } from "../../../database/Products";
 import { digitsEnToFa } from "../../utils/helper";
 
-function InventoryTable() {
+function InventoryTable({products}) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
   const productsPerPage = 10;

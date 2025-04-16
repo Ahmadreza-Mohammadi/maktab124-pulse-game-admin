@@ -34,9 +34,6 @@ export const getProductsData = async () => {
     },
   });
 
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
   const result = await response.json();
   return result.records;
 };
