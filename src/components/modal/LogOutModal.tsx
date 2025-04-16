@@ -1,5 +1,3 @@
-import { Logout } from "@mui/icons-material";
-
 interface LogOutModalProps {
   onConfirm: () => void;
   onCancel: () => void;

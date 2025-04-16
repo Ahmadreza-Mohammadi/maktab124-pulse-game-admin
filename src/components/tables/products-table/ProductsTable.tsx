@@ -3,6 +3,7 @@ import { categoryLabels, digitsEnToFa } from "../../utils/helper";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteProduct } from "../../utils/deleteProduct";
 import DeleteModal from "../../modal/DeleteModal";
+import Pagination from "../../pagination/Pagination";
 
 function ProductsTable({ products }: any) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -16,28 +17,28 @@ function ProductsTable({ products }: any) {
   const mutation = useMutation({
     mutationFn: (id: number) => deleteProduct(id),
     onSuccess: () => {
-      queryClient.invalidateQueries(["products"]); // Refresh product list
-      setShowDeleteModal(false); // Close modal on success
-      setProductToDelete(null); // Clear selected product
+      queryClient.invalidateQueries(["products"]);
+      setShowDeleteModal(false); //
+      setProductToDelete(null);
     },
   });
 
   // Handle delete button click
   const handleDeleteClick = (id: number) => {
-    setProductToDelete(id); // Set the product to delete
-    setShowDeleteModal(true); // Show the modal
+    setProductToDelete(id);
+    setShowDeleteModal(true);
   };
 
   // Handle modal cancel
   const handleCancelDelete = () => {
     setShowDeleteModal(false);
-    setProductToDelete(null); // Clear selected product
+    setProductToDelete(null);
   };
 
   // Handle modal confirm
   const handleConfirmDelete = () => {
     if (productToDelete !== null) {
-      mutation.mutate(productToDelete); // Trigger deletion
+      mutation.mutate(productToDelete);
     }
   };
 
@@ -73,68 +74,7 @@ function ProductsTable({ products }: any) {
     ...new Set(products.map((product) => product.category)),
   ];
 
-  // Handle pagination navigation
-  const goToPage = (page: number) => {
-    if (page >= 1 && page <= totalPages) {
-      setCurrentPage(page);
-    }
-  };
-
-  // Render pagination numbers dynamically
-  function renderPageNumbers() {
-    const pageNumbers = [];
-    const maxVisiblePages = 5;
-
-    pageNumbers.push(1);
-
-    let startPage = Math.max(2, currentPage - 1);
-    let endPage = Math.min(totalPages - 1, currentPage + 1);
-
-    if (currentPage <= 3) {
-      endPage = Math.min(4, totalPages - 1);
-    } else if (currentPage >= totalPages - 2) {
-      startPage = Math.max(totalPages - 3, 2);
-    }
-
-    if (startPage > 2) {
-      pageNumbers.push("...");
-    }
-
-    for (let i = startPage; i <= endPage; i++) {
-      pageNumbers.push(i);
-    }
-
-    if (endPage < totalPages - 1) {
-      pageNumbers.push("...");
-    }
-
-    if (totalPages > 1) {
-      pageNumbers.push(totalPages);
-    }
-
-    return pageNumbers.map((pageNumber, index) => {
-      if (pageNumber === "...") {
-        return (
-          <span key={`ellipsis-${index}`} className="px-3 py-1">
-            ...
-          </span>
-        );
-      }
-      return (
-        <button
-          key={`page-${pageNumber}`}
-          onClick={() => goToPage(pageNumber as number)}
-          className={`px-3 py-1 rounded-md cursor-pointer ${
-            currentPage === pageNumber
-              ? "bg-blue-500 text-white"
-              : "bg-gray-200 hover:bg-gray-300"
-          }`}
-        >
-          {digitsEnToFa(pageNumber)}
-        </button>
-      );
-    });
-  }
+ 
 
   return (
     <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-80">
@@ -196,18 +136,38 @@ function ProductsTable({ products }: any) {
                 <td className="py-3 px-4 text-right">
                   {digitsEnToFa(product.releaseYear)}
                 </td>
-                <td className="py-3 flex gap-2">
-                  <img
-                    className="h-6 cursor-pointer"
-                    src="https://www.svgrepo.com/show/489907/delete.svg"
-                    alt="delete"
-                    onClick={() => handleDeleteClick(product.id)} // Trigger modal
-                  />
-                  <img
-                    className="h-6 cursor-pointer"
-                    src="https://www.svgrepo.com/show/422395/edit-interface-multimedia.svg"
-                    alt="edit"
-                  />
+                <td className="py-3 px-4 flex gap-3 justify-center">
+                  <button
+                    className="h-8 w-8 flex items-center justify-center rounded-full bg-red-100 hover:bg-red-200 transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-400 cursor-pointer"
+                    onClick={() => handleDeleteClick(product.id)}
+                    title="حذف"
+                  >
+                    <img
+                      className="h-5 w-5"
+                      src="https://www.svgrepo.com/show/489907/delete.svg"
+                      alt="حذف محصول"
+                    />
+                  </button>
+                  <button
+                    className="h-8 w-8 flex items-center justify-center rounded-full bg-blue-100 hover:bg-blue-200 transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer"
+                    title="ویرایش"
+                  >
+                    <img
+                      className="h-5 w-5"
+                      src="https://www.svgrepo.com/show/422395/edit-interface-multimedia.svg"
+                      alt="ویرایش محصول"
+                    />
+                  </button>
+                  <button
+                    className="h-8 w-8 flex items-center justify-center rounded-full bg-green-100 hover:bg-green-200 transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-400 cursor-pointer"
+                    title="نمایش"
+                  >
+                    <img
+                      className="h-5 w-5"
+                      src="https://www.svgrepo.com/show/80986/show.svg"
+                      alt="نمایش محصول"
+                    />
+                  </button>
                 </td>
               </tr>
             ))}
@@ -224,37 +184,12 @@ function ProductsTable({ products }: any) {
       )}
 
       {/* Pagination Controls */}
-      <div className="flex items-center gap-2">
-        <button
-          onClick={() => goToPage(1)}
-          disabled={currentPage === 1}
-          className="px-4 py-2 bg-gray-200 rounded-md disabled:opacity-50 hover:bg-gray-300 transition cursor-pointer"
-        >
-          اولین
-        </button>
-        <button
-          onClick={() => goToPage(currentPage - 1)}
-          disabled={currentPage === 1}
-          className="px-4 py-2 bg-gray-200 rounded-md disabled:opacity-50 hover:bg-gray-300 transition cursor-pointer"
-        >
-          قبلی
-        </button>
-        <div className="flex gap-1">{renderPageNumbers()}</div>
-        <button
-          onClick={() => goToPage(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          className="px-4 py-2 bg-gray-200 rounded-md disabled:opacity-50 hover:bg-gray-300 transition cursor-pointer"
-        >
-          بعدی
-        </button>
-        <button
-          onClick={() => goToPage(totalPages)}
-          disabled={currentPage === totalPages}
-          className="px-4 py-2 bg-gray-200 rounded-md disabled:opacity-50 hover:bg-gray-300 transition cursor-pointer"
-        >
-          آخرین
-        </button>
-      </div>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        setCurrentPage={setCurrentPage}
+        
+      />
     </div>
   );
 }
