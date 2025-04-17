@@ -100,7 +100,7 @@ function DeliverLogsTable() {
   }
 
   return (
-    <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-80">
+    <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-64">
       {/* Filter Bar */}
       <div className="flex justify-between items-center w-full max-w-6xl bg-gray-800 p-4 rounded-lg shadow-md mb-4">
         <span className="text-white text-lg font-semibold">دسته‌بندی:</span>
