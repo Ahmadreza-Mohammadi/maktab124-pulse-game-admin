@@ -46,7 +46,7 @@ function ProductsTable({ products }: any) {
   const filteredProducts =
     selectedCategory === "همه"
       ? products
-      : products.filter((product) => product.category === selectedCategory);
+      : products.filter((product:any) => product.category === selectedCategory);
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -71,7 +71,7 @@ function ProductsTable({ products }: any) {
 
   const categories = [
     "همه",
-    ...new Set(products.map((product) => product.category)),
+    ...new Set(products.map((product:any) => product.category)),
   ];
 
  
@@ -80,7 +80,9 @@ function ProductsTable({ products }: any) {
     <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-80">
       {/* Filter Bar */}
       <div className="flex justify-between items-center w-full max-w-6xl bg-gray-800 p-4 rounded-lg shadow-md mb-4">
-        <span className="text-white text-lg font-semibold">دسته‌بندی:</span>
+        <button className="bg-blue-400 p-1">افزودن محصوg</button>
+       <div className="flex gap-4 items-center">
+       <span className="text-white text-lg font-semibold">دسته‌بندی:</span>
         <select
           value={selectedCategory}
           onChange={(e) => handleCategoryChange(e.target.value)}
@@ -92,6 +94,7 @@ function ProductsTable({ products }: any) {
             </option>
           ))}
         </select>
+       </div>
       </div>
 
       {/* Product Table */}

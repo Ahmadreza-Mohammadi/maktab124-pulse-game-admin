@@ -5,18 +5,19 @@ import ListAltIcon from "@mui/icons-material/ListAlt";
 import StorageIcon from "@mui/icons-material/Storage";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import PersonIcon from "@mui/icons-material/Person";
+import LogoutIcon from "@mui/icons-material/Logout";
 import { routes } from "../../router/const";
 import { useNavigate } from "react-router";
-import { Logout } from "@mui/icons-material";
 import LogOutModal from "../modal/LogOutModal";
 
 function AsideMenu() {
-  const navigate: any = useNavigate();
-  const [activeIndex, setActiveIndex] = useState<number | null>(null); // State to track active button
+  const navigate = useNavigate();
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   const logOutHandler = () => {
     localStorage.removeItem("accessToken");
+    localStorage.removeItem("username");
     navigate(routes.login);
   };
 
@@ -29,24 +30,16 @@ function AsideMenu() {
   };
 
   return (
-    <>
+    <aside className="fixed top-0 right-0 w-64 h-screen bg-gray-900/95 backdrop-blur-md shadow-lg z-20 overflow-y-auto">
       {showLogoutModal && (
         <LogOutModal onConfirm={logOutHandler} onCancel={handleCancelLogout} />
       )}
-      <div className="bg-gray-900 w-80 h-screen fixed top-44 right-0 p-12 flex flex-col gap-14 items-center text-center transition-all duration-500 hover:shadow-[0_0_20px_rgba(79,70,229,0.4)] z-20 overflow-y-auto">
-        <ul className="flex flex-col gap-4 w-full">
+      <div className="flex flex-col gap-6 p-6 pt-20">
+        <ul className="flex flex-col gap-2">
           {[
             { icon: <HomeIcon />, text: "خانه", endpoint: routes.home },
-            {
-              icon: <InventoryIcon />,
-              text: "محصولات",
-              endpoint: routes.products,
-            },
-            {
-              icon: <StorageIcon />,
-              text: "موجودی",
-              endpoint: routes.inventory,
-            },
+            { icon: <InventoryIcon />, text: "محصولات", endpoint: routes.products },
+            { icon: <StorageIcon />, text: "موجودی", endpoint: routes.inventory },
             { icon: <ListAltIcon />, text: "فروش", endpoint: routes.sales },
             {
               icon: <LocalShippingIcon />,
@@ -56,39 +49,42 @@ function AsideMenu() {
             { icon: <PersonIcon />, text: "پروفایل", endpoint: routes.profile },
           ].map((page, index) => (
             <li
+              key={index}
               onClick={() => {
-                setActiveIndex(index); // Update active index
+                setActiveIndex(index);
                 navigate(page.endpoint);
               }}
-              key={index}
-              className={`text-lg font-semibold flex gap-3 items-center justify-start cursor-pointer 
-                        transition-all duration-300 py-4 px-6 rounded-xl
-                        hover:text-cyan-200 hover:bg-gray-800/70 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] hover:-translate-y-1
-                        ${
-                          activeIndex === index
-                            ? "text-cyan-300 bg-gray-800 shadow-[0_0_15px_rgba(34,211,238,0.6)]"
-                            : "text-indigo-300"
-                        }`}
+              className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer
+                text-gray-200 text-base font-medium
+                transition-all duration-200 ease-in-out
+                hover:bg-gray-800 hover:text-cyan-400 hover:shadow-sm
+                ${
+                  activeIndex === index
+                    ? "bg-gray-800 text-cyan-400 shadow-sm"
+                    : ""
+                }`}
             >
               <span
-                className={`transition-all duration-500 ${
-                  activeIndex === index
-                    ? "scale-110 text-cyan-300"
-                    : "text-indigo-400"
+                className={`transition-all duration-200 ${
+                  activeIndex === index ? "text-cyan-400" : "text-gray-400"
                 }`}
               >
                 {page.icon}
               </span>
-              <span className="transition-all duration-300">{page.text}</span>
+              <span>{page.text}</span>
             </li>
           ))}
         </ul>
-        <div onClick={handleLogoutClick} className=" bg-red-400 text-white flex justify-center gap-1 items-center">
-          <button className=" font-bold text-2xl">خروج</button>
-          <Logout />
-        </div>
+        <button
+          onClick={handleLogoutClick}
+          className="flex items-center gap-2 px-4 py-3 rounded-lg bg-red-500 text-white text-base font-medium
+            hover:bg-red-600 transition-all duration-200 ease-in-out"
+        >
+          <LogoutIcon />
+          <span>خروج</span>
+        </button>
       </div>
-    </>
+    </aside>
   );
 }
 

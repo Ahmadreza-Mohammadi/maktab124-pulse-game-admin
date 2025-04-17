@@ -37,3 +37,5 @@ export const getProductsData = async () => {
   const result = await response.json();
   return result.records;
 };
+
+

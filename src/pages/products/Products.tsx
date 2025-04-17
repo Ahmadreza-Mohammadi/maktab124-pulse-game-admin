@@ -10,14 +10,14 @@ function Products() {
 
   if (isLoading) {
     return (
-      <div className="w-full h-screen flex justify-center items-center bg-red-500">
+      <div className="w-full h-screen flex items-center justify-center mr-80 bg-red-500">
         Loading...
       </div>
     );
   }
 
   if (isError) {
-    return <div>Error fetching products.</div>;
+    return <div className="w-full h-screen flex items-center justify-center mr-80 bg-red-500">Error fetching products.</div>;
   }
 
   return <ProductsTable products={data} />;
