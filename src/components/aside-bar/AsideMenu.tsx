@@ -30,12 +30,13 @@ function AsideMenu() {
   };
 
   return (
-    <aside className="fixed top-0 right-0 w-64 h-screen bg-gray-900/95 backdrop-blur-md shadow-lg z-20 overflow-y-auto">
+    <>
       {showLogoutModal && (
         <LogOutModal onConfirm={logOutHandler} onCancel={handleCancelLogout} />
       )}
-      <div className="flex flex-col gap-6 p-6 pt-20">
-        <ul className="flex flex-col gap-2">
+        <aside className="fixed top-0 right-0 w-64 h-screen bg-gray-900/95 backdrop-blur-md shadow-lg z-20 overflow-y-auto">
+      <div className="flex flex-col gap-16 p-6 pt-20">
+        <ul className="flex flex-col gap-3 mt-8">
           {[
             { icon: <HomeIcon />, text: "خانه", endpoint: routes.home },
             { icon: <InventoryIcon />, text: "محصولات", endpoint: routes.products },
@@ -77,7 +78,7 @@ function AsideMenu() {
         </ul>
         <button
           onClick={handleLogoutClick}
-          className="flex items-center gap-2 px-4 py-3 rounded-lg bg-red-500 text-white text-base font-medium
+          className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-red-500 text-white text-base font-medium
             hover:bg-red-600 transition-all duration-200 ease-in-out"
         >
           <LogoutIcon />
@@ -85,6 +86,8 @@ function AsideMenu() {
         </button>
       </div>
     </aside>
+    </>
+
   );
 }
 

@@ -7,7 +7,7 @@ function Header() {
   const adminName = JSON.parse(ADMIN_NAME);
 
   return (
-    <header className="sticky top-0 z-30 bg-gray-900/95 backdrop-blur-md shadow-lg">
+    <header className="sticky top-0 z-30 bg-gray-900/95 backdrop-blur-3xl shadow-lg">
       <div className="navbar mx-auto max-w-7xl px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-4">
           <img
@@ -16,8 +16,8 @@ function Header() {
             src="https://www.svgrepo.com/show/408429/user-person-profile-block-account-circle.svg"
             alt="Profile"
           />
-          <p className="text-gray-200 text-sm font-medium">
-            خوش آمدید{" "}
+          <p className="text-gray-200 text-lg font-medium flex gap-3">
+            خوش آمدید
             <span
               className="cursor-pointer text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
               onClick={() => navigate(routes.profile)}

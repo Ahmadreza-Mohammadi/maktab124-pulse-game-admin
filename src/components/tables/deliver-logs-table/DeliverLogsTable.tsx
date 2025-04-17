@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { categoryLabels, digitsEnToFa, formatPrice } from "../../utils/helper";
-import { deliverStatusLogs } from "../../../database/deliverStatusLogs"; // Import deliver status data
+import { deliverStatusLogs } from "../../../database/DeliverStatusLogs";
 
 function DeliverLogsTable() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -117,7 +117,7 @@ function DeliverLogsTable() {
         </select>
       </div>
 
-      <div className="w-full max-w-6xl bg-white rounded-lg shadow-md overflow-hidden mb-4">
+      <div className="w-full max-w-6xl h-2/3 bg-white rounded-lg shadow-md overflow-hidden mb-4">
         <table className="w-full">
           <thead className="bg-gray-800 text-white">
             <tr>

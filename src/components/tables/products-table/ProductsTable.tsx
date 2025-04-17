@@ -77,7 +77,7 @@ function ProductsTable({ products }: any) {
  
 
   return (
-    <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-80">
+    <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-64">
       {/* Filter Bar */}
       <div className="flex justify-between items-center w-full max-w-6xl bg-gray-800 p-4 rounded-lg shadow-md mb-4">
         <button className="bg-blue-400 p-1">افزودن محصوg</button>
@@ -98,7 +98,7 @@ function ProductsTable({ products }: any) {
       </div>
 
       {/* Product Table */}
-      <div className="w-full max-w-6xl bg-white rounded-lg shadow-md overflow-hidden mb-4">
+      <div className="w-full max-w-6xl h-2/3 bg-white rounded-lg shadow-md overflow-hidden mb-4">
         <table className="w-full">
           <thead className="bg-gray-800 text-white">
             <tr>

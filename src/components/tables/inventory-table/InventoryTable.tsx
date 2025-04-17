@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { digitsEnToFa } from "../../utils/helper";
 
-function InventoryTable({products}) {
+function InventoryTable({ products }: any) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
   const productsPerPage = 10;
@@ -9,8 +9,11 @@ function InventoryTable({products}) {
   // Filter products by category and stock
   const filteredProducts =
     selectedCategory === "همه"
-      ? products.filter((product) => product.stock === true)
-      : products.filter((product) => product.category === selectedCategory && product.stock === true);
+      ? products.filter((product: any) => product.stock === true)
+      : products.filter(
+          (product: any) =>
+            product.category === selectedCategory && product.stock === true
+        );
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -29,7 +32,7 @@ function InventoryTable({products}) {
   // Get unique categories
   const categories = [
     "همه",
-    ...new Set(products.map((product) => product.category)),
+    ...new Set(products.map((product: any) => product.category)),
   ];
 
   // Handle page change
@@ -114,7 +117,7 @@ function InventoryTable({products}) {
         </select>
       </div>
 
-      <div className="w-full max-w-6xl bg-white rounded-lg shadow-md overflow-hidden mb-4">
+      <div className="w-full max-w-6xl h-2/3 bg-white rounded-lg shadow-md overflow-hidden mb-4">
         <table className="w-full">
           <thead className="bg-gray-800 text-white">
             <tr>
