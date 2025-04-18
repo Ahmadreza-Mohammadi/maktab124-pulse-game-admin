@@ -44,8 +44,8 @@ function AsideMenu() {
             { icon: <ListAltIcon />, text: "فروش", endpoint: routes.sales },
             {
               icon: <LocalShippingIcon />,
-              text: "تحویل شده/نشده",
-              endpoint: routes.delivery_logs,
+              text: "سفارش ها",
+              endpoint: routes.orders,
             },
             { icon: <PersonIcon />, text: "پروفایل", endpoint: routes.profile },
           ].map((page, index) => (

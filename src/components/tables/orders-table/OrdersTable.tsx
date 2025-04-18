@@ -2,7 +2,7 @@ import { useState } from "react";
 import { categoryLabels, digitsEnToFa, formatPrice } from "../../utils/helper";
 import { deliverStatusLogs } from "../../../database/DeliverStatusLogs";
 
-function DeliverLogsTable() {
+function OrdersTable() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
   const productsPerPage = 10;
@@ -125,6 +125,7 @@ function DeliverLogsTable() {
               <th className="py-3 px-4 text-right">دسته‌بندی</th>
               <th className="py-3 px-4 text-right">تعداد</th>
               <th className="py-3 px-4 text-right">قیمت</th>
+              <th className="py-3 px-4 text-right">مجموع قیمت</th>
               <th className="py-3 px-4 text-right">وضعیت تحویل</th>
             </tr>
           </thead>
@@ -145,14 +146,26 @@ function DeliverLogsTable() {
                   {formatPrice(product.price)} تومان
                 </td>
                 <td className="py-3 px-4 text-right">
+                  {formatPrice(product.allPrice)} تومان
+                </td>
+                <td className="py-3 px-4 text-right ">
                   <span
-                    className={`  rounded-full text-xs ${
-                      product.delivered
-                        ? " bg-green-100 text-green-800 px-2 py-1"
-                        : "bg-red-100 text-red-800 px-4 py-1"
+                    className={` rounded-full text-xs ${
+                      (product.status === "در حال آماده سازی" &&
+                        " bg-gray-100 text-gray-800 px-2 py-1") ||
+                      (product.status === "ارسال شده" &&
+                        " bg-green-100 text-green-800 px-2 py-1") ||
+                        (product.status === "لغو شده" &&
+                          " bg-red-100 text-red-800 px-2 py-1") ||
+                          (product.status === "تحویل داده شده" &&
+                            " bg-green-100 text-green-800 px-2 py-1")
                     }`}
                   >
-                    {product.delivered ? "تحویل شده" : "در انتظار"}
+                    {(product.status === "در حال آماده سازی" &&
+                      "در حال آماده سازی") ||
+                      (product.status === "ارسال شده" && "ارسال شده")||
+                      (product.status === "لغو شده" && "لغو شده")||
+                      (product.status === "تحویل داده شده" && "تحویل داده شده")  }
                   </span>
                 </td>
               </tr>
@@ -197,4 +210,4 @@ function DeliverLogsTable() {
   );
 }
 
-export default DeliverLogsTable;
+export default OrdersTable;

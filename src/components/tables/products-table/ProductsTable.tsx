@@ -46,7 +46,9 @@ function ProductsTable({ products }: any) {
   const filteredProducts =
     selectedCategory === "همه"
       ? products
-      : products.filter((product:any) => product.category === selectedCategory);
+      : products.filter(
+          (product: any) => product.category === selectedCategory
+        );
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -71,30 +73,28 @@ function ProductsTable({ products }: any) {
 
   const categories = [
     "همه",
-    ...new Set(products.map((product:any) => product.category)),
+    ...new Set(products.map((product: any) => product.category)),
   ];
-
- 
 
   return (
     <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-64">
       {/* Filter Bar */}
       <div className="flex justify-between items-center w-full max-w-6xl bg-gray-800 p-4 rounded-lg shadow-md mb-4">
         <button className="bg-blue-400 p-1">افزودن محصوg</button>
-       <div className="flex gap-4 items-center">
-       <span className="text-white text-lg font-semibold">دسته‌بندی:</span>
-        <select
-          value={selectedCategory}
-          onChange={(e) => handleCategoryChange(e.target.value)}
-          className="px-4 py-2 rounded-md bg-gray-200 focus:outline-none text-gray-800 hover:bg-gray-300 transition ease-in-out duration-200"
-        >
-          {categories.map((category, index) => (
-            <option key={`category-${index}`} value={category}>
-              {categoryLabels[category] || category}
-            </option>
-          ))}
-        </select>
-       </div>
+        <div className="flex gap-4 items-center">
+          <span className="text-white text-lg font-semibold">دسته‌بندی:</span>
+          <select
+            value={selectedCategory}
+            onChange={(e) => handleCategoryChange(e.target.value)}
+            className="px-4 py-2 rounded-md bg-gray-200 focus:outline-none text-gray-800 hover:bg-gray-300 transition ease-in-out duration-200"
+          >
+            {categories.map((category, index) => (
+              <option key={`category-${index}`} value={category}>
+                {categoryLabels[category] || category}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {/* Product Table */}
@@ -102,13 +102,11 @@ function ProductsTable({ products }: any) {
         <table className="w-full">
           <thead className="bg-gray-800 text-white">
             <tr>
-              <th className="py-3 px-4 text-right">نام</th>
-              <th className="py-3 px-4 text-right">دسته‌بندی</th>
-              <th className="py-3 px-4 text-right">سازنده</th>
-              <th className="py-3 px-4 text-right">تعداد موجود</th>
-              <th className="py-3 px-4 text-right">وضعیت</th>
-              <th className="py-3 px-4 text-right">سال انتشار</th>
-              <th className="py-3 px-4 text-right">عملیات</th>
+              <th className="py-3 px-4 text-center">نام</th>
+              <th className="py-3 px-4 text-center">دسته‌بندی</th>
+              <th className="py-3 px-4 text-center">سازنده</th>
+              <th className="py-3 px-4 text-center">سال انتشار</th>
+              <th className="py-3 px-4 text-center">عملیات</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
@@ -117,26 +115,13 @@ function ProductsTable({ products }: any) {
                 key={`product-${index}`}
                 className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
               >
-                <td className="py-3 px-4 text-right">{product.title}</td>
-                <td className="py-3 px-4 text-right">
+                <td className="py-3 px-4 text-center">{product.title}</td>
+                <td className="py-3 px-4 text-center">
                   {categoryLabels[product.category] || product.category}
                 </td>
-                <td className="py-3 px-4 text-right">{product.creator}</td>
-                <td className="py-3 px-4 text-right">
-                  {digitsEnToFa(product.quantity)}
-                </td>
-                <td className="py-3 px-4 text-right">
-                  <span
-                    className={`px-2 py-1 rounded-full text-xs ${
-                      product.stock
-                        ? "bg-green-100 text-green-800"
-                        : "bg-red-100 text-red-800"
-                    }`}
-                  >
-                    {product.stock ? "موجود" : "ناموجود"}
-                  </span>
-                </td>
-                <td className="py-3 px-4 text-right">
+                <td className="py-3 px-4 text-center">{product.creator}</td>
+
+                <td className="py-3 px-4 text-center">
                   {digitsEnToFa(product.releaseYear)}
                 </td>
                 <td className="py-3 px-4 flex gap-3 justify-center">
@@ -191,7 +176,6 @@ function ProductsTable({ products }: any) {
         currentPage={currentPage}
         totalPages={totalPages}
         setCurrentPage={setCurrentPage}
-        
       />
     </div>
   );

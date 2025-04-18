@@ -11,7 +11,7 @@ function Inventory() {
 
   if (isLoading) {
     return (
-      <div className="w-full h-screen flex justify-center items-center bg-gray-700">
+      <div className="w-full h-screen flex justify-center items-center bg-gray-700 mr-64">
         <Loading />
       </div>
     );

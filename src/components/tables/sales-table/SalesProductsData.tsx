@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { digitsEnToFa, formatPrice } from "../../utils/helper";
-import { salesData } from "../../../database/sales";
+import { salesData } from "../../../database/Sales";
 
 function SalesProductsDataTable() {
   const [currentPage, setCurrentPage] = useState(1);

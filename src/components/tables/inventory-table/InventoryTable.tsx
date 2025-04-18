@@ -7,14 +7,11 @@ function InventoryTable({ products }: any) {
   const [selectedCategory, setSelectedCategory] = useState("همه");
   const productsPerPage = 10;
 
-  // Filter products by category and stock
+  // Filter products only by category (include all stock values)
   const filteredProducts =
     selectedCategory === "همه"
-      ? products.filter((product: any) => product.stock === true)
-      : products.filter(
-          (product: any) =>
-            product.category === selectedCategory && product.stock === true
-        );
+      ? products
+      : products.filter((product: any) => product.category === selectedCategory);
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -76,12 +73,12 @@ function InventoryTable({ products }: any) {
                 <td className="py-3 px-4 text-right">
                   <span
                     className={`px-2 py-1 rounded-full text-xs ${
-                      product.stock === true
+                      product.stock
                         ? "bg-green-100 text-green-800"
                         : "bg-red-100 text-red-800"
                     }`}
                   >
-                    {product.stock && "موجود"}
+                    {product.stock ? "موجود" : "ناموجود"}
                   </span>
                 </td>
               </tr>
