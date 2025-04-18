@@ -1,9 +1,10 @@
-interface LogOutModalProps {
+
+interface DeleteModalProps {
   onConfirm: () => void;
   onCancel: () => void;
 }
 
-function LogOutModal({ onConfirm, onCancel }: LogOutModalProps) {
+function DeleteModal({ onConfirm, onCancel }: DeleteModalProps) {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
       {/* Backdrop with intense blur */}
@@ -12,9 +13,9 @@ function LogOutModal({ onConfirm, onCancel }: LogOutModalProps) {
       {/* Modal content */}
       <div className="w-[250px] flex flex-col p-4 relative items-center justify-center bg-gray-800/90 border border-gray-700 shadow-lg rounded-2xl z-10">
         <div className="text-center p-3 flex flex-col">
-          <img className="h-16" src="https://www.svgrepo.com/show/94002/logout.svg" alt="" />
+          <img className="h-16" src="https://www.svgrepo.com/show/384385/delete-remove-uncheck.svg" alt="" />
           <h2 className="text-xl font-bold py-4 text-gray-200">
-            آیا میخواهید خارج شوید؟
+            آیا از حذف مطمئن هستید؟
           </h2>
         </div>
         <div className="flex flex-col gap-2">
@@ -26,7 +27,7 @@ function LogOutModal({ onConfirm, onCancel }: LogOutModalProps) {
           </button>
           <button
             onClick={onConfirm}
-            className="bg-green-400 w-24 hover:bg-green-500 px-5 cursor-pointer ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300"
+            className="bg-red-400 w-24 hover:bg-red-500 px-5 cursor-pointer ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-red-300 hover:border-red-500 text-white rounded-full transition ease-in duration-300"
           >
             تایید
           </button>
@@ -36,4 +37,4 @@ function LogOutModal({ onConfirm, onCancel }: LogOutModalProps) {
   );
 }
 
-export default LogOutModal;
+export default DeleteModal;

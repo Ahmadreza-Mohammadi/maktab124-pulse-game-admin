@@ -1,17 +1,54 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { categoryLabels, digitsEnToFa } from "../../utils/helper";
-import { products } from "../../../database/Products";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { deleteProduct } from "../../utils/deleteProduct";
+import DeleteModal from "../../modal/DeleteModal";
+import Pagination from "../../pagination/Pagination";
 
-function ProductsTable() {
+function ProductsTable({ products }: any) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [productToDelete, setProductToDelete] = useState<number | null>(null); // Track product to delete
+  const queryClient = useQueryClient();
   const productsPerPage = 10;
+
+  // Mutation to handle deletion
+  const mutation = useMutation({
+    mutationFn: (id: number) => deleteProduct(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries(["products"]);
+      setShowDeleteModal(false); //
+      setProductToDelete(null);
+    },
+  });
+
+  // Handle delete button click
+  const handleDeleteClick = (id: number) => {
+    setProductToDelete(id);
+    setShowDeleteModal(true);
+  };
+
+  // Handle modal cancel
+  const handleCancelDelete = () => {
+    setShowDeleteModal(false);
+    setProductToDelete(null);
+  };
+
+  // Handle modal confirm
+  const handleConfirmDelete = () => {
+    if (productToDelete !== null) {
+      mutation.mutate(productToDelete);
+    }
+  };
 
   // Filter products by category
   const filteredProducts =
     selectedCategory === "همه"
       ? products
-      : products.filter((product) => product.category === selectedCategory);
+      : products.filter(
+          (product: any) => product.category === selectedCategory
+        );
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -21,113 +58,55 @@ function ProductsTable() {
     startIndex + productsPerPage
   );
 
+  // Adjust pagination when a product is deleted
+  useEffect(() => {
+    if (currentProducts.length === 0 && currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  }, [currentProducts, currentPage]);
+
   // Handle category change
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
-    setCurrentPage(1); // Reset to the first page when the category changes
+    setCurrentPage(1);
   };
-
-
 
   const categories = [
     "همه",
-    ...new Set(products.map((product) => product.category)),
+    ...new Set(products.map((product: any) => product.category)),
   ];
 
-  // Handle page change
-  const goToPage = (page: number) => {
-    if (page >= 1 && page <= totalPages) {
-      setCurrentPage(page);
-    }
-  };
-
-  function renderPageNumbers() {
-    const pageNumbers = [];
-    const maxVisiblePages = 5;
-
-    pageNumbers.push(1);
-
-    let startPage = Math.max(2, currentPage - 1);
-    let endPage = Math.min(totalPages - 1, currentPage + 1);
-
-    if (currentPage <= 3) {
-      endPage = Math.min(4, totalPages - 1);
-    } else if (currentPage >= totalPages - 2) {
-      startPage = Math.max(totalPages - 3, 2);
-    }
-
-    if (startPage > 2) {
-      pageNumbers.push("...");
-    }
-
-    for (let i = startPage; i <= endPage; i++) {
-      pageNumbers.push(i);
-    }
-
-    if (endPage < totalPages - 1) {
-      pageNumbers.push("...");
-    }
-
-    if (totalPages > 1) {
-      pageNumbers.push(totalPages);
-    }
-
-    return pageNumbers.map((pageNumber, index) => {
-      if (pageNumber === "...") {
-        return (
-          <span key={`ellipsis-${index}`} className="px-3 py-1">
-            ...
-          </span>
-        );
-      }
-      return (
-        <button
-          key={`page-${pageNumber}`}
-          onClick={() => goToPage(pageNumber as number)}
-          className={`px-3 py-1 rounded-md cursor-pointer ${
-            currentPage === pageNumber
-              ? "bg-blue-500 text-white"
-              : "bg-gray-200 hover:bg-gray-300"
-          }`}
-        >
-          {typeof pageNumber === "number"
-            ? digitsEnToFa(pageNumber)
-            : pageNumber}
-        </button>
-      );
-    });
-  }
-
   return (
-    <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-80">
+    <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-64">
       {/* Filter Bar */}
       <div className="flex justify-between items-center w-full max-w-6xl bg-gray-800 p-4 rounded-lg shadow-md mb-4">
-        <span className="text-white text-lg font-semibold">دسته‌بندی:</span>
-        <select
-          value={selectedCategory}
-          onChange={(e) => handleCategoryChange(e.target.value)}
-          className="px-4 py-2 rounded-md bg-gray-200 focus:outline-none text-gray-800 hover:bg-gray-300 transition ease-in-out duration-200"
-        >
-          {categories.map((category, index) => (
-            <option key={`category-${index}`} value={category}>
-              {category === "همه"
-                ? "همه"
-                : categoryLabels[category] || category}
-            </option>
-          ))}
-        </select>
+        <button className="bg-blue-400 p-1">افزودن محصوg</button>
+        <div className="flex gap-4 items-center">
+          <span className="text-white text-lg font-semibold">دسته‌بندی:</span>
+          <select
+            value={selectedCategory}
+            onChange={(e) => handleCategoryChange(e.target.value)}
+            className="px-4 py-2 rounded-md bg-gray-200 focus:outline-none text-gray-800 hover:bg-gray-300 transition ease-in-out duration-200"
+          >
+            {categories.map((category, index) => (
+              <option key={`category-${index}`} value={category}>
+                {categoryLabels[category] || category}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
-      <div className="w-full max-w-6xl bg-white rounded-lg shadow-md overflow-hidden mb-4">
+      {/* Product Table */}
+      <div className="w-full max-w-6xl h-2/3 bg-white rounded-lg shadow-md overflow-hidden mb-4">
         <table className="w-full">
           <thead className="bg-gray-800 text-white">
             <tr>
-              <th className="py-3 px-4 text-right">نام</th>
-              <th className="py-3 px-4 text-right">دسته‌بندی</th>
-              <th className="py-3 px-4 text-right">سازنده</th>
-              <th className="py-3 px-4 text-right">تعداد موجود</th>
-              <th className="py-3 px-4 text-right">وضعیت</th>
-              <th className="py-3 px-4 text-right">سال انتشار</th>
+              <th className="py-3 px-4 text-center">نام</th>
+              <th className="py-3 px-4 text-center">دسته‌بندی</th>
+              <th className="py-3 px-4 text-center">سازنده</th>
+              <th className="py-3 px-4 text-center">سال انتشار</th>
+              <th className="py-3 px-4 text-center">عملیات</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
@@ -136,27 +115,47 @@ function ProductsTable() {
                 key={`product-${index}`}
                 className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
               >
-                <td className="py-3 px-4 text-right">{product.title}</td>
-                <td className="py-3 px-4 text-right">
+                <td className="py-3 px-4 text-center">{product.title}</td>
+                <td className="py-3 px-4 text-center">
                   {categoryLabels[product.category] || product.category}
                 </td>
-                <td className="py-3 px-4 text-right">{product.creator}</td>
-                <td className="py-3 px-4 text-right">
-                  {digitsEnToFa(product.quantity)}
-                </td>
-                <td className="py-3 px-4 text-right">
-                  <span
-                    className={`px-2 py-1 rounded-full text-xs ${
-                      product.stock === true
-                        ? "bg-green-100 text-green-800"
-                        : "bg-red-100 text-red-800"
-                    }`}
-                  >
-                    {product.stock ? "موجود" : "ناموجود"}
-                  </span>
-                </td>
-                <td className="py-3 px-4 text-right">
+                <td className="py-3 px-4 text-center">{product.creator}</td>
+
+                <td className="py-3 px-4 text-center">
                   {digitsEnToFa(product.releaseYear)}
+                </td>
+                <td className="py-3 px-4 flex gap-3 justify-center">
+                  <button
+                    className="h-8 w-8 flex items-center justify-center rounded-full bg-red-100 hover:bg-red-200 transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-400 cursor-pointer"
+                    onClick={() => handleDeleteClick(product.id)}
+                    title="حذف"
+                  >
+                    <img
+                      className="h-5 w-5"
+                      src="https://www.svgrepo.com/show/489907/delete.svg"
+                      alt="حذف محصول"
+                    />
+                  </button>
+                  <button
+                    className="h-8 w-8 flex items-center justify-center rounded-full bg-blue-100 hover:bg-blue-200 transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer"
+                    title="ویرایش"
+                  >
+                    <img
+                      className="h-5 w-5"
+                      src="https://www.svgrepo.com/show/422395/edit-interface-multimedia.svg"
+                      alt="ویرایش محصول"
+                    />
+                  </button>
+                  <button
+                    className="h-8 w-8 flex items-center justify-center rounded-full bg-green-100 hover:bg-green-200 transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-400 cursor-pointer"
+                    title="نمایش"
+                  >
+                    <img
+                      className="h-5 w-5"
+                      src="https://www.svgrepo.com/show/80986/show.svg"
+                      alt="نمایش محصول"
+                    />
+                  </button>
                 </td>
               </tr>
             ))}
@@ -164,38 +163,20 @@ function ProductsTable() {
         </table>
       </div>
 
+      {/* Delete Modal */}
+      {showDeleteModal && (
+        <DeleteModal
+          onConfirm={handleConfirmDelete}
+          onCancel={handleCancelDelete}
+        />
+      )}
+
       {/* Pagination Controls */}
-      <div className="flex items-center gap-2">
-        <button
-          onClick={() => goToPage(1)}
-          disabled={currentPage === 1}
-          className="px-4 py-2 bg-gray-200 rounded-md disabled:opacity-50 hover:bg-gray-300 transition cursor-pointer"
-        >
-          اولین
-        </button>
-        <button
-          onClick={() => goToPage(currentPage - 1)}
-          disabled={currentPage === 1}
-          className="px-4 py-2 bg-gray-200 rounded-md disabled:opacity-50 hover:bg-gray-300 transition cursor-pointer"
-        >
-          قبلی
-        </button>
-        <div className="flex gap-1">{renderPageNumbers()}</div>
-        <button
-          onClick={() => goToPage(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          className="px-4 py-2 bg-gray-200 rounded-md disabled:opacity-50 hover:bg-gray-300 transition cursor-pointer"
-        >
-          بعدی
-        </button>
-        <button
-          onClick={() => goToPage(totalPages)}
-          disabled={currentPage === totalPages}
-          className="px-4 py-2 bg-gray-200 rounded-md disabled:opacity-50 hover:bg-gray-300 transition cursor-pointer"
-        >
-          آخرین
-        </button>
-      </div>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 }

@@ -4,6 +4,6 @@ export const routes: any = {
   products: "products",
   inventory: "inventory",
   sales: "sales",
-  delivery_logs: "deliver_logs",
+  orders: "orders",
   profile:"profile"
 };
