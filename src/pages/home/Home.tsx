@@ -1,4 +1,5 @@
 import welcomeImg from "../../assets/imgs/home-pic.png";
+import { addToApi } from "../../components/test/test";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
         <p className="font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-600 drop-shadow-lg tracking-wide animate-pulse">
           به پنل ادمین پالس گیم خوش آمدید!
         </p>
+        <button onClick={addToApi}>ADD</button>
       </div>
     </div>
   );

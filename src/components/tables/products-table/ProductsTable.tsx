@@ -80,7 +80,18 @@ function ProductsTable({ products }: any) {
     <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-64">
       {/* Filter Bar */}
       <div className="flex justify-between items-center w-full max-w-6xl bg-gray-800 p-4 rounded-lg shadow-md mb-4">
-        <button className="bg-blue-400 p-1">افزودن محصوg</button>
+        <div className="relative">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md cursor-pointer flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg active:scale-95">
+            افزودن محصول
+            <img
+              className="h-6 transition-transform duration-300 group-hover:rotate-90"
+              src="https://cdn.iconscout.com/icon/premium/png-512-thumb/add-5279002-4402592.png?f=webp&w=512"
+              alt="Add product"
+            />
+          </button>
+          <span className="absolute -bottom-5 left-0 w-full h-1 bg-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+        </div>
+
         <div className="flex gap-4 items-center">
           <span className="text-white text-lg font-semibold">دسته‌بندی:</span>
           <select

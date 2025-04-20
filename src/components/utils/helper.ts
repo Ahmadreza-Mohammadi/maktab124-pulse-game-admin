@@ -26,7 +26,7 @@ export const categoryLabels: { [key: string]: string } = {
 };
 
 export const getProductsData = async () => {
-  const response = await fetch(`${BASE_URL}/api/records/my-products`, {
+  const response = await fetch(`${BASE_URL}/api/records/products`, {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${ACCESS_TOKEN}`,
