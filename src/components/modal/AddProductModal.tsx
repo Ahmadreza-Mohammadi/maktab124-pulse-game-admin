@@ -6,42 +6,100 @@ interface AddProductModalProps {
   onCancel: () => void;
 }
 
-function AddProductModal({ onCancel }: AddProductModalProps) {
-  const [title, setTitle] = useState("");
-  const [creator, setCreator] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [releaseYear, setReleaseYear] = useState("");
-  const [category, setCategory] = useState("");
-  const [gameCategory, setGameCategory] = useState("");
-  const [description, setDescription] = useState("");
-  const [img, setImg] = useState("");
+interface ProductData {
+  title: string;
+  creator: string;
+  quantity: string;
+  releaseYear: string;
+  category: string;
+  gameCategory: string;
+  description: string;
+  img: string;
+}
 
-  const product = JSON.stringify({
-    title,
-    creator,
-    quantity,
-    releaseYear,
-    category,
-    gameCategory,
-    description,
-    img,
+interface FormErrors {
+  title?: string;
+  creator?: string;
+  quantity?: string;
+  releaseYear?: string;
+  category?: string;
+  gameCategory?: string;
+  description?: string;
+  img?: string;
+}
+
+function AddProductModal({ onCancel }: AddProductModalProps) {
+  const [formData, setFormData] = useState<ProductData>({
+    title: "",
+    creator: "",
+    quantity: "",
+    releaseYear: "",
+    category: "",
+    gameCategory: "",
+    description: "",
+    img: "",
   });
 
-  async function AddProductHandler(product: any) {
-    const res = await axios.post(`${BASE_URL}/api/records/posts`, product, {
-      headers: {
-        api_key: API_KEY,
-        "Content-Type": "application/json",
-      },
-    });
-    setTitle("");
-    setCreator("");
-    setQuantity("");
-    setReleaseYear("");
-    setCategory("");
-    setGameCategory("");
-    setDescription("");
-    setImg("");
+  const [errors, setErrors] = useState<FormErrors>({});
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  function validateInputs(): boolean {
+    const newErrors: FormErrors = {};
+
+    if (!formData.title.trim()) newErrors.title = "عنوان نمی‌تواند خالی باشد.";
+    if (!formData.creator.trim()) newErrors.creator = "سازنده نمی‌تواند خالی باشد.";
+    if (!formData.quantity.trim()) newErrors.quantity = "تعداد نمی‌تواند خالی باشد.";
+    if (!formData.releaseYear.trim()) newErrors.releaseYear = "سال انتشار نمی‌تواند خالی باشد.";
+    if (!formData.category.trim()) newErrors.category = "دسته بندی نمی‌تواند خالی باشد.";
+    if (!formData.description.trim()) newErrors.description = "توضیحات نمی‌تواند خالی باشد.";
+    if (!formData.img.trim()) newErrors.img = "لینک تصویر نمی‌تواند خالی باشد.";
+    
+    // Add validation for gameCategory when category is "game"
+    if (formData.category === "game" && !formData.gameCategory.trim()) {
+      newErrors.gameCategory = "لطفا دسته بندی بازی را انتخاب کنید";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  }
+
+  async function AddProductHandler() {
+    if (!validateInputs()) return;
+
+    try {
+      await axios.post(`${BASE_URL}/api/records/posts`, JSON.stringify(formData), {
+        headers: {
+          api_key: API_KEY,
+          "Content-Type": "application/json",
+        },
+      });
+
+      // Reset form
+      setFormData({
+        title: "",
+        creator: "",
+        quantity: "",
+        releaseYear: "",
+        category: "",
+        gameCategory: "",
+        description: "",
+        img: "",
+      });
+      setErrors({});
+      
+      // Close modal or show success message
+      onCancel();
+    } catch (error) {
+      console.error("Error adding product:", error);
+      // Handle error (show error message, etc.)
+    }
   }
 
   return (
@@ -63,55 +121,74 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
             <label className="text-sm font-medium">عنوان:</label>
             <input
               type="text"
-              className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2 focus:border-blue-400 focus:ring focus:ring-blue-300 outline-none shadow-md"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              name="title"
+              className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2"
+              value={formData.title}
+              onChange={handleInputChange}
             />
+            {errors.title && (
+              <span className="text-sm text-red-500">{errors.title}</span>
+            )}
           </div>
           <div className="flex flex-col gap-1 w-full">
             <label className="text-sm font-medium">سازنده:</label>
             <input
               type="text"
-              className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2 focus:border-blue-400 focus:ring focus:ring-blue-300 outline-none shadow-md"
-              value={creator}
-              onChange={(e) => setCreator(e.target.value)}
+              name="creator"
+              className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2"
+              value={formData.creator}
+              onChange={handleInputChange}
             />
+            {errors.creator && (
+              <span className="text-sm text-red-500">{errors.creator}</span>
+            )}
           </div>
           <div className="flex flex-col gap-1 w-full">
             <label className="text-sm font-medium">تعداد:</label>
             <input
               type="number"
-              className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2 focus:border-blue-400 focus:ring focus:ring-blue-300 outline-none shadow-md"
-              value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
+              name="quantity"
+              className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2"
+              value={formData.quantity}
+              onChange={handleInputChange}
             />
+            {errors.quantity && (
+              <span className="text-sm text-red-500">{errors.quantity}</span>
+            )}
           </div>
           <div className="flex flex-col gap-1 w-full">
             <label className="text-sm font-medium">سال انتشار:</label>
             <input
               type="number"
-              className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2 focus:border-blue-400 focus:ring focus:ring-blue-300 outline-none shadow-md"
-              value={releaseYear}
-              onChange={(e) => setReleaseYear(e.target.value)}
+              name="releaseYear"
+              className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2"
+              value={formData.releaseYear}
+              onChange={handleInputChange}
             />
+            {errors.releaseYear && (
+              <span className="text-sm text-red-500">{errors.releaseYear}</span>
+            )}
           </div>
-
           <div className="flex flex-col gap-1 w-full">
             <label className="text-sm font-medium">لینک تصویر:</label>
             <input
               type="text"
-              className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2 focus:border-blue-400 focus:ring focus:ring-blue-300 outline-none shadow-md"
-              value={img}
-              onChange={(e) => setImg(e.target.value)}
+              name="img"
+              className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2"
+              value={formData.img}
+              onChange={handleInputChange}
             />
+            {errors.img && (
+              <span className="text-sm text-red-500">{errors.img}</span>
+            )}
           </div>
-          {/* Select Dropdown for Main Category */}
           <div className="flex flex-col gap-1 w-full">
             <label className="text-sm font-medium">دسته بندی:</label>
             <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2 focus:border-blue-400 focus:ring focus:ring-blue-300 outline-none shadow-md"
+              name="category"
+              value={formData.category}
+              onChange={handleInputChange}
+              className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2"
             >
               <option value="" disabled>
                 انتخاب کنید
@@ -122,17 +199,21 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
               <option value="console">کنسول</option>
               <option value="keyboard">کیبورد</option>
             </select>
+            {errors.category && (
+              <span className="text-sm text-red-500">{errors.category}</span>
+            )}
           </div>
 
-          {category === "game" && (
+          {formData.category === "game" && (
             <div className="flex flex-col gap-1 w-full">
               <label className="text-sm font-medium">
-                دسته بندی بازی (دلخواه):
+                دسته بندی بازی:
               </label>
               <select
-                value={gameCategory}
-                onChange={(e) => setGameCategory(e.target.value)}
-                className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2 focus:border-blue-400 focus:ring focus:ring-blue-300 outline-none shadow-md"
+                name="gameCategory"
+                value={formData.gameCategory}
+                onChange={handleInputChange}
+                className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2"
               >
                 <option value="" disabled>
                   انتخاب کنید
@@ -145,19 +226,23 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
                 <option value="sport">ورزشی</option>
                 <option value="simulator">شبیه ساز</option>
               </select>
+              {errors.gameCategory && (
+                <span className="text-sm text-red-500">{errors.gameCategory}</span>
+              )}
             </div>
           )}
 
-          <div>
+          <div className="flex flex-col gap-1 w-full">
             <label className="text-sm font-medium">توضیحات:</label>
-
             <textarea
-              name=""
-              id=""
+              name="description"
               className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
+              value={formData.description}
+              onChange={handleInputChange}
             ></textarea>
+            {errors.description && (
+              <span className="text-sm text-red-500">{errors.description}</span>
+            )}
           </div>
         </div>
 
@@ -169,7 +254,7 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
             لغو
           </button>
           <button
-            onClick={() => AddProductHandler(product)}
+            onClick={AddProductHandler}
             className="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-full cursor-pointer text-white font-semibold shadow-md transition duration-300"
           >
             تایید
