@@ -72,15 +72,20 @@ function ProductsTable({ products }: any) {
     setCurrentPage(1);
   };
 
- 
-
   return (
     <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-64">
       {/* Filter Bar */}
-     <AddProduct products={products} handleCategoryChange={handleCategoryChange} />
+      <AddProduct
+        products={products}
+        handleCategoryChange={handleCategoryChange}
+      />
 
       {/* Product Table */}
-   <MyTable products={currentProducts} handleDeleteClick={handleDeleteClick} selectedCategory={selectedCategory} />
+      <MyTable
+        products={currentProducts}
+        handleDeleteClick={handleDeleteClick}
+        selectedCategory={selectedCategory}
+      />
 
       {/* Delete Modal */}
       {showDeleteModal && (

@@ -86,3 +86,29 @@
 }
 
 
+/* styles.css یا index.css */
+
+/* WebKit-based browsers (Chrome, Safari, Edge) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* عرض اسکرول بار */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1f2937; /* معادل bg-gray-800 */
+  border-radius: 4px; /* گوشه‌های گرد برای track */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #3b82f6; /* معادل bg-blue-500 */
+  border-radius: 4px; /* گوشه‌های گرد برای thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #2563eb; /* معادل hover:bg-blue-600 */
+}
+
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin; /* اسکرول بار نازک */
+  scrollbar-color: #3b82f6 #1f2937; /* thumb: bg-blue-500, track: bg-gray-800 */
+}
