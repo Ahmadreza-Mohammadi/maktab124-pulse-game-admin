@@ -17,13 +17,11 @@ function AddProduct({ products, handleCategoryChange, selectedCategory }: any) {
     setShowAddProductModal(false);
   };
 
-  async function AddProductHandler() {}
-
+  
   return (
     <>
       {showAddProductModal && (
         <AddProductModal
-          onConfirm={AddProductHandler}
           onCancel={handleCancelAddProduct}
         />
       )}

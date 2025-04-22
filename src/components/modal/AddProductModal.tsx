@@ -1,13 +1,12 @@
+import axios from "axios";
 import { useState } from "react";
-import { categories } from "../constants/const";
-import AddProductBtn from "../create-product/AddProductBtn";
+import { API_KEY, BASE_URL } from "../api/api";
 
 interface AddProductModalProps {
-  onConfirm: () => void;
   onCancel: () => void;
 }
 
-function AddProductModal({ onConfirm, onCancel }: AddProductModalProps) {
+function AddProductModal({ onCancel }: AddProductModalProps) {
   const [title, setTitle] = useState("");
   const [creator, setCreator] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -16,6 +15,34 @@ function AddProductModal({ onConfirm, onCancel }: AddProductModalProps) {
   const [gameCategory, setGameCategory] = useState("");
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
+
+  const product = JSON.stringify({
+    title,
+    creator,
+    quantity,
+    releaseYear,
+    category,
+    gameCategory,
+    description,
+    img,
+  });
+
+  async function AddProductHandler(product: any) {
+    const res = await axios.post(`${BASE_URL}/api/records/posts`, product, {
+      headers: {
+        api_key: API_KEY,
+        "Content-Type": "application/json",
+      },
+    });
+    setTitle("");
+    setCreator("");
+    setQuantity("");
+    setReleaseYear("");
+    setCategory("");
+    setGameCategory("");
+    setDescription("");
+    setImg("");
+  }
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -53,7 +80,7 @@ function AddProductModal({ onConfirm, onCancel }: AddProductModalProps) {
           <div className="flex flex-col gap-1 w-full">
             <label className="text-sm font-medium">تعداد:</label>
             <input
-              type="text"
+              type="number"
               className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2 focus:border-blue-400 focus:ring focus:ring-blue-300 outline-none shadow-md"
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
@@ -62,17 +89,15 @@ function AddProductModal({ onConfirm, onCancel }: AddProductModalProps) {
           <div className="flex flex-col gap-1 w-full">
             <label className="text-sm font-medium">سال انتشار:</label>
             <input
-              type="text"
+              type="number"
               className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2 focus:border-blue-400 focus:ring focus:ring-blue-300 outline-none shadow-md"
               value={releaseYear}
               onChange={(e) => setReleaseYear(e.target.value)}
             />
           </div>
-      
+
           <div className="flex flex-col gap-1 w-full">
-            <label className="text-sm font-medium">
-            لینک تصویر:
-            </label>
+            <label className="text-sm font-medium">لینک تصویر:</label>
             <input
               type="text"
               className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2 focus:border-blue-400 focus:ring focus:ring-blue-300 outline-none shadow-md"
@@ -80,8 +105,7 @@ function AddProductModal({ onConfirm, onCancel }: AddProductModalProps) {
               onChange={(e) => setImg(e.target.value)}
             />
           </div>
-
-          {/* Select Dropdown */}
+          {/* Select Dropdown for Main Category */}
           <div className="flex flex-col gap-1 w-full">
             <label className="text-sm font-medium">دسته بندی:</label>
             <select
@@ -89,7 +113,7 @@ function AddProductModal({ onConfirm, onCancel }: AddProductModalProps) {
               onChange={(e) => setCategory(e.target.value)}
               className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2 focus:border-blue-400 focus:ring focus:ring-blue-300 outline-none shadow-md"
             >
-              <option value="" disabled selected>
+              <option value="" disabled>
                 انتخاب کنید
               </option>
               <option value="game">بازی</option>
@@ -99,6 +123,30 @@ function AddProductModal({ onConfirm, onCancel }: AddProductModalProps) {
               <option value="keyboard">کیبورد</option>
             </select>
           </div>
+
+          {category === "game" && (
+            <div className="flex flex-col gap-1 w-full">
+              <label className="text-sm font-medium">
+                دسته بندی بازی (دلخواه):
+              </label>
+              <select
+                value={gameCategory}
+                onChange={(e) => setGameCategory(e.target.value)}
+                className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2 focus:border-blue-400 focus:ring focus:ring-blue-300 outline-none shadow-md"
+              >
+                <option value="" disabled>
+                  انتخاب کنید
+                </option>
+                <option value="actionAdventure">اکشن ماجراجویی</option>
+                <option value="rpg">نقش آفرینی</option>
+                <option value="action">اکشن</option>
+                <option value="strategy">استراتژیک</option>
+                <option value="adventure">ماجراجویی</option>
+                <option value="sport">ورزشی</option>
+                <option value="simulator">شبیه ساز</option>
+              </select>
+            </div>
+          )}
 
           <div>
             <label className="text-sm font-medium">توضیحات:</label>
@@ -120,16 +168,12 @@ function AddProductModal({ onConfirm, onCancel }: AddProductModalProps) {
           >
             لغو
           </button>
-          <AddProductBtn
-            onConfirm={onConfirm}
-            title={title}
-            creator={creator}
-            quantity={quantity}
-            releaseYear={releaseYear}
-            gameCategory={gameCategory}
-            category={category}
-            description-={description}
-          />
+          <button
+            onClick={() => AddProductHandler(product)}
+            className="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-full cursor-pointer text-white font-semibold shadow-md transition duration-300"
+          >
+            تایید
+          </button>
         </div>
       </div>
     </div>
