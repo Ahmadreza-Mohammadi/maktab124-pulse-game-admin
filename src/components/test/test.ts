@@ -5,7 +5,7 @@ import { API_KEY, BASE_URL } from "../api/api";
 export async function addToApi() {
   for (const product of products) {
     const response = await axios.post(
-      `${BASE_URL}/api/records/my-productss`,
+      `${BASE_URL}/api/records/products`,
       JSON.stringify(product),
       {
         headers: {

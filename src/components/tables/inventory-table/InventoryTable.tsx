@@ -1,17 +1,49 @@
 import { useState } from "react";
 import { digitsEnToFa } from "../../utils/helper";
 import Pagination from "../../pagination/Pagination";
+import axios from "axios";
+import { API_KEY, BASE_URL } from "../../api/api";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { InventoryProduct } from "../../interfaces/interface";
 
-function InventoryTable({ products }: any) {
+function InventoryTable({ products }: { products: InventoryProduct[] }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
+  const [editingProduct, setEditingProduct] = useState<InventoryProduct | null>(
+    null
+  );
+  const [editValue, setEditValue] = useState<string>("");
   const productsPerPage = 10;
+  const queryClient = useQueryClient();
+
+  // Mutation to handle product updates
+  const updateProductMutation = useMutation({
+    mutationFn: async (updatedProduct: InventoryProduct) => {
+      const response = await axios.put(
+        `${BASE_URL}/api/records/products/${updatedProduct.id}`,
+        updatedProduct,
+        {
+          headers: {
+            api_key: API_KEY,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      return response.data;
+    },
+    onSuccess: () => {
+      // Invalidate and refetch products query
+      queryClient.invalidateQueries({ queryKey: ["products"] });
+      setEditingProduct(null);
+      setEditValue("");
+    },
+  });
 
   // Filter products only by category (include all stock values)
   const filteredProducts =
     selectedCategory === "همه"
       ? products
-      : products.filter((product: any) => product.category === selectedCategory);
+      : products.filter((product) => product.category === selectedCategory);
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -24,13 +56,47 @@ function InventoryTable({ products }: any) {
   // Handle category change
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
-    setCurrentPage(1); // Reset to the first page when the category changes
+    setCurrentPage(1);
+  };
+
+  // Handle double click to start editing
+  const handleDoubleClick = (product: InventoryProduct, field: "quantity") => {
+    setEditingProduct(product);
+    setEditValue(product[field].toString());
+  };
+
+  // Handle input change while editing
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEditValue(e.target.value);
+  };
+
+  // Handle save after editing
+  const handleSave = async () => {
+    if (!editingProduct) return;
+
+    const updatedProduct = {
+      ...editingProduct,
+      quantity: parseInt(editValue) || 0,
+      stock: parseInt(editValue) > 0,
+    };
+
+    updateProductMutation.mutate(updatedProduct);
+  };
+
+  // Handle key press (Enter to save, Escape to cancel)
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      handleSave();
+    } else if (e.key === "Escape") {
+      setEditingProduct(null);
+      setEditValue("");
+    }
   };
 
   // Get unique categories
   const categories = [
     "همه",
-    ...new Set(products.map((product: any) => product.category)),
+    ...new Set(products.map((product) => product.category)),
   ];
 
   return (
@@ -61,24 +127,58 @@ function InventoryTable({ products }: any) {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {currentProducts.map((product: any, index: number) => (
+            {currentProducts.map((product, index) => (
               <tr
                 key={`product-${index}`}
                 className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
               >
                 <td className="py-3 px-4 text-right">{product.title}</td>
-                <td className="py-3 px-4 text-right">
-                  {digitsEnToFa(product.quantity)}
+                <td
+                  className="py-3 px-4 text-right cursor-pointer"
+                  onDoubleClick={() => handleDoubleClick(product, "quantity")}
+                >
+                  {editingProduct?.id === product.id ? (
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="number"
+                        value={editValue}
+                        onChange={handleInputChange}
+                        onKeyDown={handleKeyPress}
+                        className="w-20 px-2 py-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        autoFocus
+                      />
+                      <button
+                        onClick={handleSave}
+                        className="p-1 text-green-600 hover:text-green-700 transition-colors"
+                        title="تایید تغییرات"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  ) : (
+                    digitsEnToFa(product.quantity)
+                  )}
                 </td>
                 <td className="py-3 px-4 text-right">
                   <span
                     className={`px-2 py-1 rounded-full text-xs ${
-                      product.stock
+                      product.quantity > 0
                         ? "bg-green-100 text-green-800"
                         : "bg-red-100 text-red-800"
                     }`}
                   >
-                    {product.stock ? "موجود" : "ناموجود"}
+                    {product.quantity > 0 ? "موجود" : "ناموجود"}
                   </span>
                 </td>
               </tr>

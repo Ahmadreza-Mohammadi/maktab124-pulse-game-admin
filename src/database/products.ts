@@ -3,8 +3,12 @@ export const products = [
     title: "Call of Duty: Black Ops 6",
     description:
       "جدیدترین نسخه Call of Duty که تو دوران جنگ خلیج جریان داره و زامبی‌ها رو با قدرت برگردونده. کمپینش پر از اکشنه و گیم‌پلی آنلاینش حسابی گیمرا رو به وجد آورده!",
-    img: "https://example.com/blackops6.jpg",
-    quantity: 15,
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.nYFavwrE-3kYmI4_pJrAlgHaEK&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.i_HC3N1zwYUlrNLDX0CFHgHaDt&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.cL6gFiELYXYcY27Xz7Z1wAHaEK&pid=15.1",
+    ],
+    quantity: 0,
     price: 1200000,
     category: "game",
     creator: "Activision",
@@ -13,12 +17,16 @@ export const products = [
     rating: 4.5,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2024,
+    gameCategory: "action",
   },
   {
     title: "EA Sports FC 25",
     description:
       "فیفای جدید که حالا با اسم FC 25 اومده و گیم‌پلیش خیلی بهتر شده. گرافیک خفنش و تیم‌های به‌روز، یه تجربه ناب برای عاشقای فوتباله!",
-    img: "https://example.com/fc25.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.H4M6LOBB0dKrfg719gLkVQHaEK&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.ofj01kMLB2ssHf0ZJjQaBwHaEK&pid=15.1",
+    ],
     quantity: 12,
     price: 1100000,
     category: "game",
@@ -28,12 +36,16 @@ export const products = [
     rating: 4.2,
     platforms: ["PS5", "PS4", "Xbox Series X|S", "Xbox One", "PC"],
     releaseYear: 2024,
+    gameCategory: "sports",
   },
   {
     title: "Suicide Squad: Kill the Justice League",
     description:
       "یه بازی اکشن کوآپ که توش جوکر و تیمش با قهرمانای Justice League می‌جنگن. پر از هرج و مرجه و طنزش گیمرا رو حسابی سرگرم می‌کنه!",
-    img: "https://example.com/suicidesquad.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.qn5ZZxlRAkQAXZ1aHTbb3gHaEK&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.WAV8GJ4E-lSQ8-EIjiM78wHaEK&pid=15.1",
+    ],
     quantity: 10,
     price: 1300000,
     category: "game",
@@ -43,12 +55,16 @@ export const products = [
     rating: 4,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2024,
+    gameCategory: "action",
   },
   {
     title: "Silent Hill 2 Remake",
     description:
       "ریمستر شاهکار Silent Hill 2 که با گرافیک مدرن و اتمسفر ترسناکش برگشته. حس تنهایی و وحشتش برای گیمرای نسل جدید یه تجربه بی‌نظیره!",
-    img: "https://example.com/silenthill2.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP._N1sOeA6q77EBu_eejOGhQHaEK&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.qbbjYdX4esrzZIBaftIl3QHaEK&pid=15.1",
+    ],
     quantity: 8,
     price: 950000,
     category: "game",
@@ -58,13 +74,17 @@ export const products = [
     rating: 4.8,
     platforms: ["PS5", "PC"],
     releaseYear: 2024,
+    gameCategory: "adventure",
   },
   {
     title: "Dragon Age: The Veilguard",
     description:
       "جدیدترین نسخه Dragon Age با داستانی عمیق و انتخابای سخت که RPGبازا رو دیوونه کرده. دنیای فانتزیش پر از جادو و ماجراجوییه و گرافیکشم خیره‌کننده‌ست!",
-    img: "https://example.com/dragonage.jpg",
-    quantity: 14,
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.Qg8c7-4fO2KVJrAwGzfiPAHaEK&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.RJKctH3JO4nBva2xbPsimgHaEK&pid=15.1",
+    ],
+    quantity: 0,
     price: 1400000,
     category: "game",
     creator: "BioWare",
@@ -73,13 +93,17 @@ export const products = [
     rating: 4.6,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2024,
+    gameCategory: "rpg",
   },
   {
     title: "Senua's Saga: Hellblade II",
     description:
       "ادامه سفر سنوآ که با گرافیک نسل بعدی و حس دیوونگی عمیقش می‌ترکونه. داستان احساسی و صداهاش یه تجربه خاص برای گیمراست!",
-    img: "https://example.com/hellblade2.jpg",
-    quantity: 9,
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.4TnQj2nc6VGLlDav3dEubwHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.K_SVroKU98fIqFiYlXkRGAHaEK&pid=15.1",
+    ],
+    quantity: 0,
     price: 1150000,
     category: "game",
     creator: "Ninja Theory",
@@ -88,12 +112,16 @@ export const products = [
     rating: 4.7,
     platforms: ["Xbox Series X|S", "PC"],
     releaseYear: 2024,
+    gameCategory: "actionAdventure",
   },
   {
     title: "Avatar: Frontiers of Pandora",
     description:
       "جهان پاندورا تو این بازی اکشن ماجراجویی زنده شده و گرافیک دیوانه‌وارش چشماتو می‌بره. پرواز با اژدها و جنگ با دشمنا حسابی جذابه!",
-    img: "https://example.com/avatar.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.t9v8w_jjhWISLKO31THwcAHaLH&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.fN3Ytb89mGdJX5nT0p42NwHaEK&pid=15.1",
+    ],
     quantity: 11,
     price: 1250000,
     category: "game",
@@ -102,13 +130,17 @@ export const products = [
     discount: 12,
     rating: 4.3,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
-    releaseYear: 2023, // این یه استثناست، چون اواخر 2023 اومد
+    releaseYear: 2023,
+    gameCategory: "actionAdventure",
   },
   {
     title: "Star Wars Outlaws",
     description:
       "یه بازی جهان‌باز تو دنیای استار وارز که توش دزدی و اکشن حرف اول رو می‌زنه. ماجراجویی تو کهکشان با شخصیتای باحال منتظرته!",
-    img: "https://example.com/starwarsoutlaws.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.0EMWTrL3IGKS_7bZAfBMlAHaE-&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.TkedHuvT99kolGa0qpl4LQHaEK&pid=15.1",
+    ],
     quantity: 13,
     price: 1350000,
     category: "game",
@@ -118,13 +150,17 @@ export const products = [
     rating: 4.4,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2024,
+    gameCategory: "actionAdventure",
   },
   {
     title: "The Day Before",
     description:
       "یه بازی زامبی آخرالزمانی که قول یه دنیای عظیم رو داد، ولی با باگاش حسابی گند زد. هنوزم می‌تونی برای تجربه بقا تستش کنی!",
-    img: "https://example.com/thedaybefore.jpg",
-    quantity: 7,
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.ZOZpsWlom6gmWhVwwv-P7QHaDt&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.eDJYXEIFCGKwukmpu30x3QHaEK&pid=15.1",
+    ],
+    quantity: 0,
     price: 800000,
     category: "game",
     creator: "Fntastic",
@@ -132,13 +168,18 @@ export const products = [
     discount: 20,
     rating: 3,
     platforms: ["PC"],
-    releaseYear: 2023, // اواخر 2023 اومد
+    releaseYear: 2023,
+    gameCategory: "action",
   },
+
   {
     title: "Alan Wake 2",
     description:
       "ادامه داستان الن ویک که با معماهاش و حس ترسش گیمرا رو میخکوب کرده. نور و تاریکی تو این بازی یه تجربه بصری و احساسی خفنه!",
-    img: "https://example.com/alanwake2.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.eroIC7A-x7CHq1JaY01lOwAAAA&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.ilD--LoeWLe1eQHrinU4YwHaEK&pid=15.1",
+    ],
     quantity: 10,
     price: 1050000,
     category: "game",
@@ -147,14 +188,17 @@ export const products = [
     discount: 10,
     rating: 4.9,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
-    releaseYear: 2023, // اواخر 2023
+    releaseYear: 2023,
+    gameCategory: "adventure", // Adventure with psychological horror
   },
-  // ادامه تا 60 با توضیحات دو جمله‌ای و سال تولید
   {
     title: "Metal Gear Solid Delta: Snake Eater",
     description:
       "ریمک Metal Gear Solid 3 که با گرافیک نسل نهم برگشته و مخفی‌کاری رو به اوج می‌رسونه. جنگل و ماموریتای اسنیک حسابی تو رو تو حال و هوای قدیم غرق می‌کنه!",
-    img: "https://example.com/mgsdelta.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.nj2jZ58DyyVg1CPr9itLoQHaEK&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.MTQ9-qkxQwfzuHr26DSp7QHaHa&pid=15.1",
+    ],
     quantity: 12,
     price: 1300000,
     category: "game",
@@ -164,12 +208,16 @@ export const products = [
     rating: 4.8,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2024,
+    gameCategory: "action", // Action with stealth elements
   },
   {
     title: "Kingdom Come: Deliverance 2",
     description:
       "ادامه RPG تاریخی که تو قرون وسطی جریان داره و جنگاش نفس‌گیره. داستان عمیق و دنیای واقعیش برای عاشقای تاریخ و گیم یه گنجه!",
-    img: "https://example.com/kingdomcome2.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.D0-p3xP7_3S31a4Ahar6qgHaEK&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.jqDfdVf9jM42L3EI8_zDYQHaDt&pid=15.1",
+    ],
     quantity: 11,
     price: 1450000,
     category: "game",
@@ -179,12 +227,17 @@ export const products = [
     rating: 4.6,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "rpg", // Historical role-playing game
   },
   {
     title: "Assassin's Creed Shadows",
     description:
       "آساسین تو ژاپن فئودال که نینجاها و سامورایی‌ها رو قاطی کرده. مخفی‌کاری و اکشنش تو محیطای شرقی حسابی می‌ترکونه و طرفدارا رو دیوونه کرده!",
-    img: "https://example.com/acshadows.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.VpenF5_BTbYkFqdpC3f9GgHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.sYCBG5xKQGUcATme74_EeQHaLH&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.khl-hg6Kt1CoCNkae8Dz4AHaFj&pid=15.1",
+    ],
     quantity: 15,
     price: 1500000,
     category: "game",
@@ -194,12 +247,16 @@ export const products = [
     rating: 4.7,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2024,
+    gameCategory: "actionAdventure", // Action-Adventure with stealth elements
   },
   {
     title: "Indiana Jones and the Great Circle",
     description:
       "ماجراجویی جدید ایندیانا جونز با اکشن و معماهای خفن که تو رو تو نقش ایندی می‌بره. شلاقتو بردار و برو دنبال گنج تو این بازی باحال!",
-    img: "https://example.com/indiana.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.t1HBdu9oPsyeTtFcdUdknwHaDt&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.zC55X6B5d5xNFm7AH0fc-QHaEk&pid=15.1",
+    ],
     quantity: 10,
     price: 1400000,
     category: "game",
@@ -209,27 +266,35 @@ export const products = [
     rating: 4.5,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2024,
+    gameCategory: "adventure", // Action-adventure exploration
   },
   {
     title: "Fable",
     description:
       "بازگشت سری Fable با طنز باحالش و دنیای فانتزی رنگارنگش که گیمرا رو شگفت‌زده کرده. انتخابای عجیبت تو این بازی عواقب خنده‌داری داره و گیم‌پلیش جذابه!",
-    img: "https://example.com/fable.jpg",
-    quantity: 9,
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.KJBLDI4dYFcIKFnc6fEzDgHaEK&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.ZmewyPQTbjg_eiYlYe3sKAHaEK&pid=15.1",
+    ],
+    quantity: 0,
     price: 1350000,
     category: "game",
     creator: "Playground Games",
-    stock: true,
+    stock: false,
     discount: 10,
     rating: 4.4,
     platforms: ["Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "rpg", // Fantasy RPG
   },
   {
     title: "South of Midnight",
     description:
       "یه بازی جادویی تو جنوب آمریکا که پر از موجودات عجیبه و داستانی عمیق داره. گرافیک و حس و حالش تو رو به یه سفر رویاهامانند می‌بره!",
-    img: "https://example.com/southmidnight.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.c22hXA-M9POkOfbrJnffrQHaEO&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.ujj1dP_QTlsQ13sEsVclBwHaEc&pid=15.1",
+    ],
     quantity: 8,
     price: 1200000,
     category: "game",
@@ -239,12 +304,16 @@ export const products = [
     rating: 4.3,
     platforms: ["Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "adventure", // Magical adventure
   },
   {
     title: "Forza Horizon 5 (PS5 Edition)",
     description:
       "ماشین‌سواری خفن Forza Horizon 5 حالا برای PS5 اومده و جاده‌هاش نفس‌گیرن. سرعت و گرافیک نسل بعدی منتظرته تا بترکونی!",
-    img: "https://example.com/forza5.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.f5OAt-AwhR1O286cUcSa-AHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.P0aJ4XrUJr-KughGLIZaiwHaEK&pid=15.1",
+    ],
     quantity: 14,
     price: 1250000,
     category: "game",
@@ -254,12 +323,16 @@ export const products = [
     rating: 4.6,
     platforms: ["PS5"],
     releaseYear: 2024,
+    gameCategory: "simulator", // Racing simulator
   },
   {
     title: "Clair Obscur: Expedition 33",
     description:
       "RPG تاکتیکی با داستانی عمیق که توش با موجودات عجیب می‌جنگی و انتخابات سرنوشتت رو عوض می‌کنه. طراحی هنری و گیم‌پلیش گیمرای حرفه‌ای رو جذب کرده!",
-    img: "https://example.com/clairobs.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.RL2428rpKH46kiUSqgjXzAHaLH&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.e9Sgu4pLiR6J3unyOddIFwHaEK&pid=15.1",
+    ],
     quantity: 10,
     price: 1300000,
     category: "game",
@@ -269,12 +342,16 @@ export const products = [
     rating: 4.5,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "strategy", // Tactical RPG
   },
   {
     title: "The Last of Us Part II Remastered (PC)",
     description:
       "ریمستر شاهکار The Last of Us Part II برای PC با گرافیک بهتر و جزئیات بیشتر اومده. داستان احساسی و اکشنش هنوزم اشک و هیجان رو قاطی می‌کنه!",
-    img: "https://example.com/tlou2.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.JlnTykuhz-iK63fOhfAhzQHaKS&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.Ohv32Xvc2PjkqCJHOj4L9AHaEK&pid=15.1",
+    ],
     quantity: 12,
     price: 1450000,
     category: "game",
@@ -284,12 +361,16 @@ export const products = [
     rating: 4.8,
     platforms: ["PC"],
     releaseYear: 2024,
+    gameCategory: "actionAdventure", // Action-Adventure
   },
   {
     title: "Tales of the Shire",
     description:
       "زندگی آروم و باحال تو دنیای هابیت‌ها که پر از خونه‌های کوچیک و غذای خوشمزه‌ست. برای گیمرایی که دنبال آرامشن و حال خوبن، یه انتخاب عالیه!",
-    img: "https://example.com/talesshire.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.juPTn6_7EPBS19VOTTcJMwHaEK&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.VSAGrFx37z__mqlB_GZkzgHaDt&pid=15.1",
+    ],
     quantity: 9,
     price: 950000,
     category: "game",
@@ -299,14 +380,18 @@ export const products = [
     rating: 4.2,
     platforms: ["PS5", "Xbox Series X|S", "PC", "Nintendo Switch"],
     releaseYear: 2025,
+    gameCategory: "adventure", // Light adventure
   },
-  // ادامه تا 60 با توضیحات دو جمله‌ای
   {
     title: "WWE 2K25",
     description:
       "جدیدترین نسخه کشتی WWE که با گرافیک بهتر و حرکات واقع‌گرایانه‌تر اومده. سوپراستاراتو انتخاب کن و رینگ رو با ضرباتت بترکون!",
-    img: "https://example.com/wwe2k25.jpg",
-    quantity: 11,
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.HseOppdlGmpLWm7QLOmXPAHaDt&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.7XSMRye6Phr1Z7agFUSXGwHaEK&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.qDQPUC48SdMxMdysfm5J6wHaJQ&pid=15.1",
+    ],
+    quantity: 0,
     price: 1100000,
     category: "game",
     creator: "2K",
@@ -315,13 +400,17 @@ export const products = [
     rating: 4.1,
     platforms: ["PS5", "PS4", "Xbox Series X|S", "Xbox One", "PC"],
     releaseYear: 2025,
+    gameCategory: "sports", // Sports/Wrestling
   },
   {
     title: "Split Fiction",
     description:
       "یه بازی اکشن کوآپ که دو دنیای مختلف رو قاطی کرده و با دوستات می‌تونی حسابی بترکونی. داستان و گیم‌پلی خلاقانه‌ش یه تجربه جدید و باحاله!",
-    img: "https://example.com/splitfiction.jpg",
-    quantity: 10,
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.FnrklBiRf3gelkrh16b8DgHaDt&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP._mSApBWuGhTjwxbUbXJgzwHaDt&pid=15.1",
+    ],
+    quantity: 0,
     price: 1350000,
     category: "game",
     creator: "Hazelight",
@@ -330,13 +419,17 @@ export const products = [
     rating: 4.4,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "actionAdventure", // Cooperative Action-Adventure
   },
   {
     title: "Two Point Museum",
     description:
       "مدیریت موزه بامزه که پر از دایناسور و آثار عجیبه و طنزش حالتو خوب می‌کنه. گیم‌پلی سبکش برای یه عصر آروم و خنده‌دار عالیه!",
-    img: "https://example.com/twopointmuseum.jpg",
-    quantity: 8,
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.bG_FfutsvuPvcGCl7zJfjgHaEK&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.JKPXsc89oFfge9wyaCFpngHaEK&pid=15.1",
+    ],
+    quantity: 0,
     price: 1000000,
     category: "game",
     creator: "Two Point Studios",
@@ -345,12 +438,16 @@ export const products = [
     rating: 4.3,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "simulator", // Light Simulation
   },
   {
     title: "Xenoblade Chronicles X Definitive",
     description:
       "RPG ژاپنی با دنیای عظیم که ریمستر شده و گرافیک خفنش چشماتو می‌گیره. داستان حماسی و ماجراجوییش برای ساعت‌ها تو رو غرق خودش می‌کنه!",
-    img: "https://example.com/xenoblade.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.bG_FfutsvuPvcGCl7zJfjgHaEK&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.JKPXsc89oFfge9wyaCFpngHaEK&pid=15.1",
+    ],
     quantity: 13,
     price: 1200000,
     category: "game",
@@ -360,12 +457,16 @@ export const products = [
     rating: 4.6,
     platforms: ["Nintendo Switch"],
     releaseYear: 2025,
+    gameCategory: "rpg", // JRPG
   },
   {
     title: "MLB The Show 25",
     description:
       "بیسبال واقعی‌تر از همیشه که با گیم‌پلی نرم و گرافیک نسل بعدی اومده. برای طرفدارای ورزش یه زمین بازی تمام‌عیاره که می‌تونی توش بدرخشی!",
-    img: "https://example.com/mlb25.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.bG_FfutsvuPvcGCl7zJfjgHaEK&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.JKPXsc89oFfge9wyaCFpngHaEK&pid=15.1",
+    ],
     quantity: 7,
     price: 1050000,
     category: "game",
@@ -375,12 +476,16 @@ export const products = [
     rating: 4.2,
     platforms: ["PS5", "PS4", "Xbox Series X|S", "Xbox One", "PC"],
     releaseYear: 2025,
+    gameCategory: "sports",
   },
   {
     title: "Suikoden I & II HD Remaster",
     description:
       "دو تا کلاسیک JRPG که با کیفیت HD برگشتن و داستاناشون هنوزم دل می‌بره. برای عاشقای نقش‌آفرینی یه نوستالژی خفن و به‌روز شده‌ست!",
-    img: "https://example.com/suikoden.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.bG_FfutsvuPvcGCl7zJfjgHaEK&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.JKPXsc89oFfge9wyaCFpngHaEK&pid=15.1",
+    ],
     quantity: 9,
     price: 950000,
     category: "game",
@@ -390,27 +495,35 @@ export const products = [
     rating: 4.5,
     platforms: ["PS5", "Xbox Series X|S", "PC", "Nintendo Switch"],
     releaseYear: 2025,
+    gameCategory: "rpg",
   },
   {
     title: "Atomfall",
     description:
       "بقای آخرالزمانی تو بریتانیا که پر از رمز و راز و خطره. گیم‌پلی اکشن و اتمسفر سنگینش تو رو تو دنیای خودش غرق می‌کنه!",
-    img: "https://example.com/atomfall.jpg",
-    quantity: 10,
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.GgF1Tzmr1pDmResgOqfBdgHaDt&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.GU9jBXZwuO-iqpu2g1DfFgHaEK&pid=15.1",
+    ],
+    quantity: 0,
     price: 1150000,
     category: "game",
     creator: "Rebellion",
-    stock: true,
+    stock: false,
     discount: 8,
     rating: 4.3,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "actionAdventure",
   },
   {
     title: "The Talos Principle: Reawakened",
     description:
       "پازلای فلسفی که با گرافیک جدید برگشتن و ذهنت رو به چالش می‌کشن. داستان عمیقش و گیم‌پلی اعتیادآورش برای فکر کردن و لذت بردن عالیه!",
-    img: "https://example.com/talos.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.s5eQbRXawQlkk_vuCE_RPQHaEK&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.-ejSb6lZW-akZE4gkl_NOwHaEK&pid=15.1",
+    ],
     quantity: 8,
     price: 900000,
     category: "game",
@@ -420,12 +533,16 @@ export const products = [
     rating: 4.4,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "strategy",
   },
   {
     title: "Lunar Remastered Collection",
     description:
       "JRPG کلاسیک Lunar که با کیفیت بهتر و گرافیک آپدیت‌شده برگشته. داستان عاشقانه و ماجراجوییش هنوزم قلب گیمرا رو می‌بره!",
-    img: "https://example.com/lunar.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.tlEtbFwTv-X0s_Mnfj9t1QHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.CphqawOoHgXpdu1OhbZXQAHaLH&pid=15.1",
+    ],
     quantity: 7,
     price: 850000,
     category: "game",
@@ -435,12 +552,17 @@ export const products = [
     rating: 4.1,
     platforms: ["PS5", "PC", "Nintendo Switch"],
     releaseYear: 2025,
+    gameCategory: "rpg",
   },
   {
     title: "Days Gone (Remastered)",
     description:
       "زامبی‌سواری Days Gone با گرافیک نسل نهم برای PS5 ریمستر شده و حسابی جذابه. موتورسواری تو دنیای پر از زامبی و داستانش تو رو می‌بره تو مود بقا!",
-    img: "https://example.com/daysgone.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.IA5V0GuFZpUcmqFQ6XeqVwHaEK&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.TgzKMTmRz4vcDD9VBkwP2gHaEK&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.DF7hsm3AQGvK4VZmPtP5MwHaEK&pid=15.1",
+    ],
     quantity: 11,
     price: 1000000,
     category: "game",
@@ -450,12 +572,16 @@ export const products = [
     rating: 4.2,
     platforms: ["PS5"],
     releaseYear: 2024,
+    gameCategory: "actionAdventure",
   },
   {
     title: "Rise of the Ronin",
     description:
       "یه بازی سامورایی تو ژاپن قدیم که اکشن و مخفی‌کاری رو قاطی کرده و باحاله. دنیای باز و شمشیرزنیش برای گیمرا یه تجربه ناب و خفنه!",
-    img: "https://example.com/ronin.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP._Y6PExm4vVe8eoorMukVxwHaJ4&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.GYmMd3bEd1t7oX9IhKa-HgHaFj&pid=15.1",
+    ],
     quantity: 12,
     price: 1400000,
     category: "game",
@@ -465,12 +591,16 @@ export const products = [
     rating: 4.6,
     platforms: ["PS5"],
     releaseYear: 2024,
+    gameCategory: "actionAdventure",
   },
   {
     title: "Bleach: Rebirth of Souls",
     description:
       "بازی انیمه‌ای Bleach که پر از شمشیرزنی و مبارزه‌ست و طرفدارای سری رو دیوونه کرده. گرافیک خفن و اکشن سریعش حسابی تو رو تو نقش ایچیگو می‌بره!",
-    img: "https://example.com/bleach.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.j4YtbcsmGJUqLSnytm3vowHaEK&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.j4YtbcsmGJUqLSnytm3vowHaEK&pid=15.1",
+    ],
     quantity: 9,
     price: 1100000,
     category: "game",
@@ -480,12 +610,16 @@ export const products = [
     rating: 4.3,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "action",
   },
   {
     title: "Atelier Yumia",
     description:
       "ماجراجویی کیمیاگری جدید تو سری Atelier که گرافیک و داستانش جذابه و دل می‌بره. برای طرفدارای JRPG یه تجربه شیرین و رنگارنگه که ساعت‌ها سرگرمت می‌کنه!",
-    img: "https://example.com/yumia.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.msdfSQHbvFRdKUjxRVNxBgHaEK&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.xZhs7XXnQ734oPnkeUad_wHaEK&pid=15.1",
+    ],
     quantity: 8,
     price: 950000,
     category: "game",
@@ -495,12 +629,16 @@ export const products = [
     rating: 4.2,
     platforms: ["PS5", "PC", "Nintendo Switch"],
     releaseYear: 2025,
+    gameCategory: "rpg",
   },
   {
     title: "The First Berserker: Khazan",
     description:
       "اکشن خشن و سریع که توش با دشمنای عظیم می‌جنگی و خون همه جا رو می‌گیره. گیم‌پلی نفس‌گیرش برای عاشقای هاردکور ساخته شده و حسابی می‌ترکونه!",
-    img: "https://example.com/khazan.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.4AU-yAXD3P9WmphXXoSY9QHaEK&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.lkK_gHNTxq1YYrVbR0XHzgHaEK&pid=15.1",
+    ],
     quantity: 10,
     price: 1200000,
     category: "game",
@@ -510,12 +648,16 @@ export const products = [
     rating: 4.4,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "action",
   },
   {
     title: "AI Limit",
     description:
       "جهان‌باز علمی-تخیلی که پر از ربات و ماجراجوییه و تو رو تو آینده غرق می‌کنه. اکشن و داستانش برای گیمرایی که دنبال چیزای جدیدن عالیه!",
-    img: "https://example.com/ailimit.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.L1hHnaZuiLLotrkB8ypRbwHaEo&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.gj1hmARQfJK00tycEs_ktQHaNK&pid=15.1",
+    ],
     quantity: 9,
     price: 1300000,
     category: "game",
@@ -525,12 +667,16 @@ export const products = [
     rating: 4.3,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "actionAdventure",
   },
   {
     title: "Commandos: Origins",
     description:
       "استراتژی جنگ جهانی که با ماموریتای تاکتیکی برگشته و ذهنت رو به کار می‌گیره. گیم‌پلی کلاسیکش برای عاشقای استراتژی یه نوستالژی خفنه!",
-    img: "https://example.com/commandos.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.MGNC-0z9rS5_W8-mHngOdAHaEK&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.JBXRAck_U40FJlxFceO6wgHaEK&pid=15.1",
+    ],
     quantity: 7,
     price: 1000000,
     category: "game",
@@ -540,13 +686,17 @@ export const products = [
     rating: 4.1,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "strategy",
   },
   {
     title: "Fatal Fury: City of the Wolves",
     description:
       "فایتینگ کلاسیک که با گرافیک جدید و مبارزای سریع برگشته. برای طرفدارای بازیای مبارزه‌ای یه تجربه ناب و پرهیجانه!",
-    img: "https://example.com/fatalfury.jpg",
-    quantity: 10,
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.l8cZzAIFCLLj-2QaRF5_TwHaLH&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.9asnLqy6jDn35VUzrneh0gHaEK&pid=15.1",
+    ],
+    quantity: 0,
     price: 1150000,
     category: "game",
     creator: "SNK",
@@ -555,27 +705,35 @@ export const products = [
     rating: 4.5,
     platforms: ["PS5", "PS4", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "action",
   },
   {
     title: "Monster Hunter Wilds",
     description:
       "شکار هیولاها تو دنیای عظیم که با گرافیک نسل بعدی و گیم‌پلی خفن اومده. برای گیمرایی که عاشق چالش و اکشنن، یه شاهکاره!",
-    img: "https://example.com/monsterhunter.jpg",
-    quantity: 15,
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.TAt-uR8HRFSMBJoCsAbEswHaLH&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.TUMRQmSjovhLf8wOemQeYAHaDt&pid=15.1",
+    ],
+    quantity: 0,
     price: 1500000,
     category: "game",
     creator: "Capcom",
-    stock: true,
+    stock: false,
     discount: 5,
     rating: 4.9,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "actionAdventure",
   },
   {
     title: "Civilization VII",
     description:
       "استراتژی ساخت تمدن که با ویژگیای جدید و گرافیک بهتر از همیشه اومده. تاریخ رو خودت بساز و ساعت‌ها تو این بازی غرق شو!",
-    img: "https://example.com/civ7.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.b5k33BES8GGtDMfJUUKxEwHaEK&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.cod8WhIZ-XoVcl0OCU1TewHaEK&pid=15.1",
+    ],
     quantity: 12,
     price: 1400000,
     category: "game",
@@ -585,12 +743,16 @@ export const products = [
     rating: 4.7,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "strategy",
   },
   {
     title: "Like a Dragon: Pirate Yakuza",
     description:
       "یاکوزا حالا دزد دریایی شده و تو دریاها ماجراجویی می‌کنه. اکشن و طنزش یه تجربه باحال و متفاوت برای طرفدارای سریه!",
-    img: "https://example.com/pirateyakuza.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.b5k33BES8GGtDMfJUUKxEwHaEK&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.cod8WhIZ-XoVcl0OCU1TewHaEK&pid=15.1",
+    ],
     quantity: 9,
     price: 1200000,
     category: "game",
@@ -600,12 +762,13 @@ export const products = [
     rating: 4.4,
     platforms: ["PS5", "PS4", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "actionAdventure",
   },
   {
     title: "Path of Exile 2",
     description:
       "RPG تاریک و عمیق که برای گیمرای هاردکور ساخته شده و پر از چالش و لوطه. دنیای وسیع و گیم‌پلی پیچیدش تو رو ساعت‌ها نگه می‌داره!",
-    img: "https://example.com/pathofexile2.jpg",
+    img: "https://tse4.mm.bing.net/th?id=OIG4.0W_rzHvUVUrWpUPMebUg&pid=ImgGn",
     quantity: 11,
     price: 1300000,
     category: "game",
@@ -615,12 +778,13 @@ export const products = [
     rating: 4.8,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2024,
+    gameCategory: "rpg",
   },
   {
     title: "Vampire: The Masquerade – Bloodlines 2",
     description:
       "خون‌آشام‌ها تو شب زنده شدن و داستان پر از خیانت و قدرت داره. گیم‌پلی RPG و اتمسفر تاریکش برای عاشقای ژانر یه گنجه!",
-    img: "https://example.com/bloodlines2.jpg",
+    img: "https://tse4.mm.bing.net/th?id=OIG4.0W_rzHvUVUrWpUPMebUg&pid=ImgGn",
     quantity: 10,
     price: 1350000,
     category: "game",
@@ -630,27 +794,29 @@ export const products = [
     rating: 4.6,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "rpg",
   },
   {
     title: "Eiyuden Chronicle: Hundred Heroes",
     description:
       "JRPG با ۱۰۰ قهرمان متنوع که داستانی حماسی رو روایت می‌کنه. گرافیک کلاسیک و گیم‌پلی عمیقش برای طرفدارای ژانر یه تجربه ناب و جذابه!",
-    img: "https://example.com/eiyuden.jpg",
-    quantity: 8,
+    img: "https://tse4.mm.bing.net/th?id=OIG4.0W_rzHvUVUrWpUPMebUg&pid=ImgGn",
+    quantity: 0,
     price: 950000,
     category: "game",
     creator: "Rabbit & Bear Studios",
-    stock: true,
+    stock: false,
     discount: 15,
     rating: 4.3,
     platforms: ["PS5", "Xbox Series X|S", "PC", "Nintendo Switch"],
     releaseYear: 2024,
+    gameCategory: "rpg",
   },
   {
     title: "Slay the Spire 2",
     description:
       "کارت‌بازی روگ‌لایک که با ویژگیای جدید و گیم‌پلی خفن‌تر برگشته. برای گیمرایی که عاشق چالش و استراتژی‌ان، یه شاهکار اعتیادآوره!",
-    img: "https://example.com/slaythespire2.jpg",
+    img: "https://tse4.mm.bing.net/th?id=OIG4.0W_rzHvUVUrWpUPMebUg&pid=ImgGn",
     quantity: 7,
     price: 900000,
     category: "game",
@@ -660,12 +826,16 @@ export const products = [
     rating: 4.5,
     platforms: ["PC", "Nintendo Switch"],
     releaseYear: 2025,
+    gameCategory: "strategy",
   },
   {
     title: "Frostpunk 2",
     description:
       "بقا تو سرمای آخرالزمان که با مدیریت شهر و انتخابای سخت همراهه. گیم‌پلی استراتژیک و اتمسفر سنگینش تو رو تو خودش غرق می‌کنه!",
-    img: "https://example.com/frostpunk2.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.5TlPcCfctHABhT5V75y-CgHaEQ&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.50GMR3o5mxkXSdxOMvbd_QAAAA&pid=15.1",
+    ],
     quantity: 12,
     price: 1250000,
     category: "game",
@@ -675,12 +845,16 @@ export const products = [
     rating: 4.7,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2024,
+    gameCategory: "strategy",
   },
   {
     title: "Hollow Knight: Silksong",
     description:
       "ادامه شاهکار Hollow Knight که با گیم‌پلی متroidvania و دنیای عمیقش برگشته. گرافیک دست‌ساز و چالشاش برای گیمرا یه تجربه بی‌نظیره!",
-    img: "https://example.com/silksong.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.FmabA6Y7fag6N9OBo6ZbYAHaG4&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.Q6pRsf0SnyVnu4_lWqfMmAHaKe&pid=15.1",
+    ],
     quantity: 14,
     price: 1100000,
     category: "game",
@@ -690,12 +864,17 @@ export const products = [
     rating: 4.9,
     platforms: ["PS5", "Xbox Series X|S", "PC", "Nintendo Switch"],
     releaseYear: 2025,
+    gameCategory: "adventure",
   },
   {
     title: "The Plucky Squire",
     description:
       "ماجراجویی بامزه تو کتاب قصه که پر از خلاقیت و طنزه. گیم‌پلی دو بعدی و سه بعدیش برای گیمرای همه سنی جذابه!",
-    img: "https://example.com/pluckysquire.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.FVBZfmmxMc1Ph_EIhA7LUAHaLH&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.AQYA51PSzTRtj_zFpREKpQHaEK&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.0UM7z_9AnX7rmBanUq6cfAAAAA&pid=15.1",
+    ],
     quantity: 9,
     price: 850000,
     category: "game",
@@ -705,12 +884,16 @@ export const products = [
     rating: 4.2,
     platforms: ["PS5", "Xbox Series X|S", "PC", "Nintendo Switch"],
     releaseYear: 2024,
+    gameCategory: "adventure",
   },
   {
     title: "Little Nightmares III",
     description:
       "ترس و معما تو دنیای کابوس‌ها که با گرافیک و اتمسفر خفنش برگشته. گیم‌پلی کوآپ و داستان ترسناکش تو رو تو خودش می‌کشه!",
-    img: "https://example.com/littlenightmares3.jpg",
+    img: [
+      "data:image/jpeg;base64,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",
+      "data:image/jpeg;base64,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",
+    ],
     quantity: 10,
     price: 1050000,
     category: "game",
@@ -720,12 +903,16 @@ export const products = [
     rating: 4.4,
     platforms: ["PS5", "PS4", "Xbox Series X|S", "Xbox One", "PC"],
     releaseYear: 2025,
+    gameCategory: "adventure", // Adventure with puzzles and horror
   },
   {
     title: "Phantom Blade Zero",
     description:
       "اکشن سریع با حال و هوای شرقی که مبارزاتش نفس‌گیره. گرافیک و داستانش تو رو تو نقش یه جنگجوی خفن می‌بره!",
-    img: "https://example.com/phantomblade.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.T-eXXty-afw9_mrrqBq48gHaIo&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.VBfHUd5VkbjggFPzrxR4EAAAAA&pid=15.1",
+    ],
     quantity: 11,
     price: 1300000,
     category: "game",
@@ -735,12 +922,16 @@ export const products = [
     rating: 4.6,
     platforms: ["PS5", "PC"],
     releaseYear: 2025,
+    gameCategory: "action", // High-paced action
   },
   {
     title: "DokeV",
     description:
       "جهان‌باز رنگارنگ که پر از هیولاها و ماجراجوییه و حسابی جذابه. گیم‌پلی شاد و گرافیک انیمه‌ایش برای گیمرای جوون عالیه!",
-    img: "https://example.com/dokev.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.umvvthua-owijvPfU09dfAHaEK&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.9OVseprvvhrZohPKpIOX3AHaIO&pid=15.1",
+    ],
     quantity: 8,
     price: 1150000,
     category: "game",
@@ -750,12 +941,16 @@ export const products = [
     rating: 4.3,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2025,
+    gameCategory: "adventure", // Colorful open-world adventure
   },
   {
     title: "Sniper Elite: Resistance",
     description:
       "تک‌تیراندازی تو جنگ جهانی دوم که با گیم‌پلی دقیق و گرافیک خفن اومده. ماموریتای مخفی‌کاری و شلیکای نفس‌گیرش تو رو تو نقش یه اسنایپر می‌بره!",
-    img: "https://example.com/sniperelite.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.BtxC11WHElYzNq2uRu4XVQHaEP&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.2t4rv9H2F9oyzSoygXIbHgAAAA&pid=15.1",
+    ],
     quantity: 9,
     price: 1200000,
     category: "game",
@@ -765,13 +960,17 @@ export const products = [
     rating: 4.4,
     platforms: ["PS5", "PS4", "Xbox Series X|S", "Xbox One", "PC"],
     releaseYear: 2025,
+    gameCategory: "actionAdventure", // Tactical action with stealth
   },
   {
     title: "Blue Protocol",
     description:
       "MMORPG انیمه‌ای که با گرافیک خفن و دنیای عظیمش گیمرا رو جذب کرده. ماجراجویی آنلاین و گروهی تو این بازی حسابی حال می‌ده!",
-    img: "https://example.com/blueprotocol.jpg",
-    quantity: 10,
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.BtxC11WHElYzNq2uRu4XVQHaEP&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.2t4rv9H2F9oyzSoygXIbHgAAAA&pid=15.1",
+    ],
+    quantity: 0,
     price: 1000000,
     category: "game",
     creator: "Bandai Namco",
@@ -780,12 +979,16 @@ export const products = [
     rating: 4.2,
     platforms: ["PS5", "Xbox Series X|S", "PC"],
     releaseYear: 2024,
+    gameCategory: "rpg", // MMORPG
   },
   {
     title: "Project Mugen",
     description:
       "جهان‌باز انیمه‌ای پر از اکشن که توش با دشمنای عجیب می‌جنگی. گرافیک رنگارنگ و گیم‌پلی سریعش برای عاشقای انیمه و گیم یه گنجه!",
-    img: "https://example.com/projectmugen.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.BtxC11WHElYzNq2uRu4XVQHaEP&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.2t4rv9H2F9oyzSoygXIbHgAAAA&pid=15.1",
+    ],
     quantity: 11,
     price: 1250000,
     category: "game",
@@ -795,12 +998,13 @@ export const products = [
     rating: 4.5,
     platforms: ["PS5", "PC"],
     releaseYear: 2025,
+    gameCategory: "actionAdventure", // Anime-styled open-world
   },
   {
     title: "Where Winds Meet",
     description:
       "جهان‌باز رزمی تو چین باستان که مبارزاتش نفس‌گیر و دنیاش خیره‌کننده‌ست. برای گیمرایی که عاشق فرهنگ شرقی و اکشنن، یه تجربه ناب و باحاله!",
-    img: "https://example.com/wherewindsmeet.jpg",
+    img: "https://tse4.mm.bing.net/th?id=OIG4.0W_rzHvUVUrWpUPMebUg&pid=ImgGn",
     quantity: 8,
     price: 1300000,
     category: "game",
@@ -810,12 +1014,16 @@ export const products = [
     rating: 4.3,
     platforms: ["PS5", "PC"],
     releaseYear: 2025,
+    gameCategory: "actionAdventure", // Martial arts in an open world
   },
   {
     title: "Deathloop",
     description:
       "یه بازی اکشن خفن که توش تو یه حلقه زمانی گیر افتادی و باید ۸ تا هدف رو قبل از ریست شدن روز بکشی. مخفی‌کاری و گان‌پلیش با حس طنز عجیبش گیمرا رو ساعت‌ها نگه می‌داره!",
-    img: "https://example.com/deathloop.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.6DOSgav38YhDOmSjaqpdRgAAAA&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.tminQiTWJo6N5NzojifdigHaKc&pid=15.1",
+    ],
     quantity: 10,
     price: 900000,
     category: "game",
@@ -825,12 +1033,16 @@ export const products = [
     rating: 4.6,
     platforms: ["PS5", "PC", "Xbox Series X|S"],
     releaseYear: 2021,
+    gameCategory: "action", // Tactical action with a time-loop mechanic
   },
   {
     title: "Elden Ring",
     description:
       "جهان‌باز Soulslike که با همکاری جرج آر. آر. مارتین ساخته شده و پر از باس‌فایتای نفس‌گیره. گیم‌پلی سخت و دنیای عمیقش برای گیمرای هاردکور یه شاهکاره!",
-    img: "https://example.com/eldenring.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.CMNMEFng2mYz6xJt2vtPsAHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.WVt142DpvY_RYJj-AxcGBgHaLH&pid=15.1",
+    ],
     quantity: 12,
     price: 1100000,
     category: "game",
@@ -840,12 +1052,16 @@ export const products = [
     rating: 4.9,
     platforms: ["PS5", "PS4", "Xbox Series X|S", "Xbox One", "PC"],
     releaseYear: 2022,
+    gameCategory: "rpg", // Soulslike RPG
   },
   {
     title: "Red Dead Redemption 2",
     description:
       "داستان آرتور مورگان تو غرب وحشی که پر از جزئیات و احساسه و گیم‌پلیش دیوونه‌کننده‌ست. دنیای بازش و ماموریتاش هنوزم استاندارد گیمای جهان‌بازه!",
-    img: "https://example.com/reddead2.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.CMNMEFng2mYz6xJt2vtPsAHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.WVt142DpvY_RYJj-AxcGBgHaLH&pid=15.1",
+    ],
     quantity: 15,
     price: 1000000,
     category: "game",
@@ -855,12 +1071,16 @@ export const products = [
     rating: 4.8,
     platforms: ["PS4", "Xbox One", "PC"],
     releaseYear: 2018,
+    gameCategory: "actionAdventure", // Open-world action
   },
   {
     title: "Rainbow Six Siege",
     description:
       "یه شوتر تاکتیکی آنلاین که هر لحظه‌ش پر از تنش و استراتژیه. آپدیتای مداوم و اپراتورای جدیدش هنوزم گیمرا رو پای بازی نگه داشته!",
-    img: "https://example.com/rainbow6siege.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.Vn5CJOlLC-WAAR-pqUNW2QHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.LcSgpOldjzqA5lNp6BVPyAHaLH&pid=15.1",
+    ],
     quantity: 14,
     price: 800000,
     category: "game",
@@ -870,12 +1090,16 @@ export const products = [
     rating: 4.4,
     platforms: ["PS5", "PS4", "Xbox Series X|S", "Xbox One", "PC"],
     releaseYear: 2015,
+    gameCategory: "action", // Tactical shooter
   },
   {
     title: "Grand Theft Auto V",
     description:
       "شاهکار راکستار که تو لوس سانتوس پر از جرم و جنایت و ماجراجوییه. حالت آنلاینش هنوزم با آپدیتای خفن گیمرا رو سرگرم می‌کنه!",
-    img: "https://example.com/gtav.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.Vn5CJOlLC-WAAR-pqUNW2QHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.LcSgpOldjzqA5lNp6BVPyAHaLH&pid=15.1",
+    ],
     quantity: 20,
     price: 950000,
     category: "game",
@@ -885,12 +1109,16 @@ export const products = [
     rating: 4.7,
     platforms: ["PS5", "PS4", "Xbox Series X|S", "Xbox One", "PC"],
     releaseYear: 2013,
+    gameCategory: "actionAdventure", // Open-world crime and action-adventure
   },
   {
     title: "Control",
     description:
       "یه بازی اکشن ماورایی که توش با قدرتای عجیب تو یه ساختمون مرموز می‌جنگی. داستان پیچیده و گیم‌پلی روانش برای گیمرای خاص‌پسند یه گنجه!",
-    img: "https://example.com/control.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.CkA_oDscqXBicFdYtg9uwwHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.Qi_dEqBj3AX2YPF_ejO01QAAAA&pid=15.1",
+    ],
     quantity: 9,
     price: 850000,
     category: "game",
@@ -900,12 +1128,16 @@ export const products = [
     rating: 4.5,
     platforms: ["PS5", "PS4", "Xbox Series X|S", "Xbox One", "PC"],
     releaseYear: 2019,
+    gameCategory: "actionAdventure", // Supernatural action-adventure
   },
   {
     title: "Ghost of Tsushima",
     description:
       "سفر جین ساکای تو ژاپن سامورایی‌ها که با گرافیک خیره‌کننده و مبارزات شمشیرزنی می‌ترکونه. دنیای باز و داستان حماسیش گیمرا رو عاشق خودش کرده!",
-    img: "https://example.com/ghostoftsushima.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.m8Mwinx3qXR7YPXBpySO9AHaJS&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.L50HOqszLKSb2XRQM8GKUQHaHa&pid=15.1",
+    ],
     quantity: 13,
     price: 1050000,
     category: "game",
@@ -915,27 +1147,32 @@ export const products = [
     rating: 4.8,
     platforms: ["PS5", "PS4", "PC"],
     releaseYear: 2020,
+    gameCategory: "actionAdventure", // Open-world action-adventure with samurai combat
   },
   {
     title: "Forza Horizon 5",
     description:
       "ماشین‌سواری تو مکزیک با گرافیک نسل بعدی و جاده‌های متنوع که قلب گیمرای عاشق سرعت رو می‌بره. دنیای بازش و ماشینای خفنش ساعت‌ها سرگرمت می‌کنه!",
-    img: "https://example.com/forza5.jpg",
-    quantity: 14,
+    img: "https://tse4.mm.bing.net/th?id=OIG4.0W_rzHvUVUrWpUPMebUg&pid=ImgGn",
+    quantity: 0,
     price: 1200000,
     category: "game",
     creator: "Playground Games",
-    stock: true,
+    stock: false,
     discount: 10,
     rating: 4.7,
     platforms: ["Xbox Series X|S", "Xbox One", "PC"],
     releaseYear: 2021,
+    gameCategory: "simulator", // Racing simulation with open-world exploration
   },
   {
     title: "Quantum Break",
     description:
       "اکشن علمی-تخیلی که توش زمان رو دستکاری می‌کنی و با دشمنا می‌جنگی. داستانش با یه سریال قاطی شده و برای گیمرای خاص یه تجربه ناب و عجیبه!",
-    img: "https://example.com/quantumbreak.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.ymkEo4INw6U1oCIyJKAbaAAAAA&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.IEZMFWoq_pYp-D3TYUnWAwHaKF&pid=15.1",
+    ],
     quantity: 0,
     price: 750000,
     category: "game",
@@ -945,12 +1182,16 @@ export const products = [
     rating: 4.2,
     platforms: ["Xbox One", "PC"],
     releaseYear: 2016,
+    gameCategory: "actionAdventure", // Sci-fi action-adventure with time manipulation
   },
   {
     title: "Gears 5",
     description:
       "شوتر خشن و پرهیجان که توش با لانسرت دشمنا رو تکه‌پاره می‌کنی و داستانش عمیقه. گیم‌پلی کوآپ و گرافیک خفنش برای طرفدارای سری یه گنجه!",
-    img: "https://example.com/gears5.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.O7I3FzNZMREPb-VZMolSawHaLH&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.UjuSY_qqBHTpaB9DtkXaCgHaLH&pid=15.1",
+    ],
     quantity: 11,
     price: 950000,
     category: "game",
@@ -960,12 +1201,13 @@ export const products = [
     rating: 4.4,
     platforms: ["Xbox Series X|S", "Xbox One", "PC"],
     releaseYear: 2019,
+    gameCategory: "action", // Third-person shooter with cooperative gameplay
   },
   {
     title: "Halo 5: Guardians",
     description:
       "ماجراجویی مستر چیف تو فضا با گان‌پلی سریع و آنلاین خفن که طرفدارای هیلو رو دیوونه کرده. داستانش و گرافیکشم هنوزم جذابه!",
-    img: "https://example.com/halo5.jpg",
+    img: "https://tse4.mm.bing.net/th?id=OIG4.0W_rzHvUVUrWpUPMebUg&pid=ImgGn",
     quantity: 10,
     price: 800000,
     category: "game",
@@ -975,12 +1217,16 @@ export const products = [
     rating: 4.3,
     platforms: ["Xbox One"],
     releaseYear: 2015,
+    gameCategory: "action", // Sci-fi shooter
   },
   {
     title: "The Last of Us Part I",
     description:
       "ریمک شاهکار TLOU که با گرافیک نسل نهم و گیم‌پلی بهتر برگشته و داستان جوئل و الی هنوزم اشکتو درمیاره. برای گیمرای احساسی و اکشن‌باز یه تجربه ناب و بی‌نظیره!",
-    img: "https://example.com/tlou1remake.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.lllunOzfTCMxJTL49oJGBwHaEW&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.xh2xAvAnJTvndLu8ilaKnAHaJK&pid=15.1",
+    ],
     quantity: 12,
     price: 1300000,
     category: "game",
@@ -990,12 +1236,13 @@ export const products = [
     rating: 4.9,
     platforms: ["PS5", "PC"],
     releaseYear: 2022,
+    gameCategory: "actionAdventure", // Emotional action-adventure
   },
   {
     title: "Razer Iskur V2",
     description:
       "صندلی گیمینگ خفن از Razer که با سیستم کمری تطبیقی‌ش کمرت رو تو گیمای طولانی مثل پادشاه نگه می‌داره. چرم مصنوعی سبز و سیاهش حس لوکس بودن می‌ده و RGBش اتاقتو به یه پایگاه گیم تبدیل می‌کنه. برای گیمرایی که دنبال راحتی و کلاسن، یه انتخاب توپه!",
-    img: "https://example.com/razeriskurv2.jpg",
+    img: ["", ""],
     quantity: 20,
     price: 4800000,
     category: "chair",
@@ -1009,7 +1256,10 @@ export const products = [
     title: "DXRacer Master",
     description:
       "صندلی ریسینگ از DXRacer که برای گیمرای حرفه‌ای ساخته شده و کمرتو تو بهترین حالت نگه می‌داره. فوم سردش شکل بدنتو می‌گیره و پایه آلومینیومش استحکام بالایی داره. چرم PU باکیفیتش برای ساعت‌ها گیم زدن حرف نداره!",
-    img: "https://example.com/dxracermaster.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.d0DjxjoOAAT7LaFm5nAnhQHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.tB76LY8yAqL5bhHku4qmRwHaNu&pid=15.1",
+    ],
     quantity: 15,
     price: 4500000,
     category: "chair",
@@ -1023,7 +1273,7 @@ export const products = [
     title: "Secretlab Titan Evo",
     description:
       "غول گیمینگ از Secretlab که با فوم متراکمش راحتی رو بهت هدیه می‌ده و کمر درد رو نابود می‌کنه. بالشتک مغناطیسیش گردنتو تو گیمای طولانی نگه می‌داره و چرمش حس لوکس بودن می‌ده. طراحی شیکش برای هر گیمری یه رویاست!",
-    img: "https://example.com/secretlabtitan.jpg",
+    img: "https://ts2.mm.bing.net/th?id=OIP.SKNbUgdnXd5VETaXW4H9QAHaHE&pid=15.1",
     quantity: 18,
     price: 5200000,
     category: "chair",
@@ -1037,12 +1287,12 @@ export const products = [
     title: "Herman Miller Aeron",
     description:
       "صندلی ارگونومیک افسانه‌ای از Herman Miller که برای کار و گیم طراحی شده و کمرت رو مثل یه تاج نگه می‌داره. جنس مش‌بکش عرق رو کم می‌کنه و تنظیمات دقیقش برای هر بدنی عالیه. با این قیمت، یه سرمایه‌گذاری برای سلامتیته!",
-    img: "https://example.com/hermanaeron.jpg",
-    quantity: 12,
+    img: "https://ts2.mm.bing.net/th?id=OIP.QW6ntH7aqyVjPDM9bGhDYQHaHa&pid=15.1",
+    quantity: 0,
     price: 6500000,
     category: "chair",
     creator: "Herman Miller",
-    stock: true,
+    stock: false,
     discount: 12,
     rating: 4.9,
     releaseYear: 2023,
@@ -1051,7 +1301,10 @@ export const products = [
     title: "Noblechairs Hero",
     description:
       "صندلی گیمینگ باکلاس از Noblechairs که با چرم واقعیش حس لوکس بودن می‌ده و راحتیش دیوونته می‌کنه. پشتیبانی کمرش برای گیمای طولانی عالیه و پایه فلزیش استحکام بالایی داره. برای گیمرای شیک‌پسند یه انتخاب خفنه!",
-    img: "https://example.com/noblehero.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.kj4NuZSD2-VbqYeda_aQMgHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.tu6jlJRK1d2UxEMm5k2RxAHaHa&pid=15.1",
+    ],
     quantity: 25,
     price: 4900000,
     category: "chair",
@@ -1065,7 +1318,10 @@ export const products = [
     title: "Corsair T3 Rush",
     description:
       "صندلی گیمینگ از Corsair با پارچه تنفس‌پذیر که تو گرما عرق نمی‌کنی و برای گیمای طولانی راحته. بالشتکای نرمش کمر و گردنتو نگه می‌دارن و طراحی مینیمالش به هر دکوری می‌خوره. برای گیمرای اقتصادی یه گزینه باحاله!",
-    img: "https://example.com/corsairt3.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.xMb1q33KIWRLogf2aV_gGQHaDV&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.UD3ybK4F7xw8yDUpsuULigHaJO&pid=15.1",
+    ],
     quantity: 17,
     price: 4200000,
     category: "chair",
@@ -1079,7 +1335,10 @@ export const products = [
     title: "Razer Enki Pro",
     description:
       "صندلی لوکس از Razer که با فوم متراکمش کمرت رو تو گیمای شبانه نگه می‌داره و خستگی رو نابود می‌کنه. چرم آلکانتراش حس ماشین اسپرت می‌ده و تنظیماتش برای هر پوزیشن گیم زدن عالیه. RGBش هم اتاقتو به یه دنیای گیم تبدیل می‌کنه!",
-    img: "https://example.com/razerenkipro.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.quLsn5RrBjsRD7dEDMR0UAHaD4&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.2X3WwJSMKAa36c5ei-VB-wHaHa&pid=15.1",
+    ],
     quantity: 14,
     price: 5800000,
     category: "chair",
@@ -1093,7 +1352,10 @@ export const products = [
     title: "Secretlab Omega",
     description:
       "صندلی جمع‌وجور از Secretlab که برای گیمرای قدکوتاه یا فضاهای کوچک طراحی شده و راحته. فوم سردش شکل بدنتو می‌گیره و چرم PUش حس لوکس بودن می‌ده. برای گیم زدن تو خونه‌های نقلی یه انتخاب باحاله!",
-    img: "https://example.com/secretlabomega.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.uFfY682unkxmtZggbrdzfAHaJ4&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.WjjC_5DT_DMegEYRJos4OwAAAA&pid=15.1",
+    ],
     quantity: 19,
     price: 4600000,
     category: "chair",
@@ -1107,7 +1369,10 @@ export const products = [
     title: "DXRacer Drifting",
     description:
       "صندلی ریسینگ از DXRacer که تا ۱۸۰ کیلو رو تحمل می‌کنه و برای گیمرای سنگین‌وزن عالیه. پشتی قابل تنظیمش کمرت رو تو گیمای طولانی نگه می‌داره و چرمش حس اسپرت بودن می‌ده. استحکام و راحتیش برای هر گیمری یه گنجه!",
-    img: "https://example.com/dxracerdrifting.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.E16NGUauwIipJuNCqP7r6QHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.foko5pOxHIvfSB3lWn4MNgHaHa&pid=15.1",
+    ],
     quantity: 10,
     price: 4700000,
     category: "chair",
@@ -1121,7 +1386,7 @@ export const products = [
     title: "AKRacing Core",
     description:
       "صندلی گیمینگ از AKRacing که با پارچه تنفس‌پذیرش تو تابستون خنکه و برای گیمای طولانی عالیه. فوم متراکمش راحتی رو تضمین می‌کنه و پایه فلزیش محکمه. طراحی ساده و شیکش برای هر گیمری جذابه!",
-    img: "https://example.com/akracingcore.jpg",
+    img: "https://ts2.mm.bing.net/th?id=OIP.p2D5mTZ0klH3WoV_KduD1QHaHa&pid=15.1",
     quantity: 16,
     price: 4300000,
     category: "chair",
@@ -1135,7 +1400,10 @@ export const products = [
     title: "Herman Miller Embody",
     description:
       "صندلی ارگونومیک از Herman Miller که با تکنولوژی خفنش کمرت رو تو هر حالتی نگه می‌داره و سلامتیتو تضمین می‌کنه. جنس مش‌بکش برای نشستنای طولانی عالیه و تنظیماتش برای هر بدنی مناسبه. گرونه، ولی ارزششو داره!",
-    img: "https://example.com/hermanembody.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.ROaki9Uf1L55dhn37Ej7cgAAAA&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.tauO9HAK3iLlZlsZofQrzAHaJx&pid=15.1",
+    ],
     quantity: 11,
     price: 7200000,
     category: "chair",
@@ -1149,7 +1417,10 @@ export const products = [
     title: "Noblechairs Epic",
     description:
       "صندلی گیمینگ با چرم واقعی از Noblechairs که حس لوکس بودن می‌ده و برای گیمرای باکلاس ساخته شده. فوم سردش کمرت رو تو گیمای طولانی نگه می‌داره و دوخت دقیقش طراحی‌ش رو خفن‌تر می‌کنه. یه انتخاب شیک و راحته!",
-    img: "https://example.com/noblechairs.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.HJCtmAj4x_6Q1NwS-BavBAHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.T1WwIVV2PS7noi7eV2iZoQHaHa&pid=15.1",
+    ],
     quantity: 13,
     price: 5100000,
     category: "chair",
@@ -1163,7 +1434,10 @@ export const products = [
     title: "Razer Fujin",
     description:
       "صندلی مش‌بک از Razer که عرق رو کم می‌کنه و برای گیمای طولانی تو گرما عالیه. پشتیبانی کمرش تطبیقیه و کمرت رو تو بهترین حالت نگه می‌داره. طراحی مینیمال و سبکش برای هر گیمری جذابه!",
-    img: "https://example.com/razerfujin.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.EFsJfBZ1PND6D1SNakc8nQHaD4&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.hsG2LdRqR8d66OxaVY8-IwAAAA&pid=15.1",
+    ],
     quantity: 18,
     price: 4900000,
     category: "chair",
@@ -1177,7 +1451,10 @@ export const products = [
     title: "Secretlab Neue",
     description:
       "صندلی ارگونومیک از Secretlab که با طراحی شیکش هم برای کار خوبه هم برای گیم زدن. فوم متراکمش راحتی رو تضمین می‌کنه و چرم PUش حس لوکس بودن می‌ده. برای گیمرای چندکاره یه انتخاب خفنه!",
-    img: "https://example.com/secretlabneue.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.cduwusgHJYyMx5na3BsDPgHaE8&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.LsWD2Itiu2lOaoQtopxcRQHaLG&pid=15.1",
+    ],
     quantity: 20,
     price: 4700000,
     category: "chair",
@@ -1191,12 +1468,15 @@ export const products = [
     title: "DXRacer Blade",
     description:
       "صندلی ریسینگ از DXRacer که با طراحی اسپرتش حس سرعت بهت می‌ده و برای گیمای مسابقه‌ای عالیه. چرم مقاومش برای سال‌ها مثل روز اول می‌مونه و فومش کمرت رو نگه می‌داره. برای گیمرای جوون‌پسند یه گزینه توپه!",
-    img: "https://example.com/dxracerblade.jpg",
-    quantity: 15,
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.5SCEIlX6G5EC4_KGr9pU9gHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.8zNaM0ObLXR9jxsU7vnk2QHaNf&pid=15.1",
+    ],
+    quantity: 0,
     price: 4600000,
     category: "chair",
     creator: "DXRacer",
-    stock: true,
+    stock: false,
     discount: 10,
     rating: 4.5,
     releaseYear: 2025,
@@ -1205,12 +1485,15 @@ export const products = [
     title: "Corsair TC70 Remix",
     description:
       "صندلی گیمینگ از Corsair با پارچه نرم که برای گیمای طولانی راحته و عرق رو کم می‌کنه. پشتی قابل تنظیمش کمرت رو تو بهترین حالت نگه می‌داره و طراحی ساده‌ش به هر دکوری می‌خوره. برای گیمرای اقتصادی یه انتخاب باحاله!",
-    img: "https://example.com/corsairtc70.jpg",
-    quantity: 17,
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.L5R29bDvwr4xP9ThPXrv7gHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.alRxWlNyjmeImmVeCiqlNQHaHa&pid=15.1",
+    ],
+    quantity: 0,
     price: 4100000,
     category: "chair",
     creator: "Corsair",
-    stock: true,
+    stock: false,
     discount: 12,
     rating: 4.4,
     releaseYear: 2024,
@@ -1219,7 +1502,10 @@ export const products = [
     title: "AKRacing Max",
     description:
       "صندلی گیمینگ از AKRacing که برای گیمرای سنگین‌وزن تا ۲۰۰ کیلو طراحی شده و استحکامش حرف نداره. فوم متراکمش راحتی رو تضمین می‌کنه و چرمش حس لوکس بودن می‌ده. برای گیمرای غول‌پیکر یه گنجه!",
-    img: "https://example.com/akracingmax.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.U7fm-omTSsKr4rjuwRlu9QHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.9qV24jac8yB3ohIVqFsAoAHaJ4&pid=15.1",
+    ],
     quantity: 14,
     price: 5000000,
     category: "chair",
@@ -1233,7 +1519,10 @@ export const products = [
     title: "Noblechairs Icon",
     description:
       "صندلی باکلاس از Noblechairs که با چرم واقعیش حس لوکس بودن می‌ده و برای گیمرای شیک‌پسند عالیه. فوم سردش کمرت رو تو گیمای طولانی نگه می‌داره و پایه فلزیش استحکام بالایی داره. طراحی‌ش اتاقتو به یه استودیو گیم تبدیل می‌کنه!",
-    img: "https://example.com/nobleicon.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.YAY42Sw42vGnlXt06CF1UAHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.3RWNkQHFsh9M9F6HjJ9r4AHaL2&pid=15.1",
+    ],
     quantity: 11,
     price: 5300000,
     category: "chair",
@@ -1247,7 +1536,10 @@ export const products = [
     title: "Razer Tarok Ultimate",
     description:
       "صندلی گیمینگ از Razer که با بالشتکای نرمش کمر و گردنتو تو گیمای طولانی نگه می‌داره و خستگی رو نابود می‌کنه. چرم PUش حس اسپرت بودن می‌ده و RGBش برای گیمرای شب‌زنده‌دار عالیه. یه انتخاب خفن برای حرفه‌ای‌هاست!",
-    img: "https://example.com/razertarok.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.j7mjuJC33-G629j38E20EQHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.OkVlEAKZcIaPeGOJVlKnqwHaHa&pid=15.1",
+    ],
     quantity: 16,
     price: 5500000,
     category: "chair",
@@ -1261,7 +1553,10 @@ export const products = [
     title: "Secretlab 2025 Pro",
     description:
       "صندلی جدید از Secretlab که با فوم بهبودیافته‌ش راحتی رو به سطح بعدی برده و کمرت رو نگه می‌داره. چرم PUش حس لوکس بودن می‌ده و تنظیمات دقیقش برای هر بدنی عالیه. برای گیمرای آینده‌نگر یه انتخاب باحاله!",
-    img: "https://example.com/secretlab2025.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.yuxONfaomj7DlPEXluFspwHaEK&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.tPPTS_eNcR783MfL1B5stwHaHW&pid=15.1",
+    ],
     quantity: 13,
     price: 5100000,
     category: "chair",
@@ -1275,7 +1570,10 @@ export const products = [
     title: "DXRacer Craft",
     description:
       "صندلی گیمینگ از DXRacer که با طراحی مینیمالش برای هر فضایی مناسبه و کمرت رو تو گیم نگه می‌داره. چرم مقاومش برای سال‌ها دوام میاره و فومش راحتی رو تضمین می‌کنه. برای گیمرای ساده‌پسند یه گزینه خفنه!",
-    img: "https://example.com/dxracercraft.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.yuxONfaomj7DlPEXluFspwHaEK&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.tPPTS_eNcR783MfL1B5stwHaHW&pid=15.1",
+    ],
     quantity: 19,
     price: 4700000,
     category: "chair",
@@ -1289,7 +1587,10 @@ export const products = [
     title: "Herman Miller Sayl",
     description:
       "صندلی ارگونومیک از Herman Miller که با طراحی معلقش حس سبکی بهت می‌ده و کمرت رو عالی نگه می‌داره. جنس مش‌بکش برای نشستنای طولانی راحته و تنظیماتش برای هر قد و قواره‌ای مناسبه. یه انتخاب شیک برای گیم و کاره!",
-    img: "https://example.com/hermansayl.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.EFsJfBZ1PND6D1SNakc8nQHaD4&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.hsG2LdRqR8d66OxaVY8-IwAAAA&pid=15.1",
+    ],
     quantity: 15,
     price: 6800000,
     category: "chair",
@@ -1303,7 +1604,10 @@ export const products = [
     title: "Corsair T1 Race",
     description:
       "صندلی ریسینگ از Corsair که با طراحی اسپرتش حس سرعت بهت می‌ده و برای گیمای مسابقه‌ای عالیه. چرم PUش مقاومه و فومش کمرت رو تو بهترین حالت نگه می‌داره. برای گیمرای جوون‌پسند یه انتخاب باحاله!",
-    img: "https://example.com/corsairt1.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.EFsJfBZ1PND6D1SNakc8nQHaD4&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.hsG2LdRqR8d66OxaVY8-IwAAAA&pid=15.1",
+    ],
     quantity: 17,
     price: 4500000,
     category: "chair",
@@ -1317,12 +1621,15 @@ export const products = [
     title: "AKRacing Nitro",
     description:
       "صندلی گیمینگ از AKRacing که با فوم متراکمش راحتی رو تضمین می‌کنه و برای گیمای طولانی عالیه. چرمش حس لوکس بودن می‌ده و پایه فلزیش استحکام بالایی داره. طراحی اسپرتش برای گیمرای پرهیجان حرف نداره!",
-    img: "https://example.com/akracingnitro.jpg",
-    quantity: 14,
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.EFsJfBZ1PND6D1SNakc8nQHaD4&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.hsG2LdRqR8d66OxaVY8-IwAAAA&pid=15.1",
+    ],
+    quantity: 0,
     price: 4800000,
     category: "chair",
     creator: "AKRacing",
-    stock: true,
+    stock: false,
     discount: 8,
     rating: 4.6,
     releaseYear: 2025,
@@ -1331,7 +1638,10 @@ export const products = [
     title: "Noblechairs Legend",
     description:
       "صندلی لوکس از Noblechairs که با چرم واقعیش حس قدرت و کلاس بهت می‌ده و برای گیمرای حرفه‌ای عالیه. فوم سردش کمرت رو تو گیمای طولانی نگه می‌داره و دوخت دقیقش طراحی‌ش رو خفن‌تر می‌کنه. یه انتخاب شیک و راحته!",
-    img: "https://example.com/noblelegend.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.yuxONfaomj7DlPEXluFspwHaEK&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.tPPTS_eNcR783MfL1B5stwHaHW&pid=15.1",
+    ],
     quantity: 20,
     price: 5400000,
     category: "chair",
@@ -1345,12 +1655,15 @@ export const products = [
     title: "Razer Enki X",
     description:
       "صندلی اقتصادی از Razer که با فوم نرمش کمرت رو تو گیمای طولانی نگه می‌داره و خستگی رو کم می‌کنه. چرم PUش حس اسپرت بودن می‌ده و طراحی ساده‌ش برای هر گیمری مناسبه. برای گیمرای باهوش یه گزینه باحاله!",
-    img: "https://example.com/razerenkix.jpg",
-    quantity: 16,
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.yuxONfaomj7DlPEXluFspwHaEK&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.tPPTS_eNcR783MfL1B5stwHaHW&pid=15.1",
+    ],
+    quantity: 0,
     price: 4200000,
     category: "chair",
     creator: "Razer",
-    stock: true,
+    stock: false,
     discount: 12,
     rating: 4.5,
     releaseYear: 2024,
@@ -1359,7 +1672,10 @@ export const products = [
     title: "Secretlab Titan Stealth",
     description:
       "صندلی مشکی از Secretlab که با طراحی مینیمالش برای گیمرای حرفه‌ای ساخته شده و کمرت رو نگه می‌داره. فوم متراکمش راحتی رو تضمین می‌کنه و چرم PUش حس لوکس بودن می‌ده. برای گیم زدن تو شب یه انتخاب خفنه!",
-    img: "https://example.com/secretlabstealth.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.EFsJfBZ1PND6D1SNakc8nQHaD4&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.hsG2LdRqR8d66OxaVY8-IwAAAA&pid=15.1",
+    ],
     quantity: 13,
     price: 5000000,
     category: "chair",
@@ -1373,7 +1689,10 @@ export const products = [
     title: "DXRacer Formula",
     description:
       "صندلی ریسینگ از DXRacer که با طراحی اسپرتش حس سرعت بهت می‌ده و برای گیمای مسابقه‌ای عالیه. فومش کمرت رو تو بهترین حالت نگه می‌داره و چرمش برای سال‌ها مقاومه. برای گیمرای جوون یه انتخاب باحاله!",
-    img: "https://example.com/dxracerformula.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.EFsJfBZ1PND6D1SNakc8nQHaD4&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.hsG2LdRqR8d66OxaVY8-IwAAAA&pid=15.1",
+    ],
     quantity: 18,
     price: 4400000,
     category: "chair",
@@ -1387,7 +1706,10 @@ export const products = [
     title: "Herman Miller Cosm",
     description:
       "صندلی ارگونومیک از Herman Miller که با طراحی معلقش حس سبکی بهت می‌ده و کمرت رو تو گیم و کار نگه می‌داره. جنس مش‌بکش برای نشستنای طولانی راحته و رنگای خنثی‌ش به هر دکوری می‌خوره. یه انتخاب لوکس و شیکه!",
-    img: "https://example.com/hermancosm.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.EFsJfBZ1PND6D1SNakc8nQHaD4&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.hsG2LdRqR8d66OxaVY8-IwAAAA&pid=15.1",
+    ],
     quantity: 15,
     price: 6900000,
     category: "chair",
@@ -1401,7 +1723,10 @@ export const products = [
     title: "Corsair T2 Road Warrior",
     description:
       "صندلی گیمینگ از Corsair که با چرم PUش حس اسپرت بودن می‌ده و برای گیمای طولانی راحته. فوم متراکمش کمرت رو نگه می‌داره و چرخای نرمی داره که رو هر سطحی بی‌صدا می‌ره. برای گیمرای پرتحرک یه گزینه خفنه!",
-    img: "https://example.com/corsairt2.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.yuxONfaomj7DlPEXluFspwHaEK&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.tPPTS_eNcR783MfL1B5stwHaHW&pid=15.1",
+    ],
     quantity: 21,
     price: 4600000,
     category: "chair",
@@ -1415,7 +1740,10 @@ export const products = [
     title: "Razer BlackShark V2 Pro (2023)",
     description:
       "هدست گیمینگ وایرلس از Razer که با میکروفون خفنش صداتو کریستالی می‌کنه و برای چت آنلاین معرکه‌ست. درایورای TriForce Titaniumش صدا رو با جزئیات دیوونه‌کننده پخش می‌کنه. باتری ۷۰ ساعته‌ش برای گیمرای ماراتونی یه انتخاب توپه!",
-    img: "https://example.com/blacksharkv2pro.jpg",
+    img: [
+      "https://m.media-amazon.com/images/I/713FOOoJ-4L._AC_SX679_.jpg",
+      "https://thinkcomputers.org/wp-content/uploads/2023/04/razer-blackshark-v2-pro-3.jpg",
+    ],
     quantity: 20,
     price: 5200000,
     category: "headset",
@@ -1429,7 +1757,10 @@ export const products = [
     title: "SteelSeries Arctis Nova Pro Wireless",
     description:
       "بهترین هدست SteelSeries که با ANC صداهای مزاحم رو بلاک می‌کنه و تمرکزت رو تو گیم بالا می‌بره. باتری قابل تعویضش تو رو تو گیمای طولانی تنها نمی‌ذاره و کیفیت صداش دیوونته می‌کنه. نرم‌افزار Sonarش برای تنظیمات حرفه‌ای یه گنجه!",
-    img: "https://example.com/arctisnovapro.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.0PoOfofgAvICciOH7SLbVwHaKj&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP._416VuJF3f2WUnZ9IFMHvwHaLj&pid=15.1",
+    ],
     quantity: 15,
     price: 6800000,
     category: "headset",
@@ -1443,7 +1774,10 @@ export const products = [
     title: "Logitech G Pro X 2 Lightspeed",
     description:
       "هدست Logitech که با میکروفون Blue صداتو مثل استریمرای حرفه‌ای می‌کنه و تو چت می‌ترکونه. صدای 3Dش تو رو وسط گیم می‌بره و راحتیش برای ساعت‌ها گیم زدن عالیه. جنس آلومینیوم و استیلش حس پریمیوم بودن می‌ده!",
-    img: "https://example.com/gprox2.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.hYTJx91kIzIbHxm9QlT6ZgHaHn&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.FIkWBQSFZq_TM7HafaS2PAHaHa&pid=15.1",
+    ],
     quantity: 18,
     price: 5500000,
     category: "headset",
@@ -1457,7 +1791,10 @@ export const products = [
     title: "HyperX Cloud Alpha Wireless",
     description:
       "هدست وایرلس HyperX با باتری ۳۰۰ ساعته که گیمرای تنبل رو عاشق خودش می‌کنه. صدای باس‌دارش اکشن گیما رو جذاب‌تر می‌کنه و میکروفونش برای چت تیمی عالیه. طراحی سبکش برای گیمای طولانی حرف نداره!",
-    img: "https://example.com/cloudalpha.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.yuxONfaomj7DlPEXluFspwHaEK&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.tPPTS_eNcR783MfL1B5stwHaHW&pid=15.1",
+    ],
     quantity: 22,
     price: 4900000,
     category: "headset",
@@ -1471,7 +1808,10 @@ export const products = [
     title: "Corsair Virtuoso Max",
     description:
       "هدست پریمیوم Corsair که با صدای Dolby Atmos تو رو تو دنیای گیم غرق می‌کنه. چرم لوکس و فوم مموریش راحتیش رو به اوج می‌رسونه و میکروفونش برای استریم حرف نداره. RGB خفنش هم اتاقتو قشنگ‌تر می‌کنه!",
-    img: "https://example.com/virtuosomax.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.yuxONfaomj7DlPEXluFspwHaEK&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.tPPTS_eNcR783MfL1B5stwHaHW&pid=15.1",
+    ],
     quantity: 14,
     price: 6200000,
     category: "headset",
@@ -1485,7 +1825,10 @@ export const products = [
     title: "Turtle Beach Stealth 700 Gen 3",
     description:
       "هدست Turtle Beach که با تکنولوژی Superhuman Hearing صداها رو مثل سوپرمن می‌شنوی و دشمناتو پیدا می‌کنی. اتصال دوگانه Bluetooth و 2.4GHz برای گیم و موسیقی عالیه. باتری ۸۵ ساعته‌ش برای گیمرای هاردکور یه گنجه!",
-    img: "https://example.com/stealth700.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.KtQRS488x7tWM-gbN6fuAQHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.DaHJEHCu9dntWb4NwwF4lgHaHa&pid=15.1",
+    ],
     quantity: 17,
     price: 5100000,
     category: "headset",
@@ -1499,12 +1842,15 @@ export const products = [
     title: "Sennheiser GSP 670",
     description:
       "هدست Sennheiser که با صدای استریوی خفنش جزئیات گیم رو بهت نشون می‌ده و غرقت می‌کنه. میکروفون نویزکنسلینگش برای چت تیمی بی‌نقصه و طراحی ارگونومیکش برای گیمای طولانی راحته. کیفیت ساخت آلمانیش حس اطمینان می‌ده!",
-    img: "https://example.com/gsp670.jpg",
-    quantity: 12,
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.eHZKELtslKOcWGAIvevbuAAAAA&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.ptLXrqRuSGxIjrje-2rnlAHaEK&pid=15.1",
+    ],
+    quantity: 0,
     price: 5800000,
     category: "headset",
     creator: "Sennheiser",
-    stock: true,
+    stock: false,
     discount: 8,
     rating: 4.6,
     releaseYear: 2023,
@@ -1513,7 +1859,10 @@ export const products = [
     title: "Razer Kraken V4 Pro",
     description:
       "هدست Razer با haptic feedback که لرزشای گیم رو تو سرت حس می‌کنی و هیجانشو دو برابر می‌کنه. صدای THX Spatialش تو رو وسط میدان نبرد می‌بره و میکروفونش برای استریم عالیه. RGB Chromaش هم برای گیمرای باکلاس یه انتخاب خفنه!",
-    img: "https://example.com/krakenv4pro.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.eHZKELtslKOcWGAIvevbuAAAAA&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.ptLXrqRuSGxIjrje-2rnlAHaEK&pid=15.1",
+    ],
     quantity: 19,
     price: 6000000,
     category: "headset",
@@ -1527,7 +1876,10 @@ export const products = [
     title: "SteelSeries Arctis Nova 5X",
     description:
       "هدست SteelSeries که با اپلیکیشنش صداها رو برای هر گیمی تنظیم می‌کنی و می‌ترکونی. اتصال چندپلتفرمیش برای PS5، Xbox و PC عالیه و میکروفونش صداتو شفاف می‌کنه. طراحی سبکش برای گیمرای در حال حرکت حرف نداره!",
-    img: "https://example.com/arctisnova5x.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.HYoNm289FPan7KuEtP_mBgHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.Pl9LPj-NgBr1M-gzl99hJgHaHa&pid=15.1",
+    ],
     quantity: 16,
     price: 4700000,
     category: "headset",
@@ -1541,7 +1893,10 @@ export const products = [
     title: "Logitech Astro A50 X",
     description:
       "هدست Logitech که با سوئیچر HDMIش بین کنسولا جابه‌جا می‌شی و گیماتو می‌ترکونی. صدای فراگیرش تو رو تو گیم غرق می‌کنه و میکروفونش برای چت تیمی عالیه. طراحی پریمیومش برای گیمرای چندپلتفرمی یه گنجه!",
-    img: "https://example.com/astroa50x.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.Mn-NO5oYZkBdYtlTO8WbRAHaJK&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.6679m6N-5aEqGJFTDXmPAQHaJG&pid=15.1",
+    ],
     quantity: 13,
     price: 6500000,
     category: "headset",
@@ -1555,7 +1910,10 @@ export const products = [
     title: "HyperX Cloud III Wireless",
     description:
       "هدست HyperX که با صدای شفافش جزئیات گیم رو بهت نشون می‌ده و غرقت می‌کنه. باتری ۱۲۰ ساعته‌ش برای گیمرای تنبل معرکه‌ست و میکروفونش برای چت تیمی بی‌نقصه. فوم مموریش برای گیمای طولانی راحتی رو تضمین می‌کنه!",
-    img: "https://example.com/cloudiii.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.Mn-NO5oYZkBdYtlTO8WbRAHaJK&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.6679m6N-5aEqGJFTDXmPAQHaJG&pid=15.1",
+    ],
     quantity: 21,
     price: 5000000,
     category: "headset",
@@ -1569,7 +1927,10 @@ export const products = [
     title: "Corsair HS80 Max",
     description:
       "هدست Corsair با پارچه خنک که تو گیمای طولانی عرق نمی‌کنی و راحتیش دیوونته می‌کنه. صدای Dolby Atmosش تو رو تو گیم غرق می‌کنه و میکروفونش برای چت عالیه. طراحی سبکش برای گیمرای حرفه‌ای یه انتخاب باحاله!",
-    img: "https://example.com/hs80max.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.FxJ-EtNqMrCMBU2GXpKchQHaIF&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.Abcp9dwm5TlIfT0owhtS0QHaHe&pid=15.1",
+    ],
     quantity: 15,
     price: 5300000,
     category: "headset",
@@ -1583,12 +1944,15 @@ export const products = [
     title: "Turtle Beach Atlas Air",
     description:
       "هدست اوپن‌بک Turtle Beach که با صدای وسیعش تو رو تو گیم غرق می‌کنه و جزئیات رو نشون می‌ده. وزن سبکش برای گیمای طولانی عالیه و میکروفونش برای چت تیمی بی‌نقصه. طراحی مینیمالش برای گیمرای خاص‌پسند حرف نداره!",
-    img: "https://example.com/atlasair.jpg",
-    quantity: 18,
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.gnLA2RxzxWVHQP1LwQEBrAHaIZ&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.rKW1OFxxXbWiG0EKZRXnWgHaHa&pid=15.1",
+    ],
+    quantity: 0,
     price: 4800000,
     category: "headset",
     creator: "Turtle Beach",
-    stock: true,
+    stock: false,
     discount: 12,
     rating: 4.5,
     releaseYear: 2024,
@@ -1597,7 +1961,10 @@ export const products = [
     title: "Sennheiser HD 620S",
     description:
       "هدست Sennheiser با صدای بالانس که برای گیم و موسیقی حرف نداره و غرقت می‌کنه. طراحی بسته‌ش نویز رو کم می‌کنه و میکروفون جداگانه‌ش برای چت عالیه. راحتیش برای گیمرای audiophile یه انتخاب خفنه!",
-    img: "https://example.com/hd620s.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.cC2xS38qv9jZlad3GG00OAHaG2&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.rqKa03vtUvDHzpPofv5uOQHaGa&pid=15.1",
+    ],
     quantity: 10,
     price: 6700000,
     category: "headset",
@@ -1611,7 +1978,10 @@ export const products = [
     title: "Razer Barracuda X Chroma",
     description:
       "هدست Razer با RGB که اتاقتو قشنگ می‌کنه و برای گیم و موسیقی عالیه. اتصال چندکاره Bluetooth و 2.4GHzش انعطاف‌پذیری می‌ده و میکروفونش صداتو شفاف می‌کنه. وزن سبکش برای گیمرای در حال حرکت حرف نداره!",
-    img: "https://example.com/barracudax.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.lVMobtMyMD9QaqVTas4hRQHaE8&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.c8DFzXie4ejm7-91InnQxAHaER&pid=15.1",
+    ],
     quantity: 23,
     price: 4600000,
     category: "headset",
@@ -1625,7 +1995,10 @@ export const products = [
     title: "SteelSeries Arctis GameBuds",
     description:
       "هدست earbud از SteelSeries که با طراحی کوچیکش برای گیمرای پرتحرک عالیه و جا می‌شه تو جیبت. صدای شفافش تو رو تو گیم غرق می‌کنه و میکروفونش برای چت تیمی بی‌نقصه. باتری ۴۰ ساعته‌ش برای گیمای طولانی کافیه!",
-    img: "https://example.com/gamebuds.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.6-Bjo34zUUlb0tR8lkKKmgHaK_&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.w3CPq36xHFTOjDyaD-l53wHaIC&pid=15.1",
+    ],
     quantity: 16,
     price: 4300000,
     category: "headset",
@@ -1639,7 +2012,10 @@ export const products = [
     title: "Logitech G733 Lightspeed",
     description:
       "هدست Logitech با RGB رنگارنگ که حس گیمری بهت می‌ده و برای چت و گیم عالیه. صدای فراگیرش تو رو تو گیم می‌بره و میکروفونش صداتو شفاف می‌کنه. وزن سبک و بند کشیش برای گیمای طولانی راحته!",
-    img: "https://example.com/g733.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.Fq0OjqZ6BpULU6E7xs2rcAHaIL&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.6DC4y1TNRFJg7fqKXpx1iAHaHa&pid=15.1",
+    ],
     quantity: 19,
     price: 4500000,
     category: "headset",
@@ -1653,7 +2029,10 @@ export const products = [
     title: "HyperX Cloud Stinger 2",
     description:
       "هدست اقتصادی HyperX که با صدای شفافش برای گیمای رقابتی عالیه و دشمناتو پیدا می‌کنی. میکروفون چرخانش برای چت تیمی بی‌نقصه و وزن سبکش راحتی رو تضمین می‌کنه. برای گیمرای با بودجه کم یه انتخاب توپه!",
-    img: "https://example.com/stinger2.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.Qo6-9ULs8cU5nWaP74GdyQHaHs&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.BNMTcRY9WqDXcfooUMr4cgHaHa&pid=15.1",
+    ],
     quantity: 25,
     price: 3800000,
     category: "headset",
@@ -1667,7 +2046,10 @@ export const products = [
     title: "Corsair Void RGB Elite",
     description:
       "هدست Corsair با صدای 7.1 که تو رو تو گیم غرق می‌کنه و جزئیات رو نشون می‌ده. RGB خفنش برای گیمرای باکلاس جذابه و میکروفونش برای چت عالیه. فوم مموریش برای گیمای طولانی راحته و خستت نمی‌کنه!",
-    img: "https://example.com/voidrgb.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.CNzCTdCwLGyRCoeGO1M6wwHaGd&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.-rIfdGxOXgKXHuTBbnuQpQHaHa&pid=15.1",
+    ],
     quantity: 14,
     price: 4700000,
     category: "headset",
@@ -1681,7 +2063,10 @@ export const products = [
     title: "Turtle Beach Stealth 500",
     description:
       "هدست Turtle Beach که با صدای باس‌دارش اکشن گیما رو هیجانی‌تر می‌کنه و غرقت می‌کنه. اتصال وایرلسش برای گیمرای پرتحرک عالیه و میکروفونش صداتو شفاف می‌کنه. قیمت مناسبش برای گیمرای اقتصادی یه گنجه!",
-    img: "https://example.com/stealth500.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.T3Wv6pZ9l281uKQJjJZftAHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.R0IHB1Wt66H7xrODCgOcuQHaHa&pid=15.1",
+    ],
     quantity: 20,
     price: 4200000,
     category: "headset",
@@ -1695,7 +2080,10 @@ export const products = [
     title: "Sennheiser EPOS H6Pro",
     description:
       "هدست Sennheiser که با صدای اوپن‌بکش جزئیات گیم رو بهت نشون می‌ده و غرقت می‌کنه. میکروفون جداشدنی‌ش برای چت تیمی عالیه و طراحی سبکش برای گیمای طولانی راحته. کیفیت صداش برای audiophile‌ها حرف نداره!",
-    img: "https://example.com/h6pro.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.PNczFLi028-Z_leFUY3jKAHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.HDE0wnleK6pgocfvCRRHWAHaHT&pid=15.1",
+    ],
     quantity: 11,
     price: 5900000,
     category: "headset",
@@ -1709,7 +2097,10 @@ export const products = [
     title: "Razer Kaira Pro",
     description:
       "هدست Razer که با hapticش لرزشای گیم رو حس می‌کنی و هیجانشو دو برابر می‌کنه. صدای THXش تو رو تو گیم غرق می‌کنه و میکروفونش برای چت تیمی عالیه. اتصال چندپلتفرمیش برای گیمرای همه‌فن‌حریف یه انتخاب خفنه!",
-    img: "https://example.com/kairapro.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.TeiBMeK26wX1IZmNoP1xKgHaKT&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.ZLZxStDfyY2jLfeuBkIM8gHaFj&pid=15.1",
+    ],
     quantity: 17,
     price: 5100000,
     category: "headset",
@@ -1723,7 +2114,10 @@ export const products = [
     title: "SteelSeries Arctis 9 Wireless",
     description:
       "هدست SteelSeries با اتصال دوگانه Bluetooth و 2.4GHz که برای گیم و موسیقی عالیه. صدای شفافش تو رو تو گیم می‌بره و میکروفونش صداتو کریستالی می‌کنه. باتری ۲۰ ساعته‌ش برای گیمرای پرمشغله کافیه!",
-    img: "https://example.com/arctis9.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.V_MoQxZyFAJik-zPP-JangHaFj&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.6fZ2z-sgaYfJEvxlV89S5AHaGh&pid=15.1",
+    ],
     quantity: 15,
     price: 4800000,
     category: "headset",
@@ -1737,7 +2131,10 @@ export const products = [
     title: "Logitech G435 Lightspeed",
     description:
       "هدست Logitech که با وزن فوق‌سبکش برای گیمای طولانی راحته و خستت نمی‌کنه. صدای شفافش جزئیات گیم رو نشون می‌ده و میکروفونش برای چت تیمی عالیه. قیمت مناسبش برای گیمرای جوون یه انتخاب باحاله!",
-    img: "https://example.com/g435.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.VM55BdCypHAkQ08J_bgztgHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.ewaoXEkFrPGG9cClVatQXAHaHa&pid=15.1",
+    ],
     quantity: 22,
     price: 3900000,
     category: "headset",
@@ -1751,7 +2148,10 @@ export const products = [
     title: "HyperX Cloud Flight S",
     description:
       "هدست HyperX با صدای 7.1 که تو رو تو گیم غرق می‌کنه و جزئیات رو نشون می‌ده. باتری ۳۰ ساعته‌ش برای گیمرای پرمشغله کافیه و میکروفونش برای چت تیمی عالیه. طراحی ساده‌ش برای گیمرای مینیمال حرف نداره!",
-    img: "https://example.com/cloudflights.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.RwubBeWV_pelOKxJF1lUDAHaFs&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.Zb-8PS1hJyYVMWlsWxiRYQHaHa&pid=15.1",
+    ],
     quantity: 18,
     price: 4500000,
     category: "headset",
@@ -1765,7 +2165,10 @@ export const products = [
     title: "Corsair HS65 Surround",
     description:
       "هدست Corsair که با صدای فراگیرش تو رو وسط گیم می‌بره و هیجانشو زیاد می‌کنه. میکروفون جداشدنی‌ش برای چت تیمی عالیه و فوم مموریش راحتی رو تضمین می‌کنه. قیمت مناسبش برای گیمرای اقتصادی یه گنجه!",
-    img: "https://example.com/hs65.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.7oPcYp8a566bveqg1UN3HAHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.XLdJd5gZL9iH1zUrSZ70VQHaIK&pid=15.1",
+    ],
     quantity: 16,
     price: 4300000,
     category: "headset",
@@ -1779,7 +2182,10 @@ export const products = [
     title: "Turtle Beach Stealth Pro",
     description:
       "هدست Turtle Beach با ANC که نویز رو بلاک می‌کنه و تمرکزت رو تو گیم بالا می‌بره. صدای پانچی‌ش اکشن گیما رو جذاب‌تر می‌کنه و میکروفونش برای استریم عالیه. باتری ۳۰ ساعته‌ش برای گیمرای حرفه‌ای حرف نداره!",
-    img: "https://example.com/stealthpro.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.zjYhPBkJbDoaYVjBRP9MUAHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.uCgVCDbCQc1Xzn0bbrI_3QHaEK&pid=15.1",
+    ],
     quantity: 13,
     price: 5700000,
     category: "headset",
@@ -1793,12 +2199,15 @@ export const products = [
     title: "Sennheiser Momentum 4 Gaming",
     description:
       "هدست Sennheiser که با صدای audiophileش برای گیم و موسیقی معرکه‌ست و غرقت می‌کنه. باتری ۶۰ ساعته‌ش برای گیمرای تنبل عالیه و میکروفونش صداتو شفاف می‌کنه. طراحی شیکش برای گیمرای باکلاس یه انتخاب خفنه!",
-    img: "https://example.com/momentum4.jpg",
-    quantity: 10,
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.I3Uwb1mw1iB6CCF8pC2-FgHaDw&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.7Q8Mm84HxBuFOAN-4LxBBAHaHa&pid=15.1",
+    ],
+    quantity: 0,
     price: 6300000,
     category: "headset",
     creator: "Sennheiser",
-    stock: true,
+    stock: false,
     discount: 10,
     rating: 4.9,
     releaseYear: 2024,
@@ -1807,7 +2216,10 @@ export const products = [
     title: "Razer BlackShark V2 Hyperspeed",
     description:
       "هدست Razer که با درایورای Titaniumش صدای خفنی بهت می‌ده و تو گیم غرقت می‌کنه. میکروفونش برای چت تیمی بی‌نقصه و وزن سبکش برای گیمای طولانی راحته. اتصال چندکاره‌ش برای گیمرای پرتحرک یه گنجه!",
-    img: "https://example.com/hyperspeed.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.FFKkmMz2Xy2ALmQOe6RQgwHaGw&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.LobnPibNQ8PIsmZsmewW1AHaHa&pid=15.1",
+    ],
     quantity: 20,
     price: 4600000,
     category: "headset",
@@ -1821,7 +2233,10 @@ export const products = [
     title: "SteelSeries Arctis 7P+",
     description:
       "هدست SteelSeries که با صدای شفافش برای گیمای PS5 عالیه و جزئیات رو نشون می‌ده. باتری ۳۰ ساعته‌ش برای گیمرای پرمشغله کافیه و میکروفونش صداتو کریستالی می‌کنه. طراحی ارگونومیکش برای گیمای طولانی راحته!",
-    img: "https://example.com/arctis7p.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.ycyEAwWdAVZhsEIBuPwqggHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.aiHFqW87JLuioOcu5sWyhAHaIs&pid=15.1",
+    ],
     quantity: 17,
     price: 4700000,
     category: "headset",
@@ -1835,7 +2250,10 @@ export const products = [
     title: "Logitech G Astro A10 Gen 2",
     description:
       "هدست اقتصادی Logitech که با صدای شفافش برای گیمای رقابتی عالیه و دشمناتو پیدا می‌کنی. میکروفونش برای چت تیمی بی‌نقصه و طراحی سبکش برای گیمرای جوون حرف نداره. قیمت مناسبش برای بودجه کم یه انتخاب باحاله!",
-    img: "https://example.com/astroa10.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.0LSZx4BQMgd-TgbW4R7aAAHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.AFS4JX7Rp55fD2ghFEQUWAHaHa&pid=15.1",
+    ],
     quantity: 24,
     price: 3700000,
     category: "headset",
@@ -1849,7 +2267,10 @@ export const products = [
     title: "HyperX CloudX Stinger Core",
     description:
       "هدست HyperX که با صدای باس‌دارش اکشن گیما رو هیجانی‌تر می‌کنه و غرقت می‌کنه. میکروفون چرخانش برای چت تیمی عالیه و وزن سبکش راحتی رو تضمین می‌کنه. برای گیمرای Xbox یه انتخاب اقتصادی و خفنه!",
-    img: "https://example.com/cloudx.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.OVBswd9QRILLEFjisO77PwHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.1PHqVeKhZkjeWFZ7w1EyKwHaHa&pid=15.1",
+    ],
     quantity: 19,
     price: 3900000,
     category: "headset",
@@ -1863,7 +2284,10 @@ export const products = [
     title: "Corsair HS55 Wireless",
     description:
       "هدست Corsair که با صدای فراگیرش تو رو تو گیم می‌بره و جزئیات رو نشون می‌ده. اتصال وایرلسش برای گیمرای پرتحرک عالیه و میکروفونش صداتو شفاف می‌کنه. طراحی سبکش برای گیمای طولانی راحته و خستت نمی‌کنه!",
-    img: "https://example.com/hs55.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.7N4MIwb4OiEAHs9Ex6PmtQHaIs&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.7N4MIwb4OiEAHs9Ex6PmtQHaIs&pid=15.1",
+    ],
     quantity: 16,
     price: 4400000,
     category: "headset",
@@ -1877,7 +2301,10 @@ export const products = [
     title: "Turtle Beach Recon 500",
     description:
       "هدست Turtle Beach که با درایورای ۶۰ میلی‌متریش صدای پانچی بهت می‌ده و تو گیم غرقت می‌کنه. میکروفونش برای چت تیمی بی‌نقصه و طراحی ساده‌ش برای گیمرای مینیمال حرف نداره. قیمت مناسبش برای گیمرای اقتصادی یه گنجه!",
-    img: "https://example.com/recon500.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.reMDdCVVjIIe-rEJZJ83LAAAAA&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.WKTg7vn8F0pl4kh_d79vPAHaHa&pid=15.1",
+    ],
     quantity: 21,
     price: 4100000,
     category: "headset",
@@ -1891,7 +2318,10 @@ export const products = [
     title: "Sennheiser GSP 370",
     description:
       "هدست Sennheiser با باتری ۱۰۰ ساعته که برای گیمرای تنبل معرکه‌ست و تو رو تنها نمی‌ذاره. صدای شفافش جزئیات گیم رو نشون می‌ده و میکروفونش برای چت تیمی عالیه. طراحی ارگونومیکش برای گیمای طولانی راحته!",
-    img: "https://example.com/gsp370.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.QYNU0rj-cdWPdyNQj6f6ewHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.r7q02R7GyGT6bXixNiRPHwHaHa&pid=15.1",
+    ],
     quantity: 12,
     price: 5400000,
     category: "headset",
@@ -1905,12 +2335,15 @@ export const products = [
     title: "Razer Kraken X",
     description:
       "هدست اقتصادی Razer که با صدای 7.1 تو رو تو گیم غرق می‌کنه و دشمناتو پیدا می‌کنی. میکروفونش برای چت تیمی بی‌نقصه و وزن سبکش برای گیمای طولانی راحته. برای گیمرای با بودجه کم یه انتخاب خفنه!",
-    img: "https://example.com/krakenx.jpg",
-    quantity: 25,
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.8B-RWnzPS6VWzt7kXfaV5QHaD4&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.sluvkGEk12MVRzDdApJuGAHaJf&pid=15.1",
+    ],
+    quantity: 0,
     price: 3800000,
     category: "headset",
     creator: "Razer",
-    stock: true,
+    stock: false,
     discount: 15,
     rating: 4.2,
     releaseYear: 2023,
@@ -1919,7 +2352,10 @@ export const products = [
     title: "SteelSeries Arctis 1 Wireless",
     description:
       "هدست SteelSeries که با اتصال وایرلسش برای گیمرای پرتحرک عالیه و آزادی می‌ده. صدای شفافش تو رو تو گیم می‌بره و میکروفونش صداتو شفاف می‌کنه. طراحی ساده‌ش برای گیمرای مینیمال حرف نداره!",
-    img: "https://example.com/arctis1.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.jaGJXySKSLXjbp-4T3DWpQAAAA&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.E4boqkShucy7Ze6rH012gQHaHa&pid=15.1",
+    ],
     quantity: 18,
     price: 4200000,
     category: "headset",
@@ -1933,7 +2369,10 @@ export const products = [
     title: "Logitech G533 Wireless",
     description:
       "هدست Logitech که با صدای 7.1 تو رو تو گیم غرق می‌کنه و جزئیات رو نشون می‌ده. باتری ۱۵ ساعته‌ش برای گیمرای پرمشغله کافیه و میکروفونش برای چت تیمی عالیه. طراحی مشکی‌ش برای گیمرای باکلاس یه انتخاب باحاله!",
-    img: "https://example.com/g533.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.8N5bhq25H6xJU360JUbbdAHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.L7rKJX7KGnVR-2mLVPX-pgHaH7&pid=15.1",
+    ],
     quantity: 20,
     price: 4500000,
     category: "headset",
@@ -1947,7 +2386,10 @@ export const products = [
     title: "HyperX Cloud MIX",
     description:
       "هدست HyperX که با اتصال دوگانه Bluetooth و سیمی برای گیم و موسیقی عالیه. صدای شفافش تو رو تو گیم می‌بره و میکروفونش صداتو کریستالی می‌کنه. طراحی شیکش برای گیمرای چندکاره یه انتخاب خفنه!",
-    img: "https://example.com/cloudmix.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.IsuRZdVbzuJXTaG-qnjykAHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.Pl-bImYpawA-gfw9EjSanAHaHa&pid=15.1",
+    ],
     quantity: 15,
     price: 4800000,
     category: "headset",
@@ -1961,7 +2403,10 @@ export const products = [
     title: "Corsair HS70 Pro",
     description:
       "هدست Corsair که با صدای فراگیرش تو رو وسط گیم می‌بره و هیجانشو زیاد می‌کنه. میکروفون جداشدنی‌ش برای چت تیمی عالیه و فوم مموریش راحتی رو تضمین می‌کنه. باتری ۱۶ ساعته‌ش برای گیمرای پرمشغله کافیه!",
-    img: "https://example.com/hs70pro.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.mPGIkUNBBwWPwUi8WE-WygHaHp&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.nkhXsZVak2ObsmmcNpU7EQHaHa&pid=15.1",
+    ],
     quantity: 17,
     price: 4600000,
     category: "headset",
@@ -1975,7 +2420,10 @@ export const products = [
     title: "Turtle Beach Elite Atlas Aero",
     description:
       "هدست Turtle Beach که با صدای Waves Nx تو رو تو گیم غرق می‌کنه و جزئیات رو نشون می‌ده. میکروفونش برای چت تیمی بی‌نقصه و طراحی ارگونومیکش برای گیمای طولانی راحته. برای گیمرای حرفه‌ای یه انتخاب توپه!",
-    img: "https://example.com/eliteatlas.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.yIYOtw1lWRpkDWPGRSQxoQHaGC&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.n1E8zJOvMZebIgqPQcDrEAHaHa&pid=15.1",
+    ],
     quantity: 14,
     price: 5100000,
     category: "headset",
@@ -1989,7 +2437,10 @@ export const products = [
     title: "Razer Huntsman V3 Pro",
     description:
       "کیبورد گیمینگ Razer با سوئیچای اپتیکال که سرعتت رو تو گیم مثل رعد و برق می‌کنه. نورپردازی Chroma RGBش چشاتو می‌گیره و بدنه آلومینیومش حس پریمیوم بودن می‌ده. برای گیمرای رقابتی که دنبال دقت و سرعتن، یه انتخاب خفنه!",
-    img: "https://example.com/huntsmanv3pro.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.oWMv07qHSOiqYcexInFZwQHaD4&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.HNvxjYRoxy5IwmujnbYGIAHaF3&pid=15.1",
+    ],
     quantity: 20,
     price: 6200000,
     category: "keyboard",
@@ -2003,7 +2454,10 @@ export const products = [
     title: "SteelSeries Apex Pro TKL (2024)",
     description:
       "کیبورد SteelSeries با سوئیچای OmniPoint که فاصله فعال‌سازیش رو خودت تنظیم می‌کنی و می‌ترکونی. صفحه OLEDش دستوراتت رو سریع نشون می‌ده و RGBش برای گیمرای شب‌زنده‌دار عالیه. طراحی جمع‌وجورش برای تورنمنتا یه گنجه!",
-    img: "https://example.com/apexpro2024.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.1KCzT0wSvAiJWt2VSwI7wwHaGu&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.Bbe95BadFoxyJdBHGv-5DwHaIn&pid=15.1",
+    ],
     quantity: 15,
     price: 6800000,
     category: "keyboard",
@@ -2017,7 +2471,10 @@ export const products = [
     title: "Logitech G915 TKL Lightspeed",
     description:
       "کیبورد وایرلس Logitech که با سوئیچای کم‌ارتفاعش تایپ و گیم زدن رو نرم‌تر می‌کنه. باتری ۴۰ ساعته‌ش تو رو تو گیم تنها نمی‌ذاره و RGBش با گیمات هماهنگ می‌شه. بدنه آلومینیومش برای گیمرای باکلاس یه انتخاب شیکه!",
-    img: "https://example.com/g915tkl.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.nK_HAZZTmgg8RRZX3ZRy4gHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.9aaoYZcuPUqcIEM3AGLHpwHaHa&pid=15.1",
+    ],
     quantity: 18,
     price: 5500000,
     category: "keyboard",
@@ -2031,7 +2488,10 @@ export const products = [
     title: "HyperX Alloy Origins 2",
     description:
       "کیبورد HyperX با سوئیچای مکانیکال خودش که حس کلیک رضایت‌بخشی می‌ده و گیماتو می‌ترکونه. نورپردازی RGBش چشاتو می‌گیره و بدنه فلزیش استحکام بالایی داره. برای گیمرای اقتصادی که دنبال کیفیتن، یه انتخاب توپه!",
-    img: "https://example.com/alloyorigins2.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.nK_HAZZTmgg8RRZX3ZRy4gHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.9aaoYZcuPUqcIEM3AGLHpwHaHa&pid=15.1",
+    ],
     quantity: 22,
     price: 4500000,
     category: "keyboard",
@@ -2045,7 +2505,10 @@ export const products = [
     title: "Corsair K100 RGB Optical",
     description:
       "کیبورد Corsair با سوئیچای اپتیکال که سرعت واکنشش تو گیم دیوونته می‌کنه. صفحه AXONش برای ماکروهای پیچیده عالیه و RGB پویاش اتاقتو قشنگ‌تر می‌کنه. بدنه آلومینیوم و wrist restش برای گیمای طولانی حرف نداره!",
-    img: "https://example.com/k100rgb.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.JJCVCE9_gzJlClOlREqDDwHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.Xema-csgk5aS09Wy99DRJwHaEh&pid=15.1",
+    ],
     quantity: 14,
     price: 6700000,
     category: "keyboard",
@@ -2059,12 +2522,15 @@ export const products = [
     title: "Keychron K8 Pro",
     description:
       "کیبورد Keychron که با سوئیچای hot-swap خودش بهت آزادی انتخاب می‌ده و تایپ رو لذت‌بخش می‌کنه. اتصال وایرلس و سیمی‌ش برای گیم و کار عالیه و RGBش حس گیمری می‌ده. برای تایپیست‌ها و گیمرای چندکاره یه انتخاب خفنه!",
-    img: "https://example.com/k8pro.jpg",
-    quantity: 17,
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.sDcUYl9AbU6Su1EUmP6FOQHaFj&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.H85q9XfLFLuF1aPG2-a0vAHaFj&pid=15.1",
+    ],
+    quantity: 0,
     price: 4800000,
     category: "keyboard",
     creator: "Keychron",
-    stock: true,
+    stock: false,
     discount: 10,
     rating: 4.7,
     releaseYear: 2024,
@@ -2073,7 +2539,10 @@ export const products = [
     title: "Ducky One 3 SF",
     description:
       "کیبورد جمع‌وجور Ducky که با سوئیچای Cherry MXش حس تایپ کلاسیک می‌ده و گیماتو می‌ترکونه. رنگای پاستلیش چشاتو می‌گیره و بدنه محکمش برای حمل و نقل عالیه. برای گیمرای مینیمال و خاص‌پسند یه گنجه!",
-    img: "https://example.com/duckyone3sf.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.2DhU3JsHaL1UtmJBecvCPAHaE8&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.L0eR3soYmdMAWc5izZcKdQAAAA&pid=15.1",
+    ],
     quantity: 12,
     price: 5100000,
     category: "keyboard",
@@ -2087,7 +2556,10 @@ export const products = [
     title: "Razer BlackWidow V4 X",
     description:
       "کیبورد Razer با سوئیچای مکانیکال سبز که کلیکای خفنش تو گیم و تایپ دیوونته می‌کنه. نورپردازی RGBش با گیمات سینک می‌شه و wrist restش برای گیمای طولانی راحته. برای گیمرای پرسرعت یه انتخاب باحاله!",
-    img: "https://example.com/blackwidowv4x.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.6yQzUErp0F5HIjqVSWCetwHaD4&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.WMoVwVlftyBRzjndjY5z1QHaE8&pid=15.1",
+    ],
     quantity: 19,
     price: 5600000,
     category: "keyboard",
@@ -2101,8 +2573,11 @@ export const products = [
     title: "SteelSeries Apex 9 Mini",
     description:
       "کیبورد SteelSeries با سوئیچای اپتیکال که سرعتت رو تو گیم به اوج می‌رسونه و می‌ترکونی. طراحی ۶۰٪‌ش برای میزای شلوغ عالیه و RGBش حس گیمری می‌ده. برای گیمرای تورنمنت‌باز یه انتخاب جمع‌وجوره!",
-    img: "https://example.com/apex9mini.jpg",
-    quantity: 16,
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.GrMk96qs5YLdv0zylrb4JAHaD3&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.uiYM1terJJXn4rXotIExcAHaHa&pid=15.1",
+    ],
+    quantity: 0,
     price: 4900000,
     category: "keyboard",
     creator: "SteelSeries",
@@ -2115,7 +2590,10 @@ export const products = [
     title: "Logitech G713 TKL",
     description:
       "کیبورد Logitech با سوئیچای لمسی که تایپ و گیم زدن رو نرم و لذت‌بخش می‌کنه. نورپردازی RGBش با رنگای پاستلی چشاتو می‌گیره و بدنه سبکش برای حمل راحته. برای گیمرای جوون و تایپیست‌ها یه انتخاب شیکه!",
-    img: "https://example.com/g713tkl.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.kzG_Prm5zgaTQV__i1hY5AHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.dUHOIGQ3BMFfvKCxunt9CQHaHa&pid=15.1",
+    ],
     quantity: 13,
     price: 5200000,
     category: "keyboard",
@@ -2129,7 +2607,10 @@ export const products = [
     title: "HyperX Alloy Elite 3",
     description:
       "کیبورد HyperX با سوئیچای Red که سرعتت رو تو گیم بالا می‌بره و حس خوبی می‌ده. RGB خفنش چشاتو نوازش می‌کنه و بدنه فلزیش استحکام بالایی داره. برای گیمرای رقابتی که دنبال کیفیتن، یه انتخاب توپه!",
-    img: "https://example.com/alloyelite3.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.5r93tQj0xmFjHd6COteN5gHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.2Q4Vozlv92qyvFomqdCuqQHaF7&pid=15.1",
+    ],
     quantity: 21,
     price: 4700000,
     category: "keyboard",
@@ -2143,7 +2624,10 @@ export const products = [
     title: "Corsair K70 RGB Pro",
     description:
       "کیبورد Corsair با سوئیچای Cherry MX که حس کلیک کلاسیک می‌ده و گیماتو می‌ترکونه. نورپردازی RGBش با نرم‌افزار iCUE تنظیم می‌شه و بدنه آلومینیومش محکمه. wrist rest مغناطیسیش برای گیمای طولانی یه گنجه!",
-    img: "https://example.com/k70rgbpro.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.FVcyEyUxbQFBhARGywR2yQHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.L8KvA9EsParvPf5d_6wCjwHaEy&pid=15.1",
+    ],
     quantity: 15,
     price: 5800000,
     category: "keyboard",
@@ -2157,8 +2641,11 @@ export const products = [
     title: "Keychron Q1 Pro",
     description:
       "کیبورد Keychron با بدنه تمام فلزی که حس پریمیوم بودن می‌ده و تایپ رو لذت‌بخش می‌کنه. سوئیچای hot-swapش بهت آزادی انتخاب می‌ده و RGBش برای گیم و کار عالیه. اتصال وایرلسش برای گیمرای چندکاره حرف نداره!",
-    img: "https://example.com/q1pro.jpg",
-    quantity: 18,
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.YFhM7jiz3EI_ZdKVqoaABQHaEK&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.b3c8Cfs48RIm-tqvfa-pbAHaEK&pid=15.1",
+    ],
+    quantity: 0,
     price: 5300000,
     category: "keyboard",
     creator: "Keychron",
@@ -2171,7 +2658,10 @@ export const products = [
     title: "Ducky Shine 8",
     description:
       "کیبورد Ducky با سوئیچای Gateron که تایپ و گیم زدن رو نرم‌تر می‌کنه و حس خوبی می‌ده. نورپردازی RGBش چشاتو می‌گیره و طراحی شیکش برای گیمرای خاص‌پسند عالیه. بدنه محکمش برای سال‌ها مثل روز اول می‌مونه!",
-    img: "https://example.com/shine8.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.2K7d5jwNA38AYVhJuAD3iQHaFV&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.b3c8Cfs48RIm-tqvfa-pbAHaEK&pid=15.1",
+    ],
     quantity: 10,
     price: 5900000,
     category: "keyboard",
@@ -2185,7 +2675,10 @@ export const products = [
     title: "Razer DeathStalker V2 Pro",
     description:
       "کیبورد Razer با سوئیچای اپتیکال کم‌ارتفاع که سرعتت رو تو گیم به اوج می‌رسونه. نورپردازی RGBش با گیمات سینک می‌شه و اتصال وایرلسش برای گیمرای پرتحرک عالیه. بدنه باریکش برای میزای شلوغ یه انتخاب خفنه!",
-    img: "https://example.com/deathstalkerv2.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.9EzCoGvQctkxY4F4ndQvOgHaD4&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.J3W1sx4iOLyzNGusI7nZBgHaDa&pid=15.1",
+    ],
     quantity: 23,
     price: 6500000,
     category: "keyboard",
@@ -2199,7 +2692,10 @@ export const products = [
     title: "SteelSeries Apex 5",
     description:
       "کیبورد SteelSeries با سوئیچای هیبریدی که حس مکانیکال و ممبرین رو قاطی می‌کنه و گیماتو می‌ترکونه. صفحه OLEDش دستوراتت رو نشون می‌ده و RGBش حس گیمری می‌ده. برای گیمرای اقتصادی که دنبال امکاناتن، یه انتخاب باحاله!",
-    img: "https://example.com/apex5.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.fAoj2DMiSwQRkibYPLay9AHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.-j7uVNYvXrJg14H_1eusMgHaFo&pid=15.1",
+    ],
     quantity: 16,
     price: 4600000,
     category: "keyboard",
@@ -2213,7 +2709,10 @@ export const products = [
     title: "Logitech G413 SE",
     description:
       "کیبورد Logitech با سوئیچای Tactile که حس تایپ کلاسیک می‌ده و برای گیم و کار عالیه. بدنه آلومینیومش استحکام بالایی داره و نور سفیدش چشاتو اذیت نمی‌کنه. برای گیمرای مینیمال یه انتخاب ساده و خفنه!",
-    img: "https://example.com/g413se.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.LHxkH1rvNK96dlN_GvGbSgHaE8&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.N29V5LqN3KNNQdtXQ6Z2cwHaHa&pid=15.1",
+    ],
     quantity: 19,
     price: 4200000,
     category: "keyboard",
@@ -2227,8 +2726,10 @@ export const products = [
     title: "HyperX Alloy FPS Max",
     description:
       "کیبورد HyperX با سوئیچای Blue که کلیکای خفنش تایپ و گیم زدن رو لذت‌بخش می‌کنه. بدنه فلزیش محکمه و نورپردازی RGBش چشاتو می‌گیره. برای گیمرای رقابتی که دنبال دقتن، یه انتخاب توپه!",
-    img: "https://example.com/alloyfpsmax.jpg",
-    quantity: 25,
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.LHxkH1rvNK96dlN_GvGbSgHaE8&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.N29V5LqN3KNNQdtXQ6Z2cwHaHa&pid=15.1",
+    ],
     price: 4800000,
     category: "keyboard",
     creator: "HyperX",
@@ -2241,7 +2742,10 @@ export const products = [
     title: "Corsair K95 RGB Platinum XT",
     description:
       "کیبورد Corsair با سوئیچای Cherry MX که حس کلیک رضایت‌بخشی می‌ده و گیماتو می‌ترکونه. ماکروهای اختصاصیش برای گیمرای حرفه‌ای عالیه و RGBش با گیمات سینک می‌شه. wrist rest چرمش برای گیمای طولانی یه گنجه!",
-    img: "https://example.com/k95xt.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.fAoj2DMiSwQRkibYPLay9AHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.-j7uVNYvXrJg14H_1eusMgHaFo&pid=15.1",
+    ],
     quantity: 14,
     price: 6100000,
     category: "keyboard",
@@ -2255,7 +2759,10 @@ export const products = [
     title: "Keychron K10 Pro",
     description:
       "کیبورد Keychron با سوئیچای Red که تایپ و گیم زدن رو نرم‌تر می‌کنه و حس خوبی می‌ده. اتصال وایرلس و سیمی‌ش برای گیمرای چندکاره عالیه و RGBش چشاتو نوازش می‌کنه. بدنه آلومینیومش برای سال‌ها مثل روز اول می‌مونه!",
-    img: "https://example.com/k10pro.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.5r93tQj0xmFjHd6COteN5gHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.2Q4Vozlv92qyvFomqdCuqQHaF7&pid=15.1",
+    ],
     quantity: 20,
     price: 5400000,
     category: "keyboard",
@@ -2269,7 +2776,10 @@ export const products = [
     title: "Ducky Mecha Mini V2",
     description:
       "کیبورد Ducky با طراحی ۶۰٪ که برای میزای شلوغ عالیه و سوئیچای Cherryش گیماتو می‌ترکونه. نورپردازی RGBش چشاتو می‌گیره و بدنه فلزیش استحکام بالایی داره. برای گیمرای تورنمنت‌باز یه انتخاب جمع‌وجوره!",
-    img: "https://example.com/mechamini.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.sxscJs9uGXUIw5GaXjs6EAHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.QxLx2fCg7VMASBNw6kupOQAAAA&pid=15.1",
+    ],
     quantity: 11,
     price: 5700000,
     category: "keyboard",
@@ -2283,7 +2793,10 @@ export const products = [
     title: "Razer Ornata V3 X",
     description:
       "کیبورد Razer با سوئیچای هیبریدی که حس مکانیکال و ممبرین رو قاطی می‌کنه و تایپ رو لذت‌بخش می‌کنه. نورپردازی RGBش با گیمات سینک می‌شه و wrist restش برای گیمای طولانی راحته. برای گیمرای اقتصادی یه انتخاب باحاله!",
-    img: "https://example.com/ornatav3x.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.uF0AO6xNlpeiLlXmlGO61wHaD4&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.qba5Hq6a-mmCwkW6Gt3IMAHaHa&pid=15.1",
+    ],
     quantity: 17,
     price: 4300000,
     category: "keyboard",
@@ -2297,7 +2810,10 @@ export const products = [
     title: "SteelSeries Apex 7 TKL",
     description:
       "کیبورد SteelSeries با سوئیچای Red که سرعتت رو تو گیم بالا می‌بره و حس خوبی می‌ده. صفحه OLEDش دستوراتت رو نشون می‌ده و RGBش برای گیمرای شب‌زنده‌دار عالیه. طراحی جمع‌وجورش برای تورنمنتا یه گنجه!",
-    img: "https://example.com/apex7tkl.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.5r93tQj0xmFjHd6COteN5gHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.2Q4Vozlv92qyvFomqdCuqQHaF7&pid=15.1",
+    ],
     quantity: 15,
     price: 5100000,
     category: "keyboard",
@@ -2311,7 +2827,10 @@ export const products = [
     title: "Logitech G512 Carbon",
     description:
       "کیبورد Logitech با سوئیچای GX Blue که کلیکای خفنش گیم و تایپ رو لذت‌بخش می‌کنه. نورپردازی RGBش با نرم‌افزار G HUB تنظیم می‌شه و بدنه آلومینیومش محکمه. برای گیمرای رقابتی یه انتخاب ساده و خفنه!",
-    img: "https://example.com/g512carbon.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.h6LVBBotAq2F_SL8yUTgCAHaEQ&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.tmKOaoTMOF8ulHPx_EBfXAHaVz&pid=15.1",
+    ],
     quantity: 22,
     price: 4600000,
     category: "keyboard",
@@ -2325,7 +2844,10 @@ export const products = [
     title: "HyperX Alloy Core RGB",
     description:
       "کیبورد HyperX با سوئیچای ممبرین که حس تایپ نرم می‌ده و برای گیم و کار عالیه. نورپردازی RGBش چشاتو می‌گیره و بدنه محکمش برای استفاده روزمره کافیه. برای گیمرای اقتصادی یه انتخاب باحاله!",
-    img: "https://example.com/alloycore.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.paWWstSCuCoKcci-96VSvQHaGk&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.8fYP5NtP7meE80JpIBjZRQHaDc&pid=15.1",
+    ],
     quantity: 18,
     price: 3900000,
     category: "keyboard",
@@ -2339,7 +2861,10 @@ export const products = [
     title: "Corsair K60 RGB Pro SE",
     description:
       "کیبورد Corsair با سوئیچای Cherry Viola که حس کلیک رضایت‌بخشی می‌ده و گیماتو می‌ترکونه. نورپردازی RGBش با iCUE تنظیم می‌شه و wrist restش برای گیمای طولانی راحته. برای گیمرای باکلاس یه انتخاب شیکه!",
-    img: "https://example.com/k60prose.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.EuEEyEWpwEYjTw3Er-lZcQHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.x-F6d9UR2o1lUZRuQQ2o5QHaEG&pid=15.1",
+    ],
     quantity: 16,
     price: 4900000,
     category: "keyboard",
@@ -2353,12 +2878,15 @@ export const products = [
     title: "Keychron C3 Pro",
     description:
       "کیبورد Keychron با سوئیچای Brown که تایپ و گیم زدن رو نرم‌تر می‌کنه و حس خوبی می‌ده. نورپردازی قرمز یا RGBش برای گیمرای مینیمال عالیه و بدنه محکمش استحکام بالایی داره. برای تایپیست‌ها و گیمرای اقتصادی یه انتخاب توپه!",
-    img: "https://example.com/c3pro.jpg",
-    quantity: 13,
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.EuEEyEWpwEYjTw3Er-lZcQHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.EuEEyEWpwEYjTw3Er-lZcQHaHa&pid=15.1",
+    ],
+    quantity: 0,
     price: 4500000,
     category: "keyboard",
     creator: "Keychron",
-    stock: true,
+    stock: false,
     discount: 12,
     rating: 4.5,
     releaseYear: 2024,
@@ -2367,7 +2895,10 @@ export const products = [
     title: "Ducky One 2 RGB TKL",
     description:
       "کیبورد Ducky با سوئیچای Cherry MX که حس تایپ کلاسیک می‌ده و گیماتو می‌ترکونه. نورپردازی RGBش چشاتو نوازش می‌کنه و طراحی جمع‌وجورش برای میزای شلوغ عالیه. برای گیمرای خاص‌پسند یه انتخاب خفنه!",
-    img: "https://example.com/duckyone2tkl.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.0R_6elkEDp5DY-b7T3SINwHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.5eZgqhcl1xob3heMXNFHPgHaHa&pid=15.1",
+    ],
     quantity: 20,
     price: 5300000,
     category: "keyboard",
@@ -2381,7 +2912,10 @@ export const products = [
     title: "Razer Pro Type Ultra",
     description:
       "کیبورد Razer با سوئیچای Yellow که تایپ و گیم زدن رو بی‌صدا و نرم می‌کنه. اتصال وایرلسش برای گیمرای پرتحرک عالیه و نور سفیدش چشاتو اذیت نمی‌کنه. برای کار و گیم یه انتخاب مینیمال و شیکه!",
-    img: "https://example.com/protypeultra.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.s8zlIIBUKgOKZc2WPCNneAHaD4&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.cfiVlYF7FcdSiiLIQB91YwHaE8&pid=15.1",
+    ],
     quantity: 17,
     price: 5700000,
     category: "keyboard",
@@ -2395,7 +2929,10 @@ export const products = [
     title: "SteelSeries Apex 3 TKL",
     description:
       "کیبورد SteelSeries با سوئیچای ممبرین که حس تایپ نرم می‌ده و برای گیم و کار عالیه. نورپردازی RGBش چشاتو می‌گیره و بدنه ضدآبش برای گیمرای دست‌وپاچلفتی یه گنجه! طراحی جمع‌وجورش برای تورنمنتا حرف نداره!",
-    img: "https://example.com/apex3tkl.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.afZWtP6wpwaxp8ZHsU9KEQHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.3ECozuJ3kKd6T1QAeDovvgHaE7&pid=15.1",
+    ],
     quantity: 15,
     price: 4200000,
     category: "keyboard",
@@ -2409,7 +2946,10 @@ export const products = [
     title: "Logitech G213 Prodigy",
     description:
       "کیبورد Logitech با سوئیچای ممبرین که حس تایپ رضایت‌بخشی می‌ده و برای گیم و کار کافیه. نورپردازی RGBش با گیمات سینک می‌شه و بدنه محکمش برای استفاده روزمره عالیه. برای گیمرای اقتصادی یه انتخاب باحاله!",
-    img: "https://example.com/g213prodigy.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.uLAJLVWORUvNQ2YJHsVJFAHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.IWdM44EiKYwKlXF4F_nekAHaHa&pid=15.1",
+    ],
     quantity: 24,
     price: 3800000,
     category: "keyboard",
@@ -2423,7 +2963,10 @@ export const products = [
     title: "HyperX Alloy Rise",
     description:
       "کیبورد HyperX با سوئیچای hot-swap که بهت آزادی انتخاب می‌ده و گیماتو می‌ترکونه. نورپردازی RGBش چشاتو نوازش می‌کنه و بدنه فلزیش استحکام بالایی داره. برای گیمرای حرفه‌ای که دنبال انعطافن، یه انتخاب خفنه!",
-    img: "https://example.com/alloyrise.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.5r93tQj0xmFjHd6COteN5gHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.2Q4Vozlv92qyvFomqdCuqQHaF7&pid=15.1",
+    ],
     quantity: 19,
     price: 5100000,
     category: "keyboard",
@@ -2437,12 +2980,15 @@ export const products = [
     title: "Corsair K55 RGB Pro XT",
     description:
       "کیبورد Corsair با سوئیچای ممبرین که حس تایپ نرم می‌ده و برای گیم و کار عالیه. ماکروهای اختصاصیش برای گیمرای حرفه‌ای کافیه و RGBش چشاتو می‌گیره. wrist restش برای گیمای طولانی راحته و خستت نمی‌کنه!",
-    img: "https://example.com/k55proxt.jpg",
-    quantity: 16,
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.ZF30XdQvySMnNKQxud0rDwHaHS&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.jymkg0ibP2TN-y5adWsx9wHaEn&pid=15.1",
+    ],
+    quantity: 0,
     price: 4400000,
     category: "keyboard",
     creator: "Corsair",
-    stock: true,
+    stock: false,
     discount: 12,
     rating: 4.4,
     releaseYear: 2024,
@@ -2451,12 +2997,15 @@ export const products = [
     title: "Keychron K14",
     description:
       "کیبورد Keychron با سوئیچای Gateron که تایپ و گیم زدن رو لذت‌بخش می‌کنه و حس خوبی می‌ده. اتصال وایرلسش برای گیمرای پرتحرک عالیه و RGBش برای شب‌زنده‌داری حرف نداره. طراحی ۷۰٪‌ش برای میزای شلوغ یه انتخاب باحاله!",
-    img: "https://example.com/k14.jpg",
-    quantity: 14,
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.ZF30XdQvySMnNKQxud0rDwHaHS&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.jymkg0ibP2TN-y5adWsx9wHaEn&pid=15.1",
+    ],
+    quantity: 0,
     price: 4900000,
     category: "keyboard",
     creator: "Keychron",
-    stock: true,
+    stock: false,
     discount: 10,
     rating: 4.5,
     releaseYear: 2023,
@@ -2465,7 +3014,10 @@ export const products = [
     title: "Ducky Feather",
     description:
       "کیبورد Ducky با سوئیچای Cherry MX که حس تایپ کلاسیک می‌ده و گیماتو می‌ترکونه. وزن سبکش برای حمل و نقل عالیه و نورپردازی RGBش چشاتو می‌گیره. برای گیمرای تورنمنت‌باز یه انتخاب جمع‌وجور و خفنه!",
-    img: "https://example.com/duckyfeather.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.vLts01XQpBZ5aTdGQ-96aQHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.p_zD3VaZjmLNKaQt36dcQAHaHa&pid=15.1",
+    ],
     quantity: 21,
     price: 5600000,
     category: "keyboard",
@@ -2479,7 +3031,10 @@ export const products = [
     title: "Razer DeathAdder V3 Pro",
     description:
       "موس Razer با سنسور 30K که دقتش تو گیم مثل لیزر می‌مونه و دشمناتو نابود می‌کنه. وزن ۶۳ گرمیش انگار پره تو دستته و باتری وایرلسش تا ۹۰ ساعت گیماتو نگه می‌داره. برای گیمرای رقابتی که دنبال سرعت و دقتن، یه انتخاب خفنه!",
-    img: "https://example.com/deathadderv3pro.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.C_fvI0la9WT9eNLyICLOswHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.J_0I79km7ggAT3PEyx_yCgAAAA&pid=15.1",
+    ],
     quantity: 20,
     price: 4800000,
     category: "mouse",
@@ -2493,7 +3048,10 @@ export const products = [
     title: "Logitech G Pro X Superlight 2",
     description:
       "موس Logitech با وزن ۶۰ گرم که مثل باد تو دستت حرکت می‌کنه و گیماتو می‌ترکونه. سنسور HERO 2ش دقت دیوونه‌کننده‌ای داره و باتری ۹۵ ساعته‌ش برای ماراتون گیمینگ عالیه. برای گیمرای حرفه‌ای تورنمنت یه گنجه!",
-    img: "https://example.com/gproxsuperlight2.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.Au8o_jEUwS1sYU1xM5c_2QHaFj&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.m7L0QT_eO8aQ9tJRFRdczAHaFj&pid=15.1",
+    ],
     quantity: 15,
     price: 5200000,
     category: "mouse",
@@ -2507,7 +3065,10 @@ export const products = [
     title: "SteelSeries Aerox 5 Wireless",
     description:
       "موس SteelSeries با طراحی سوراخ‌دار که وزن ۷۴ گرمیش تو رو تو گیم سبک نگه می‌داره. سنسور TrueMove Airش دقت بالایی داره و RGBش چشاتو می‌گیره. برای گیمرای چندکاره که دکمه‌های زیاد می‌خوان، یه انتخاب باحاله!",
-    img: "https://example.com/aerox5.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.gqZeXNBceq6HHw4Jx4CTvQHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.bpMKXKb-ZE0aAT_V-DEcuAHaJD&pid=15.1",
+    ],
     quantity: 18,
     price: 4500000,
     category: "mouse",
@@ -2521,7 +3082,10 @@ export const products = [
     title: "Corsair Darkstar Wireless",
     description:
       "موس Corsair با ۶ دکمه کناری که ماکروهات رو تو گیم مثل جادو اجرا می‌کنه. سنسور 26Kش دقتشو به اوج می‌رسونه و RGB خفنش اتاقتو قشنگ‌تر می‌کنه. باتری ۸۰ ساعته‌ش برای گیمرای شب‌زنده‌دار حرف نداره!",
-    img: "https://example.com/darkstar.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.BMxi2XgUngMFBCbQM9yzBAHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.HSdzbnknswBi0eZmCu6mWAHaE4&pid=15.1",
+    ],
     quantity: 14,
     price: 4900000,
     category: "mouse",
@@ -2535,7 +3099,10 @@ export const products = [
     title: "HyperX Pulsefire Haste 2",
     description:
       "موس HyperX با وزن ۵۳ گرم که مثل پر تو دستت می‌چرخه و گیماتو می‌ترکونه. سنسور 26Kش دقت بالایی داره و طراحی سوراخ‌دارش برای گیمای سریع عالیه. برای گیمرای رقابتی که دنبال سبکی و سرعتن، یه انتخاب توپه!",
-    img: "https://example.com/pulsefirehaste2.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.C_fvI0la9WT9eNLyICLOswHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.58YC-9ejjFGjva3soaFirAHaHa&pid=15.1",
+    ],
     quantity: 22,
     price: 4200000,
     category: "mouse",
@@ -2549,7 +3116,10 @@ export const products = [
     title: "Razer Basilisk V3 X Hypershift",
     description:
       "موس Razer با دکمه‌های قابل برنامه‌ریزی که استایل گیمینگت رو به اوج می‌رسونه. سنسور 18Kش دقت خوبی داره و RGB Chromaش با گیمات سینک می‌شه. برای گیمرای چندکاره که دنبال انعطافن، یه انتخاب خفنه!",
-    img: "https://example.com/basiliskv3x.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.Q_Dc6k7ZKNyV4z3-3wdQawHaG7&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.a6ubyux4ogHYuyKu_gFdGgHaJM&pid=15.1",
+    ],
     quantity: 17,
     price: 4600000,
     category: "mouse",
@@ -2563,7 +3133,10 @@ export const products = [
     title: "Logitech G502 X Plus",
     description:
       "موس Logitech با سوئیچای اپتیکال که کلیکاتو سریع‌تر می‌کنه و گیماتو می‌ترکونه. سنسور HERO 25Kش دقت دیوونه‌کننده‌ای داره و RGBش حس گیمری می‌ده. وزن قابل تنظیمش برای هر گیمری یه گنجه!",
-    img: "https://example.com/g502xplus.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.PUrULofeRMAkXPussQKhsgHaFj&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.MXKbF_TPb9YHhfWlDVyVEgHaHa&pid=15.1",
+    ],
     quantity: 12,
     price: 5100000,
     category: "mouse",
@@ -2577,7 +3150,10 @@ export const products = [
     title: "SteelSeries Rival 5",
     description:
       "موس SteelSeries با ۹ دکمه که برای گیمای MMO و FPS عالیه و دستت رو پر می‌کنه. سنسور TrueMove Coreش دقت خوبی داره و طراحی ارگونومیکش برای گیمای طولانی راحته. RGB خفنش برای گیمرای باکلاس یه انتخاب باحاله!",
-    img: "https://example.com/rival5.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.yyABYT3XoO9m8GMnVaeangHaIw&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.AbcfQgO3ZHnH4cEZ7NuMuQHaE7&pid=15.1",
+    ],
     quantity: 19,
     price: 4300000,
     category: "mouse",
@@ -2591,7 +3167,10 @@ export const products = [
     title: "Corsair Scimitar Elite Wireless",
     description:
       "موس Corsair با ۱۲ دکمه کناری که برای گیمرای MMO مثل جادو عمل می‌کنه و ماکروهاتو می‌ترکونه. سنسور 26Kش دقت بالایی داره و باتری وایرلسش تا ۱۲۰ ساعت دووم میاره. برای گیمرای حرفه‌ای که دنبال امکاناتن، یه انتخاب خفنه!",
-    img: "https://example.com/scimitarwireless.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.DXdpdoYkKxyiiI6az04sewHaFI&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.2eFz-Fx5Nye5bZ-BdCjvDgHaHa&pid=15.1",
+    ],
     quantity: 16,
     price: 5500000,
     category: "mouse",
@@ -2605,7 +3184,10 @@ export const products = [
     title: "HyperX Pulsefire Dart",
     description:
       "موس HyperX با شارژ وایرلس که دستت رو تو گیم آزاد نگه می‌داره و گیماتو می‌ترکونه. سنسور 16Kش دقت خوبی داره و RGBش چشاتو نوازش می‌کنه. برای گیمرای اقتصادی که دنبال راحتی وایرلسن، یه انتخاب توپه!",
-    img: "https://example.com/pulsefiredart.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.9dbEpMXhCJ4dqCw4tRuvXwHaFj&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.mC-llyZiM_yoFaAwGMJZ1AHaGk&pid=15.1",
+    ],
     quantity: 13,
     price: 4500000,
     category: "mouse",
@@ -2619,7 +3201,10 @@ export const products = [
     title: "Razer Viper V3 Hyperspeed",
     description:
       "موس Razer با وزن ۵۹ گرم که مثل باد تو دستت می‌چرخه و برای گیمای سریع عالیه. سنسور 30Kش دقت لیزری داره و باتری AAش تا ۲۸۰ ساعت گیماتو نگه می‌داره. برای گیمرای رقابتی یه انتخاب سبک و خفنه!",
-    img: "https://example.com/viperv3hyperspeed.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.fgMnlJ3POj2f3gT6CmdU1wHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.JJTq1jxipuW1XiDZd7uOHQHaF-&pid=15.1",
+    ],
     quantity: 21,
     price: 4700000,
     category: "mouse",
@@ -2633,7 +3218,10 @@ export const products = [
     title: "Logitech G305 Lightspeed",
     description:
       "موس Logitech با سنسور HERO که دقت خوبی داره و برای گیمای سریع کافیه. باتری AAش تا ۲۵۰ ساعت دووم میاره و وزن سبکش برای گیمرای پرتحرک عالیه. برای گیمرای اقتصادی که وایرلس می‌خوان، یه گنجه!",
-    img: "https://example.com/g305.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.o7AQ67bm6ljZtXydYu-OTAHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP._TW9hebSkIww5XoqkluuPwHaHa&pid=15.1",
+    ],
     quantity: 25,
     price: 3900000,
     category: "mouse",
@@ -2647,7 +3235,10 @@ export const products = [
     title: "SteelSeries Aerox 9 Wireless",
     description:
       "موس SteelSeries با ۱۸ دکمه که برای گیمای MMO و MOBA مثل یه ارتش تو دستته. سنسور TrueMove Airش دقت بالایی داره و طراحی سوراخ‌دارش وزن رو کم می‌کنه. باتری ۱۸۰ ساعته‌ش برای گیمرای هاردکور حرف نداره!",
-    img: "https://example.com/aerox9.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP._UZ-gDWmfDXbPtm1i5QPYQHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.peSJwTo7YYQtOtvkHaSQyAHaHa&pid=15.1",
+    ],
     quantity: 15,
     price: 5300000,
     category: "mouse",
@@ -2661,7 +3252,10 @@ export const products = [
     title: "Corsair Katar Elite Wireless",
     description:
       "موس Corsair با وزن ۶۹ گرم که برای گیمای سریع عالیه و دستت رو خسته نمی‌کنه. سنسور 26Kش دقت لیزری داره و باتری وایرلسش تا ۱۱۰ ساعت گیماتو نگه می‌داره. برای گیمرای رقابتی که دنبال سبکی و سرعتن، یه انتخاب باحاله!",
-    img: "https://example.com/katarelite.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.ZRfzpYjtvH1_HDipQE11lwHaFF&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.5k7ppLz8rrrVJ5zMbnAnZwHaHa&pid=15.1",
+    ],
     quantity: 18,
     price: 4600000,
     category: "mouse",
@@ -2675,7 +3269,10 @@ export const products = [
     title: "HyperX Pulsefire Raid",
     description:
       "موس HyperX با ۱۱ دکمه که برای گیمای چندکاره مثل MMO و FPS عالیه و ماکروهاتو می‌ترکونه. سنسور 16Kش دقت خوبی داره و طراحی ارگونومیکش برای گیمای طولانی راحته. برای گیمرای اقتصادی که دکمه زیاد می‌خوان، یه انتخاب توپه!",
-    img: "https://example.com/pulsefireraid.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.9AItWwTaYqaDbsvWfzwywQHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.8gSmuGFhRAGSnTLnwZ8Z1gHaFP&pid=15.1",
+    ],
     quantity: 20,
     price: 4100000,
     category: "mouse",
@@ -2689,7 +3286,10 @@ export const products = [
     title: "Razer Naga V2 Pro",
     description:
       "موس Razer با پنل‌های جداشدنی که برای MMO و FPS تطبیق‌پذیره و گیماتو می‌ترکونه. سنسور 30Kش دقت دیوونه‌کننده‌ای داره و باتری وایرلسش تا ۱۵۰ ساعت دووم میاره. برای گیمرای چندکاره که انعطاف می‌خوان، یه گنجه!",
-    img: "https://example.com/nagav2pro.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.1BC5rOKzFuHyEry7yhPPlgHaE2&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.z1m-sS-ZkFAqvLJasKqYCwHaLE&pid=15.1",
+    ],
     quantity: 16,
     price: 5800000,
     category: "mouse",
@@ -2703,12 +3303,15 @@ export const products = [
     title: "Logitech G703 Lightspeed",
     description:
       "موس Logitech با سنسور HERO 25K که دقت بالایی داره و برای گیمای رقابتی کافیه. شارژ وایرلسش با پد Powerplay عالیه و طراحی ارگونومیکش دستت رو خسته نمی‌کنه. برای گیمرای حرفه‌ای که راحتی می‌خوان، یه انتخاب خفنه!",
-    img: "https://example.com/g703.jpg",
-    quantity: 14,
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.eCDkQx92gBu0AiPKQ5EMUwHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.eWibrIiejTnVIrKIw6rsHwHaHa&pid=15.1",
+    ],
+    quantity: 0,
     price: 4700000,
     category: "mouse",
     creator: "Logitech",
-    stock: true,
+    stock: false,
     discount: 8,
     rating: 4.6,
     releaseYear: 2023,
@@ -2717,7 +3320,10 @@ export const products = [
     title: "SteelSeries Prime Wireless",
     description:
       "موس SteelSeries با سنسور TrueMove Pro که دقتش تو گیم مثل لیزر می‌مونه و دشمناتو پیدا می‌کنه. وزن ۸۰ گرمیش برای گیمای سریع عالیه و باتری ۱۰۰ ساعته‌ش گیماتو نگه می‌داره. برای گیمرای تورنمنت‌باز یه انتخاب باحاله!",
-    img: "https://example.com/primewireless.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.cRzXJIEyuLqe3IRSDou_pwHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.2Hi-4CQTChwf-4auF_RlJQHaE7&pid=15.1",
+    ],
     quantity: 19,
     price: 4900000,
     category: "mouse",
@@ -2731,7 +3337,10 @@ export const products = [
     title: "Corsair Sabre RGB Pro",
     description:
       "موس Corsair با سنسور 18K که دقت خوبی داره و برای گیمای سریع کافیه. وزن ۷۴ گرمیش دستت رو آزاد نگه می‌داره و RGBش چشاتو نوازش می‌کنه. برای گیمرای اقتصادی که دنبال عملکردن، یه انتخاب توپه!",
-    img: "https://example.com/sabrergbpro.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.yyABYT3XoO9m8GMnVaeangHaIw&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.AbcfQgO3ZHnH4cEZ7NuMuQHaE7&pid=15.1",
+    ],
     quantity: 13,
     price: 4200000,
     category: "mouse",
@@ -2745,7 +3354,10 @@ export const products = [
     title: "HyperX Pulsefire Surge",
     description:
       "موس HyperX با سنسور 16K که دقتش تو گیم خوبه و گیماتو می‌ترکونه. RGB 360 درجه‌ش چشاتو می‌گیره و طراحی ارگونومیکش برای گیمای طولانی راحته. برای گیمرای باکلاس که دنبال استایلن، یه گنجه!",
-    img: "https://example.com/pulsefiresurge.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.yyABYT3XoO9m8GMnVaeangHaIw&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.AbcfQgO3ZHnH4cEZ7NuMuQHaE7&pid=15.1",
+    ],
     quantity: 17,
     price: 4300000,
     category: "mouse",
@@ -2759,7 +3371,10 @@ export const products = [
     title: "Razer Orochi V2",
     description:
       "موس Razer با وزن ۶۰ گرم که برای گیمرای پرتحرک عالیه و تو کیف جا می‌شه. سنسور 18Kش دقت خوبی داره و باتری دوگانه‌ش تا ۹۵۰ ساعت دووم میاره. برای گیمرای اقتصادی که وایرلس می‌خوان، یه انتخاب خفنه!",
-    img: "https://example.com/orochiv2.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.cRzXJIEyuLqe3IRSDou_pwHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.2Hi-4CQTChwf-4auF_RlJQHaE7&pid=15.1",
+    ],
     quantity: 23,
     price: 4100000,
     category: "mouse",
@@ -2773,7 +3388,10 @@ export const products = [
     title: "Logitech G903 Lightspeed",
     description:
       "موس Logitech با سنسور HERO 25K که دقت لیزری داره و برای گیمای رقابتی عالیه. شارژ وایرلسش با Powerplay تو رو تو گیم نگه می‌داره و دکمه‌های قابل تنظیمش انعطاف می‌ده. برای گیمرای حرفه‌ای یه انتخاب باحاله!",
-    img: "https://example.com/g903.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.yyABYT3XoO9m8GMnVaeangHaIw&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.AbcfQgO3ZHnH4cEZ7NuMuQHaE7&pid=15.1",
+    ],
     quantity: 11,
     price: 5600000,
     category: "mouse",
@@ -2787,7 +3405,10 @@ export const products = [
     title: "SteelSeries Sensei Ten",
     description:
       "موس SteelSeries با سنسور TrueMove Pro که دقتش تو گیم مثل ساعت کار می‌کنه و دشمناتو پیدا می‌کنه. طراحی دوطرفه‌ش برای چپ‌دستا و راست‌دستا عالیه و وزن ۹۲ گرمیش راحته. برای گیمرای کلاسیک یه انتخاب خفنه!",
-    img: "https://example.com/senseiten.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.yyABYT3XoO9m8GMnVaeangHaIw&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.AbcfQgO3ZHnH4cEZ7NuMuQHaE7&pid=15.1",
+    ],
     quantity: 16,
     price: 4500000,
     category: "mouse",
@@ -2801,7 +3422,10 @@ export const products = [
     title: "Corsair Ironclaw RGB Wireless",
     description:
       "موس Corsair با سنسور 18K که دقت خوبی داره و برای گیمای چندکاره کافیه. طراحی ارگونومیکش برای دستای بزرگ عالیه و باتری وایرلسش تا ۵۰ ساعت گیماتو نگه می‌داره. برای گیمرای MMO که راحتی می‌خوان، یه گنجه!",
-    img: "https://example.com/ironclaw.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.cRzXJIEyuLqe3IRSDou_pwHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.2Hi-4CQTChwf-4auF_RlJQHaE7&pid=15.1",
+    ],
     quantity: 20,
     price: 4700000,
     category: "mouse",
@@ -2815,7 +3439,10 @@ export const products = [
     title: "HyperX Pulsefire Core",
     description:
       "موس HyperX با سنسور 6K که دقتش برای گیمای روزمره کافیه و گیماتو می‌ترکونه. RGB ساده‌ش چشاتو نوازش می‌کنه و طراحی ارگونومیکش دستت رو خسته نمی‌کنه. برای گیمرای اقتصادی که دنبال کیفیتن، یه انتخاب باحاله!",
-    img: "https://example.com/pulsefirecore.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.9AItWwTaYqaDbsvWfzwywQHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.8gSmuGFhRAGSnTLnwZ8Z1gHaFP&pid=15.1",
+    ],
     quantity: 18,
     price: 3800000,
     category: "mouse",
@@ -2829,7 +3456,10 @@ export const products = [
     title: "ASUS ROG Swift PG27UQX",
     description:
       "مانیتور 27 اینچی ASUS با رزولوشن 4K که چشاتو با جزئیات دیوونه‌کننده‌ش غرق می‌کنه. رفرش‌ریت 165Hz و G-Syncش گیماتو نرم‌تر از ابریشم می‌کنه. برای گیمرای حرفه‌ای که دنبال بهترینن، یه انتخاب خفنه!",
-    img: "https://example.com/pg27uqx.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.bktTlVEBn8Rn9dx3uOzp9wHaFj&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.wvfkxGBc9npaZlIqtFjayAHaGl&pid=15.1",
+    ],
     quantity: 15,
     price: 28500000,
     category: "monitor",
@@ -2843,7 +3473,10 @@ export const products = [
     title: "Acer Predator X28",
     description:
       "مانیتور 28 اینچی Acer با رفرش‌ریت 155Hz که گیمای سریع رو مثل باد نشون می‌ده. پنل IPSش رنگای زنده‌ای داره و HDRش چشاتو می‌گیره. برای گیمرای رقابتی که دقت و سرعت می‌خوان، یه گنجه!",
-    img: "https://example.com/predatorx28.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.SCGW36Ss_MNTTdtZAU6YFQHaGE&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.9BZF46_Xb6suaot5D4v33AHaFj&pid=15.1",
+    ],
     quantity: 12,
     price: 24500000,
     category: "monitor",
@@ -2857,7 +3490,10 @@ export const products = [
     title: "LG UltraGear 32GP850",
     description:
       "مانیتور 32 اینچی LG با رزولوشن QHD که گیماتو با رفرش‌ریت 180Hz می‌ترکونه. پنل Nano IPSش رنگا رو مثل نقاشی نشون می‌ده و زمان پاسخگویی 1msش برای گیمای سریع عالیه. برای گیمرای باکلاس یه انتخاب شیکه!",
-    img: "https://example.com/32gp850.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.Occ6Ag6Iw_x1JSXtHvLq0wHaE6&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.uQBO8yNqaJgDu6K0q2NSXAHaEK&pid=15.1",
+    ],
     quantity: 18,
     price: 22500000,
     category: "monitor",
@@ -2871,7 +3507,10 @@ export const products = [
     title: "Samsung Odyssey G7 (2024)",
     description:
       "مانیتور 27 اینچی Samsung با پنل QLED که رنگا رو مثل واقعیت نشون می‌ده و چشاتو می‌گیره. رفرش‌ریت 240Hz و انحنای 1000Rش گیماتو غرق‌کننده می‌کنه. برای گیمرای حرفه‌ای که دنبال سرعت و کیفیتن، یه انتخاب توپه!",
-    img: "https://example.com/odysseyg7.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.NeQ6i3Ig0LXOSB44iGw0uQHaF6&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.kooFmjVY0NQHXQxUKpSpDQHaE7&pid=15.1",
+    ],
     quantity: 14,
     price: 26500000,
     category: "monitor",
@@ -2885,7 +3524,10 @@ export const products = [
     title: "MSI Optix MAG274QRF",
     description:
       "مانیتور 27 اینچی MSI با رزولوشن QHD که با رفرش‌ریت 165Hz گیماتو نرم و روان می‌کنه. پنل IPSش زاویه دید خفنی داره و RGB پشتش حس گیمری می‌ده. برای گیمرای اقتصادی که کیفیت می‌خوان، یه گنجه!",
-    img: "https://example.com/mag274qrf.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.Cm18c2u1NMzkT-EmgXomngHaF7&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.0DGmJQEYTTHKzPQL0q95XQHaF7&pid=15.1",
+    ],
     quantity: 20,
     price: 19500000,
     category: "monitor",
@@ -2899,7 +3541,10 @@ export const products = [
     title: "BenQ Zowie XL2566K",
     description:
       "مانیتور 24.5 اینچی BenQ با رفرش‌ریت 360Hz که برای گیمرای esports مثل رعد و برق عمل می‌کنه. پنل TNش زمان پاسخگویی 0.5ms داره و دقتش دشمناتو نابود می‌کنه. برای تورنمنت‌بازای حرفه‌ای یه انتخاب خفنه!",
-    img: "https://example.com/xl2566k.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.xHO5nHXT-MbFhwXX9fyc8gHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.Vo3f04VJy3gDJJ7gNlIkFwHaHa&pid=15.1",
+    ],
     quantity: 16,
     price: 23500000,
     category: "monitor",
@@ -2913,7 +3558,10 @@ export const products = [
     title: "Dell Alienware AW3423DWF",
     description:
       "مانیتور 34 اینچی Dell با پنل QD-OLED که رنگای مشکی عمیق و زنده‌ای بهت می‌ده. رزولوشن UWQHD و رفرش‌ریت 175Hz گیماتو غرق‌کننده می‌کنه. برای گیمرای لوکس‌پسند که دنبال کیفیتن، یه انتخاب شیکه!",
-    img: "https://example.com/aw3423dwf.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.jdeMCXiBs2qRxZTl-6JOUAHaEK&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.wsV7imOb8BgPmCLECMGS1wHaHa&pid=15.1",
+    ],
     quantity: 13,
     price: 32500000,
     category: "monitor",
@@ -2927,7 +3575,10 @@ export const products = [
     title: "ASUS TUF VG27AQ3A",
     description:
       "مانیتور 27 اینچی ASUS با رزولوشن QHD که رفرش‌ریت 180Hzش گیماتو نرم‌تر از کره می‌کنه. پنل IPSش رنگا رو دقیق نشون می‌ده و FreeSyncش لگ رو نابود می‌کنه. برای گیمرای اقتصادی که عملکرد می‌خوان، یه انتخاب باحاله!",
-    img: "https://example.com/vg27aq3a.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.xCby3g0KbOhJsl2HxtvFGgHaHa&pid=15.1.1",
+      "https://ts2.mm.bing.net/th?id=OIP.QxVdsYrZvUt6V46GcTj2vwHaFj&pid=15.1",
+    ],
     quantity: 19,
     price: 18500000,
     category: "monitor",
@@ -2941,12 +3592,15 @@ export const products = [
     title: "Acer Nitro XV272U",
     description:
       "مانیتور 27 اینچی Acer با رفرش‌ریت 170Hz که گیمای سریع رو مثل باد نشون می‌ده. پنل IPSش زاویه دید خفنی داره و HDR10ش رنگا رو زنده‌تر می‌کنه. برای گیمرای با بودجه متوسط یه انتخاب توپه!",
-    img: "https://example.com/xv272u.jpg",
-    quantity: 17,
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.mevS3lyhtVeU30rgpL2WUQHaFj&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.-Lh5KbQYZgRmO4s1X49ldwHaFj&pid=15.1",
+    ],
+    quantity: 0,
     price: 20500000,
     category: "monitor",
     creator: "Acer",
-    stock: true,
+    stock: false,
     discount: 10,
     rating: 4.6,
     releaseYear: 2023,
@@ -2955,7 +3609,10 @@ export const products = [
     title: "LG UltraGear 27GR95QE",
     description:
       "مانیتور 27 اینچی LG با پنل OLED که رنگای مشکی عمیق و کنتراست دیوونه‌کننده‌ای داره. رفرش‌ریت 240Hz و زمان پاسخگویی 0.03ms گیماتو به اوج می‌بره. برای گیمرای پریمیوم که بهترینو می‌خوان، یه گنجه!",
-    img: "https://example.com/27gr95qe.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.18a2G3eiR9JM6ZHtOEQAZwHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.ovc2bfXwE0qFsqVEw4zcJwHaHa&pid=15.1",
+    ],
     quantity: 11,
     price: 34500000,
     category: "monitor",
@@ -2969,7 +3626,10 @@ export const products = [
     title: "Samsung Odyssey Neo G8",
     description:
       "مانیتور 32 اینچی Samsung با رزولوشن 4K که Mini-LEDش روشنایی و رنگا رو به اوج می‌رسونه. رفرش‌ریت 240Hz و انحنای 1000R گیماتو غرق‌کننده می‌کنه. برای گیمرای لوکس‌پسند یه انتخاب خفنه!",
-    img: "https://example.com/odysseyneog8.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.xhxe7-3y1nHnVvkCFd7XPwHaE7&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.xqOn01sw7ZSsr8VwFjqA3wHaE8&pid=15.1",
+    ],
     quantity: 14,
     price: 38500000,
     category: "monitor",
@@ -2983,7 +3643,10 @@ export const products = [
     title: "MSI MAG321CURV",
     description:
       "مانیتور 32 اینچی MSI با انحنای 1500R که گیماتو فراگیر می‌کنه و چشاتو می‌گیره. رزولوشن 4K و رفرش‌ریت 144Hzش برای گیمای سنگین عالیه. برای گیمرای اقتصادی که دنبال کیفیتن، یه انتخاب باحاله!",
-    img: "https://example.com/mag321curv.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.Ojyyh7EnAruJdDGakohtYAHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.jCRh2tF3k5H55eHszEMYZAHaHa&pid=15.1",
+    ],
     quantity: 20,
     price: 21500000,
     category: "monitor",
@@ -2997,7 +3660,10 @@ export const products = [
     title: "BenQ Mobiuz EX2710U",
     description:
       "مانیتور 27 اینچی BenQ با رزولوشن 4K که HDRiش رنگا رو زنده‌تر می‌کنه و گیماتو می‌ترکونه. رفرش‌ریت 144Hz و اسپیکرای داخلیش برای گیم و سرگرمی عالیه. برای گیمرای چندکاره یه انتخاب شیکه!",
-    img: "https://example.com/ex2710u.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.iE8k_oDv8om1tw-422fmEAHaCR&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.WzUPYlBirTPMk0131AaiIAHaEI&pid=15.1",
+    ],
     quantity: 16,
     price: 25500000,
     category: "monitor",
@@ -3011,7 +3677,10 @@ export const products = [
     title: "Dell UltraSharp U2724DE",
     description:
       "مانیتور 27 اینچی Dell با رزولوشن QHD که پنل IPSش رنگا رو دقیق نشون می‌ده و گیماتو قشنگ می‌کنه. رفرش‌ریت 120Hz و پورتای متنوعش برای کار و گیم عالیه. برای گیمرای مینیمال که کیفیت می‌خوان، یه گنجه!",
-    img: "https://example.com/u2724de.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.2SLYVlUzqz3QjXPkKLD1OwHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.sEX_jWYF9IM5XnltOH1DJQHaEK&pid=15.1",
+    ],
     quantity: 18,
     price: 23500000,
     category: "monitor",
@@ -3025,7 +3694,10 @@ export const products = [
     title: "ASUS ROG Strix XG43UQ",
     description:
       "مانیتور 43 اینچی ASUS با رزولوشن 4K که مثل یه سینما گیماتو نشون می‌ده و چشاتو می‌گیره. رفرش‌ریت 144Hz و HDR1000ش برای گیمای سنگین معرکه‌ست. برای گیمرای پریمیوم که دنبال بزرگین، یه انتخاب خفنه!",
-    img: "https://example.com/xg43uq.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.18tnMGShlijDrILlCqcwIwHaFc&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.MR7gpIU0KgeltqtTuodUowHaDx&pid=15.1",
+    ],
     quantity: 10,
     price: 42500000,
     category: "monitor",
@@ -3039,7 +3711,10 @@ export const products = [
     title: "Acer Nitro VG240Y",
     description:
       "مانیتور 24 اینچی Acer با رفرش‌ریت 165Hz که گیمای سریع رو نرم‌تر از ابریشم می‌کنه. پنل IPSش رنگا رو زنده نشون می‌ده و قیمت مناسبش برای گیمرای اقتصادی عالیه. برای گیمای روزمره یه انتخاب باحاله!",
-    img: "https://example.com/vg240y.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.mbcgyNtq3OVBrTpfjP7_-AHaHZ&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.zbzqb-r1sxY22lwemmD6mgHaFi&pid=15.1",
+    ],
     quantity: 22,
     price: 16500000,
     category: "monitor",
@@ -3053,7 +3728,10 @@ export const products = [
     title: "LG UltraGear 34GP950G",
     description:
       "مانیتور 34 اینچی LG با رزولوشن UWQHD که انحنای 1900Rش گیماتو غرق‌کننده می‌کنه. رفرش‌ریت 180Hz و G-Syncش لگ رو نابود می‌کنه و پنل IPSش رنگا رو دقیق می‌کنه. برای گیمرای حرفه‌ای یه انتخاب توپه!",
-    img: "https://example.com/34gp950g.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.G6uLFjE9dwosxYwu6fbAFwHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.5BbskZOsj-Gy7_-hd0JG-AHaHa&pid=15.1",
+    ],
     quantity: 13,
     price: 29500000,
     category: "monitor",
@@ -3067,7 +3745,10 @@ export const products = [
     title: "Samsung Odyssey G5 (2025)",
     description:
       "مانیتور 32 اینچی Samsung با انحنای 1000R که گیماتو فراگیر می‌کنه و چشاتو می‌گیره. رزولوشن QHD و رفرش‌ریت 165Hzش برای گیمای سنگین کافیه. برای گیمرای باکلاس که دنبال استایلن، یه گنجه!",
-    img: "https://example.com/odysseyg5.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.L3NFuZfwefVjuiYip7paKQHaF6&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.bWR9itpFAv0a8J3iT-3BfQAAAA&pid=15.1",
+    ],
     quantity: 17,
     price: 20500000,
     category: "monitor",
@@ -3081,12 +3762,15 @@ export const products = [
     title: "MSI Optix MPG341CQR",
     description:
       "مانیتور 34 اینچی MSI با رزولوشن UWQHD که انحنای 1800Rش گیماتو غرق‌کننده می‌کنه. رفرش‌ریت 144Hz و RGB پشتش حس گیمری می‌ده. برای گیمرای چندکاره که کیفیت می‌خوان، یه انتخاب شیکه!",
-    img: "https://example.com/mpg341cqr.jpg",
-    quantity: 19,
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.VlpbPmH8k6ihZrA-cKRo4QHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.Wr3SLMGOUuEV_j2nN0PX4gHaHa&pid=15.1",
+    ],
+    quantity: 0,
     price: 27500000,
     category: "monitor",
     creator: "MSI",
-    stock: true,
+    stock: false,
     discount: 8,
     rating: 4.7,
     releaseYear: 2023,
@@ -3095,7 +3779,10 @@ export const products = [
     title: "BenQ Zowie XL2746K",
     description:
       "مانیتور 27 اینچی BenQ با رفرش‌ریت 240Hz که برای گیمرای esports مثل رعد و برق عمل می‌کنه. پنل TNش زمان پاسخگویی 0.5ms داره و دقتش دشمناتو نابود می‌کنه. برای تورنمنت‌بازای حرفه‌ای یه انتخاب خفنه!",
-    img: "https://example.com/xl2746k.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.VlpbPmH8k6ihZrA-cKRo4QHaHa&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.Wr3SLMGOUuEV_j2nN0PX4gHaHa&pid=15.1",
+    ],
     quantity: 15,
     price: 24500000,
     category: "monitor",
@@ -3109,7 +3796,10 @@ export const products = [
     title: "Dell Alienware AW2725DF",
     description:
       "مانیتور 27 اینچی Dell با پنل OLED که رنگای مشکی عمیق و زنده‌ای بهت می‌ده. رفرش‌ریت 360Hz و زمان پاسخگویی 0.03ms گیماتو به اوج می‌بره. برای گیمرای پریمیوم که بهترینو می‌خوان، یه گنجه!",
-    img: "https://example.com/aw2725df.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.3g1b73yZpXAyH-Z2hLhLLAHaFw&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.NZSA4MbT6qy_LX6lj4jmxgHaGi&pid=15.1",
+    ],
     quantity: 11,
     price: 36500000,
     category: "monitor",
@@ -3123,7 +3813,10 @@ export const products = [
     title: "ASUS ROG Swift OLED PG32UCDM",
     description:
       "مانیتور 32 اینچی ASUS با پنل OLED که کنتراست دیوونه‌کننده‌ای داره و گیماتو غرق می‌کنه. رزولوشن 4K و رفرش‌ریت 240Hzش برای گیمای سنگین معرکه‌ست. برای گیمرای لوکس‌پسند یه انتخاب خفنه!",
-    img: "https://example.com/pg32ucdm.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.B80bX6S-vhVr5MyLLbzqPwHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.30FQ30oeylkQPGB0gNpLOQHaEb&pid=15.1",
+    ],
     quantity: 14,
     price: 39500000,
     category: "monitor",
@@ -3137,7 +3830,10 @@ export const products = [
     title: "Acer Predator XB323QK",
     description:
       "مانیتور 32 اینچی Acer با رزولوشن 4K که رفرش‌ریت 144Hzش گیماتو نرم‌تر از کره می‌کنه. پنل IPSش رنگا رو دقیق نشون می‌ده و HDR400ش چشاتو می‌گیره. برای گیمرای باکلاس که کیفیت می‌خوان، یه انتخاب باحاله!",
-    img: "https://example.com/xb323qk.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.B2g9MhE3xgMVDqW9DSR92AHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.V_fTETygwgL_Wfb61CmSnAHaId&pid=15.1",
+    ],
     quantity: 16,
     price: 30500000,
     category: "monitor",
@@ -3151,7 +3847,10 @@ export const products = [
     title: "LG UltraGear 38GN950",
     description:
       "مانیتور 38 اینچی LG با رزولوشن UWQHD که انحنای 1900Rش گیماتو فراگیر می‌کنه. رفرش‌ریت 160Hz و G-Syncش لگ رو نابود می‌کنه و پنل Nano IPSش رنگا رو زنده می‌کنه. برای گیمرای حرفه‌ای یه انتخاب توپه!",
-    img: "https://example.com/38gn950.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.v2j8hsw_pSVobYOthWy8zwHaFj&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.ec6-QLFZ4-6LirZniyctMgHaEK&pid=15.1",
+    ],
     quantity: 13,
     price: 33500000,
     category: "monitor",
@@ -3165,7 +3864,10 @@ export const products = [
     title: "Samsung Odyssey Ark (2024)",
     description:
       "مانیتور 55 اینچی Samsung با رزولوشن 4K که مثل یه سفینه فضایی گیماتو نشون می‌ده. رفرش‌ریت 165Hz و انحنای 1000Rش گیماتو غرق‌کننده می‌کنه. برای گیمرای لوکس که دنبال غولن، یه گنجه!",
-    img: "https://example.com/odysseyark.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.LLNnTQoHtXGQ8r0o2dt-UAHaEK&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.-U90na-Bp9T8pwql-kPZIgHaFj&pid=15.1",
+    ],
     quantity: 10,
     price: 58500000,
     category: "monitor",
@@ -3179,7 +3881,10 @@ export const products = [
     title: "MSI Optix G274QPF",
     description:
       "مانیتور 27 اینچی MSI با رزولوشن QHD که رفرش‌ریت 170Hzش گیماتو نرم‌تر از ابریشم می‌کنه. پنل IPSش زاویه دید خفنی داره و قیمت مناسبش برای گیمرای اقتصادی عالیه. برای گیمای روزمره یه انتخاب باحاله!",
-    img: "https://example.com/g274qpf.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.Hu73T5kbFUCqnVOm1O-xAgHaF7&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.gTMtmC35m_zYGoQbhW-5IgHaF7&pid=15.1",
+    ],
     quantity: 21,
     price: 18500000,
     category: "monitor",
@@ -3193,7 +3898,10 @@ export const products = [
     title: "BenQ Mobiuz EX3210R",
     description:
       "مانیتور 32 اینچی BenQ با انحنای 1000R که گیماتو فراگیر می‌کنه و چشاتو می‌گیره. رزولوشن QHD و رفرش‌ریت 165Hzش برای گیمای سنگین کافیه. اسپیکرای داخلیش برای گیمرای چندکاره یه انتخاب شیکه!",
-    img: "https://example.com/ex3210r.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.qKUvHPkN4EVugEUE3R37tQHaHa&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.IoIBz5U9OFcgz6A_PgEfKgHaHa&pid=15.1",
+    ],
     quantity: 17,
     price: 24500000,
     category: "monitor",
@@ -3207,7 +3915,10 @@ export const products = [
     title: "Dell S3222DGM",
     description:
       "مانیتور 32 اینچی Dell با انحنای 1800R که گیماتو غرق‌کننده می‌کنه و چشاتو نوازش می‌ده. رزولوشن QHD و رفرش‌ریت 165Hzش برای گیمای سریع عالیه. برای گیمرای اقتصادی که دنبال کیفیتن، یه انتخاب توپه!",
-    img: "https://example.com/s3222dgm.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.s44j5yNTWrgATMbA6nGz-gHaG2&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.h5JjzUMUmeJ5ujzsnH2lJwHaE_&pid=15.1",
+    ],
     quantity: 19,
     price: 21500000,
     category: "monitor",
@@ -3221,7 +3932,10 @@ export const products = [
     title: "ASUS TUF VG32AQL1A",
     description:
       "مانیتور 32 اینچی ASUS با رزولوشن QHD که رفرش‌ریت 170Hzش گیماتو نرم‌تر از کره می‌کنه. پنل IPSش رنگا رو دقیق نشون می‌ده و HDR10ش چشاتو می‌گیره. برای گیمرای باکلاس که کیفیت می‌خوان، یه گنجه!",
-    img: "https://example.com/vg32aql1a.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.7t2CdFUgEuBOpbPKIcZ_VwHaFj&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.3by0VE3cv145-JD3KlEGiAHaHa&pid=15.1",
+    ],
     quantity: 15,
     price: 25500000,
     category: "monitor",
@@ -3235,7 +3949,10 @@ export const products = [
     title: "Acer Nitro XZ342CU",
     description:
       "مانیتور 34 اینچی Acer با رزولوشن UWQHD که انحنای 1500Rش گیماتو فراگیر می‌کنه. رفرش‌ریت 165Hz و FreeSyncش لگ رو نابود می‌کنه و پنل VAش کنتراست بالایی داره. برای گیمرای اقتصادی یه انتخاب باحاله!",
-    img: "https://example.com/xz342cu.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.Y4LI9pJREMa-KDLijaQdKgHaDt&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.JGsnF4fihqH3j42vccx5mQHaGz&pid=15.1",
+    ],
     quantity: 20,
     price: 22500000,
     category: "monitor",
@@ -3249,7 +3966,10 @@ export const products = [
     title: "LG UltraGear 24GN650",
     description:
       "مانیتور 24 اینچی LG با رفرش‌ریت 144Hz که گیمای سریع رو نرم‌تر از ابریشم می‌کنه. پنل IPSش رنگا رو زنده نشون می‌ده و قیمت مناسبش برای گیمرای اقتصادی عالیه. برای گیمای روزمره یه انتخاب شیکه!",
-    img: "https://example.com/24gn650.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.Jq_6V8VzcTLF4ycV2urcoQHaFj&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.2WMxSsr96htPKszEW-9dQAHaE6&pid=15.1",
+    ],
     quantity: 22,
     price: 17500000,
     category: "monitor",
@@ -3263,12 +3983,16 @@ export const products = [
     title: "Samsung Odyssey G9 Neo",
     description:
       "مانیتور 49 اینچی Samsung با رزولوشن DQHD که مثل یه پرده سینما گیماتو نشون می‌ده. رفرش‌ریت 240Hz و Mini-LEDش روشنایی و رنگا رو به اوج می‌رسونه. برای گیمرای لوکس که دنبال غولن، یه انتخاب خفنه!",
-    img: "https://example.com/odysseyg9neo.jpg",
-    quantity: 12,
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.z2eNen6xQJiEV-MYa_6-eQHaEK&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.AIiWgEC1RrwbfEzYapL4VwHaE8&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.ObeyPBOxF_Gpt_q7ImT2kAHaFj&pid=15.1",
+    ],
+    quantity: 0,
     price: 48500000,
     category: "monitor",
     creator: "Samsung",
-    stock: true,
+    stock: false,
     discount: 10,
     rating: 4.9,
     releaseYear: 2024,
@@ -3277,7 +4001,10 @@ export const products = [
     title: "MSI Optix MAG272CQR",
     description:
       "مانیتور 27 اینچی MSI با انحنای 1500R که گیماتو فراگیر می‌کنه و چشاتو می‌گیره. رزولوشن QHD و رفرش‌ریت 165Hzش برای گیمای سنگین کافیه. برای گیمرای اقتصادی که دنبال استایلن، یه گنجه!",
-    img: "https://example.com/mag272cqr.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.Zl8V5XDHFYmI0VgQe3AxNgHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.2reQLFVny5bNnyDJ-e21EAHaHa&pid=15.1",
+    ],
     quantity: 18,
     price: 19500000,
     category: "monitor",
@@ -3291,7 +4018,10 @@ export const products = [
     title: "BenQ Zowie XL2546X",
     description:
       "مانیتور 24.5 اینچی BenQ با رفرش‌ریت 240Hz که برای گیمرای esports مثل رعد و برق عمل می‌کنه. پنل TNش زمان پاسخگویی 0.5ms داره و دقتش دشمناتو نابود می‌کنه. برای تورنمنت‌بازای حرفه‌ای یه انتخاب باحاله!",
-    img: "https://example.com/xl2546x.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.Qew0fxEHZJLRZjViRgr9mwAAAA&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.6c0h1Z-ml2PrUaYLLLP3sQHaHa&pid=15.1",
+    ],
     quantity: 16,
     price: 22500000,
     category: "monitor",
@@ -3305,7 +4035,10 @@ export const products = [
     title: "Dell Alienware AW5525QF",
     description:
       "مانیتور 55 اینچی Dell با پنل QD-OLED که رنگای مشکی عمیق و زنده‌ای بهت می‌ده. رزولوشن 4K و رفرش‌ریت 240Hz گیماتو به اوج می‌بره. برای گیمرای پریمیوم که دنبال غولن، یه انتخاب خفنه!",
-    img: "https://example.com/aw5525qf.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.Kp3K2j2Ao6YDSenriFv8ZwHaER&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.pqp-WTwsZeFsWXFezjsO5QHaD4&pid=15.1",
+    ],
     quantity: 10,
     price: 59500000,
     category: "monitor",
@@ -3319,7 +4052,10 @@ export const products = [
     title: "Sony PlayStation 5 Pro",
     description:
       "کنسول PS5 Pro با سخت‌افزار خفنش گیمای 4K رو با 60 فریم روان‌تر از ابریشم می‌کنه. تکنولوژی PSSR و GPU 16.7 ترافلاپش گرافیک رو به اوج می‌بره و چشاتو می‌گیره. برای گیمرای حرفه‌ای که دنبال بهترین تجربه‌ن، یه انتخاب توپه!",
-    img: "https://example.com/ps5pro.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.Bd0zUZivnoJaSx6f3TZEBQHaEK&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.XCjlXd_6583d8zK6HkmCuAHaEK&pid=15.1",
+    ],
     quantity: 10,
     price: 32500000,
     category: "console",
@@ -3333,7 +4069,10 @@ export const products = [
     title: "Microsoft Xbox Series X Elite",
     description:
       "کنسول Xbox Series X Elite با SSD سریعش لودینگ رو نابود می‌کنه و گیماتو می‌ترکونه. قدرت 12 ترافلاپ و Quick Resumeش برای گیمرای چندکاره عالیه. Game Pass هم که دیگه بهشت گیمرای اقتصادیه!",
-    img: "https://example.com/xboxseriesxelite.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.Sl_FgoX_24uy81UTP89esQAAAA&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.eiUuNS_sr2NY-7k3g7KADAHaFK&pid=15.1",
+    ],
     quantity: 12,
     price: 29500000,
     category: "console",
@@ -3347,7 +4086,10 @@ export const products = [
     title: "Nintendo Switch 2",
     description:
       "کنسول Nintendo Switch 2 با جوی‌کانای مغناطیسی و بک‌وارد کم‌پتیبیلیتی گیماتو به نسل بعد می‌بره. صفحه OLED بزرگ‌ترش چشاتو نوازش می‌ده و Mario Kart 9 رو باید باهاش امتحان کنی! برای گیمرای پرتابل و نینتندوفن‌ها یه گنجه!",
-    img: "https://example.com/switch2.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIF.7YGmKcAedlvBnPidfergIg&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIF.bMjcRknF02i%2bq40VM6Gozw&pid=15.1",
+    ],
     quantity: 15,
     price: 24500000,
     category: "console",
@@ -3361,7 +4103,10 @@ export const products = [
     title: "Sony PlayStation 5 Slim",
     description:
       "کنسول PS5 Slim با طراحی جمع‌وجورش جا کم می‌گیره ولی گیمای سنگین رو مثل شیر می‌کشه. حافظه 1 ترابایتیش برای جمع کردن کلکسیون بازیت عالیه. برای گیمرای مینیمال که دنبال قدرت تو سایز کوچیک هستن، یه انتخاب خفنه!",
-    img: "https://example.com/ps5slim.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.jPmr35vXOpqBc7jwlYHGrgHaDb&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.fiWjGlPQAX_JhpzRII93tAHaIW&pid=15.1",
+    ],
     quantity: 18,
     price: 28500000,
     category: "console",
@@ -3375,7 +4120,10 @@ export const products = [
     title: "Microsoft Xbox Series S Next",
     description:
       "کنسول Xbox Series S Next با حجم کمش گیمای 1440p رو با فریم‌ریت بالا می‌بره و چشاتو می‌گیره. حافظه ارتقا یافته‌ش برای گیمرای دیجیتال عالیه و قیمتش جیب‌تو خالی نمی‌کنه. برای گیمرای اقتصادی که دنبال عملکردن، یه انتخاب باحاله!",
-    img: "https://example.com/xboxseriesnext.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.PZINrWohH6g9AZJ9FuoVmgHaE-&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.tRT_OKrUqKue9gP506OVOgAAAA&pid=15.1",
+    ],
     quantity: 20,
     price: 19500000,
     category: "console",
@@ -3389,7 +4137,10 @@ export const products = [
     title: "Nintendo Switch OLED",
     description:
       "کنسول Switch OLED با صفحه 7 اینچی زنده‌ش رنگای گیماتو مثل نقاشی نشون می‌ده. باتری بهترش برای گیم زدن تو سفر عالیه و داک جدیدش اتصال رو راحت‌تر می‌کنه. برای نینتندوبازای کلاسیک یه گنجه!",
-    img: "https://example.com/switcholed.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIF.pseFvqrYK93d%2fcmCoW04pw&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIF.aZbkTQrYwy74JY5HIXhNkg&pid=15.1",
+    ],
     quantity: 14,
     price: 18500000,
     category: "console",
@@ -3403,12 +4154,15 @@ export const products = [
     title: "Sony PlayStation 4 Pro Neo",
     description:
       "کنسول PS4 Pro Neo با قدرت 4K و HDR گیمای قدیمی رو دوباره زنده می‌کنه و چشاتو می‌گیره. آپدیت 2023ش عملکرد رو بهتر کرده و هنوزم برای گیمرای اقتصادی می‌درخشه. برای طرفدارای سونی که دنبال نوستالژین، یه انتخاب خفنه!",
-    img: "https://example.com/ps4proneo.jpg",
-    quantity: 16,
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.QdvoIV9xG16FGtpGkf6yGAHaHa&pid=15.1",
+      "https://ts2.mm.bing.net/th?id=OIP.gJlwf32QD_WRxUuTz28OGgHaHa&pid=15.1",
+    ],
+    quantity: 0,
     price: 16500000,
     category: "console",
     creator: "Sony",
-    stock: true,
+    stock: false,
     discount: 12,
     rating: 4.5,
     releaseYear: 2023,
@@ -3417,7 +4171,10 @@ export const products = [
     title: "Microsoft Xbox Series X Halo Edition",
     description:
       "کنسول Xbox Series X Halo Edition با طراحی خفنش برای فنای هیلو یه رویاست و گیماتو می‌ترکونه. قدرت 12 ترافلاپش گیمای سنگین رو مثل آب خوردن می‌بره. باندل اختصاصیش برای کلکسیونرها یه گنجه!",
-    img: "https://example.com/xboxhalo.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.MZyscpb_-iUW6lyZe289awHaHa&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.KA2KdaiaJiMBxS79HMJBYQHaHa&pid=15.1",
+    ],
     quantity: 11,
     price: 31500000,
     category: "console",
@@ -3431,7 +4188,10 @@ export const products = [
     title: "Nintendo Switch Lite Pro",
     description:
       "کنسول Switch Lite Pro با سخت‌افزار ارتقا یافته گیمای پرتابل رو با کیفیت بهتر نشون می‌ده. وزن سبکش برای گیم زدن تو هر جایی عالیه و رنگای جدیدش چشاتو می‌گیره. برای گیمرای جوون و مسافر یه انتخاب باحاله!",
-    img: "https://example.com/switchlitepro.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.eY74EcHeXB0e03mmp6ETAgHaDt&pid=15.1",
+      "https://ts1.mm.bing.net/th?id=OIP.pPviYT-TyDXImXtLGSBalwHaEK&pid=15.1",
+    ],
     quantity: 19,
     price: 15500000,
     category: "console",
@@ -3445,7 +4205,10 @@ export const products = [
     title: "Sony PlayStation 5 Digital Edition",
     description:
       "کنسول PS5 Digital Edition با حذف درایو دیسک قیمت رو پایین نگه می‌داره ولی گیماتو می‌ترکونه. حافظه SSDش لودینگ رو نابود می‌کنه و DualSenseش حس گیم رو به دستات می‌بره. برای گیمرای دیجیتال‌پسند یه انتخاب شیکه!",
-    img: "https://example.com/ps5digital.jpg",
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIP.f8w27Uyc5-G5MTQjRZ6i9QHaG2&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.fiWjGlPQAX_JhpzRII93tAHaIW&pid=15.1",
+    ],
     quantity: 13,
     price: 27500000,
     category: "console",
@@ -3459,7 +4222,10 @@ export const products = [
     title: "Microsoft Xbox Series X Slim",
     description:
       "کنسول Xbox Series X Slim با طراحی باریکش جا کم می‌گیره ولی قدرت 12 ترافلاپش گیماتو به اوج می‌بره. SSD سریعش لودینگ رو غیبش می‌زنه و Game Passش کلکسیون بازیتو پر می‌کنه. برای گیمرای حرفه‌ای که دنبال جمع‌وجورین، یه انتخاب خفنه!",
-    img: "https://example.com/xboxseriesxslim.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.Blv65rqx3c-XWXSp7pxEuwHaEk&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIP.xdDxVtikwxvByq9WtwqlGwHaE8&pid=15.1",
+    ],
     quantity: 17,
     price: 30500000,
     category: "console",
@@ -3473,7 +4239,10 @@ export const products = [
     title: "Nintendo Switch Pro",
     description:
       "کنسول Switch Pro با سخت‌افزار قوی‌تر گیمای سنگین‌تر رو تو حالت دستی می‌کشه و چشاتو می‌گیره. داک 4Kش برای تلوزیون معرکه‌ست و باتریش برای گیمای طولانی کافیه. برای نینتندوفن‌های هاردکور یه گنجه!",
-    img: "https://example.com/switchpro.jpg",
+    img: [
+      "https://ts3.mm.bing.net/th?id=OIP.8x-NlaAmgUsV8DZV2aDNqAHaEK&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.2DuhJz7UfUer9Yz2grBUqgHaJ4&pid=15.1",
+    ],
     quantity: 15,
     price: 22500000,
     category: "console",
@@ -3487,7 +4256,10 @@ export const products = [
     title: "Sony PlayStation Vita Neo",
     description:
       "کنسول Vita Neo با صفحه OLED خفنش گیمای پرتابل رو زنده‌تر از همیشه نشون می‌ده. آپدیت 2024ش قدرت رو بالا برده و برای نوستالژی‌بازا عالیه. برای گیمرای قدیمی که دنبال دستی‌ن، یه انتخاب باحاله!",
-    img: "https://example.com/vitaneo.jpg",
+    img: [
+      "https://ts4.mm.bing.net/th?id=OIP.GW3v09w4ep8ShpcNL4dvmwHaH1&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.Fq_twsSgI9kBb51KE1YXjAHaIV&pid=15.1",
+    ],
     quantity: 14,
     price: 14500000,
     category: "console",
@@ -3501,7 +4273,10 @@ export const products = [
     title: "Microsoft Xbox One X Revive",
     description:
       "کنسول Xbox One X Revive با آپدیت 2023 گیمای 4K رو هنوزم می‌تونست بکشه و چشاتو نوازش بده. قیمت مناسبش برای گیمرای اقتصادی عالیه و Game Passش همچنان می‌درخشه. برای طرفدارای ایکس‌باکس که دنبال نوستالژین، یه انتخاب شیکه!",
-    img: "https://example.com/xboxonexrevive.jpg",
+    img: [
+      "https://ts2.mm.bing.net/th?id=OIP.9-FG7K8LtZacGRK1OM8RBgHaFp&pid=15.1",
+      "https://ts4.mm.bing.net/th?id=OIP.TM6kAee4k0uPV3cZzVMflgHaG0&pid=15.1",
+    ],
     quantity: 16,
     price: 13500000,
     category: "console",
@@ -3515,15 +4290,17 @@ export const products = [
     title: "Nintendo Switch OLED Zelda Edition",
     description:
       "کنسول Switch OLED Zelda Edition با طراحی زلدایی خفنش برای فنای لینک یه رویاست و گیماتو می‌ترکونه. صفحه 7 اینچیش رنگا رو زنده نشون می‌ده و باندل اختصاصیش کلکسیونت رو کامل می‌کنه. برای گیمرای نینتندو که دنبال استایلن، یه انتخاب خفنه!",
-    img: "https://example.com/switchzelda.jpg",
-    quantity: 13,
+    img: [
+      "https://ts1.mm.bing.net/th?id=OIF.pseFvqrYK93d%2fcmCoW04pw&pid=15.1",
+      "https://ts3.mm.bing.net/th?id=OIF.0u9Q573bKSOSJIiBUObEFQ&pid=15.1",
+    ],
+    quantity: 0,
     price: 19500000,
     category: "console",
     creator: "Nintendo",
-    stock: true,
+    stock: false,
     discount: 10,
     rating: 4.8,
     releaseYear: 2021,
   },
 ];
-
