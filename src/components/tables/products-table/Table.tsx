@@ -1,6 +1,16 @@
 import { categoryLabels, digitsEnToFa } from "../../utils/helper";
 
-function MyTable({ products, handleDeleteClick }: any) {
+interface MyTableProps {
+  products: any[];
+  handleDeleteClick: (id: number) => void;
+  handleEditClick: (product: any) => void;
+}
+
+function MyTable({
+  products,
+  handleDeleteClick,
+  handleEditClick,
+}: MyTableProps) {
   return (
     <div className="w-full max-w-6xl h-2/3 bg-white rounded-lg shadow-md overflow-hidden mb-4">
       <table className="w-full">
@@ -43,6 +53,7 @@ function MyTable({ products, handleDeleteClick }: any) {
                 <button
                   className="h-8 w-8 flex items-center justify-center rounded-full bg-blue-100 hover:bg-blue-200 transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer"
                   title="ویرایش"
+                  onClick={() => handleEditClick(product)}
                 >
                   <img
                     className="h-5 w-5"

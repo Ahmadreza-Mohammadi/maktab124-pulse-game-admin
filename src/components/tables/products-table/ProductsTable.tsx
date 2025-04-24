@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteProduct } from "../../utils/deleteProduct";
 import DeleteModal from "../../modal/DeleteModal";
+import EditProductModal from "../../modal/EditProductModal";
 import Pagination from "../../pagination/Pagination";
 import MyTable from "./Table";
 import AddProduct from "./AddProduct";
@@ -10,7 +11,9 @@ function ProductsTable({ products }: any) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [productToDelete, setProductToDelete] = useState<number | null>(null); // Track product to delete
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [productToDelete, setProductToDelete] = useState<number | null>(null);
+  const [productToEdit, setProductToEdit] = useState<any>(null);
   const queryClient = useQueryClient();
   const productsPerPage = 10;
 
@@ -18,8 +21,8 @@ function ProductsTable({ products }: any) {
   const mutation = useMutation({
     mutationFn: (id: number) => deleteProduct(id),
     onSuccess: () => {
-      queryClient.invalidateQueries(["products"]);
-      setShowDeleteModal(false); //
+      queryClient.invalidateQueries({ queryKey: ["products"] });
+      setShowDeleteModal(false);
       setProductToDelete(null);
     },
   });
@@ -30,10 +33,27 @@ function ProductsTable({ products }: any) {
     setShowDeleteModal(true);
   };
 
+  // Handle edit button click
+  const handleEditClick = (product: any) => {
+    setProductToEdit(product);
+    setShowEditModal(true);
+  };
+
   // Handle modal cancel
   const handleCancelDelete = () => {
     setShowDeleteModal(false);
     setProductToDelete(null);
+  };
+
+  const handleCancelEdit = () => {
+    setShowEditModal(false);
+    setProductToEdit(null);
+  };
+
+  const handleConfirmEdit = () => {
+    queryClient.invalidateQueries({ queryKey: ["products"] });
+    setShowEditModal(false);
+    setProductToEdit(null);
   };
 
   // Handle modal confirm
@@ -78,13 +98,14 @@ function ProductsTable({ products }: any) {
       <AddProduct
         products={products}
         handleCategoryChange={handleCategoryChange}
+        selectedCategory={selectedCategory}
       />
 
       {/* Product Table */}
       <MyTable
         products={currentProducts}
         handleDeleteClick={handleDeleteClick}
-        selectedCategory={selectedCategory}
+        handleEditClick={handleEditClick}
       />
 
       {/* Delete Modal */}
@@ -92,6 +113,15 @@ function ProductsTable({ products }: any) {
         <DeleteModal
           onConfirm={handleConfirmDelete}
           onCancel={handleCancelDelete}
+        />
+      )}
+
+      {/* Edit Modal */}
+      {showEditModal && productToEdit && (
+        <EditProductModal
+          product={productToEdit}
+          onCancel={handleCancelEdit}
+          onConfirm={handleConfirmEdit}
         />
       )}
 
