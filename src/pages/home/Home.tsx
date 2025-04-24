@@ -1,17 +1,89 @@
-import welcomeImg from "../../assets/imgs/home-pic.png";
+import { useQuery } from "@tanstack/react-query";
+import { getProductsData } from "../../components/utils/helper";
+import MyChart from "../../components/chart/Chart";
+import Loading from "../../components/loading/Loading";
+import { digitsEnToFa } from "../../components/utils/helper";
+import { Product } from "../../components/interfaces/interface";
 
 function Home() {
+  const {
+    data: products,
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["products"],
+    queryFn: getProductsData,
+  });
+
+  if (isLoading) {
+    return (
+      <div className="w-full h-screen flex items-center justify-center mr-64 bg-gray-700">
+        <Loading />
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="w-full h-screen flex items-center justify-center mr-64 bg-gray-700">
+        Error fetching products.
+      </div>
+    );
+  }
+
+  // Calculate statistics
+  const totalProducts = products?.length || 0;
+  const totalStock =
+    products?.reduce((sum: number, product: Product) => {
+      const quantity =
+        typeof product.quantity === "string"
+          ? parseInt(product.quantity)
+          : product.quantity;
+      return sum + (quantity || 0);
+    }, 0) || 0;
+  const outOfStockProducts =
+    products?.filter((product: Product) => !product.stock).length || 0;
+
   return (
-    <div className="bg-gray-700 w-full h-screen flex justify-center items-center transition-all duration-500 pr-80">
-      <div className="home-container flex flex-col items-center gap-8 p-10 bg-gray-800/90 rounded-2xl shadow-[0_0_25px_rgba(34,197,94,0.5)] transform hover:scale-105 hover:shadow-[0_0_35px_rgba(16,185,129,0.7)] transition-all duration-300">
-        <img
-          className="h-80 w-auto rounded-lg object-cover transform hover:rotate-2 hover:shadow-[0_0_20px_rgba(16,185,129,0.8)] transition-all duration-500"
-          src={welcomeImg}
-          alt="Welcome to Pulse Gaming"
-        />
-        <p className="font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-600 drop-shadow-lg tracking-wide animate-pulse">
+    <div className="w-full min-h-screen bg-gray-700 p-8 mr-64">
+      {/* Welcome Section */}
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-white mb-2">
           به پنل ادمین پالس گیم خوش آمدید!
-        </p>
+        </h1>
+        <p className="text-gray-300">مدیریت و نظارت بر محصولات و موجودی</p>
+      </div>
+
+      {/* Statistics Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3 className="text-gray-400 mb-2">تعداد کل محصولات</h3>
+          <p className="text-3xl font-bold text-emerald-400">
+            {digitsEnToFa(totalProducts)}
+          </p>
+        </div>
+        <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3 className="text-gray-400 mb-2">موجودی کل</h3>
+          <p className="text-3xl font-bold text-blue-400">
+            {digitsEnToFa(totalStock)}
+          </p>
+        </div>
+        <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3 className="text-gray-400 mb-2">محصولات ناموجود</h3>
+          <p className="text-3xl font-bold text-red-400">
+            {digitsEnToFa(outOfStockProducts)}
+          </p>
+        </div>
+      </div>
+
+      {/* Chart Section */}
+      <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h2 className="text-xl font-bold text-white mb-4">
+          نمودار فروش محصولات
+        </h2>
+        <div className="flex justify-center">
+          <MyChart />
+        </div>
       </div>
     </div>
   );
