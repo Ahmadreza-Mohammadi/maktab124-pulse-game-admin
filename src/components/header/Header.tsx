@@ -4,7 +4,7 @@ import { ADMIN_NAME } from "../api/api";
 
 function Header() {
   const navigate = useNavigate();
-  const adminName = JSON.parse(ADMIN_NAME);
+  const adminName = JSON.parse(ADMIN_NAME || '""');
 
   return (
     <header className="sticky top-0 z-30 bg-gray-900/95 backdrop-blur-3xl shadow-lg">

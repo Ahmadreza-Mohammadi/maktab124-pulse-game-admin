@@ -2,7 +2,7 @@ export interface Product {
   id: number;
   title: string;
   creator: string;
-  quantity: string;
+  quantity: string | number;
   releaseYear: string;
   category: string;
   gameCategory: string;
@@ -40,4 +40,21 @@ export interface FormErrors {
   gameCategory?: string;
   description?: string;
   img?: string;
+}
+
+export interface Statistics {
+  totalProducts: number;
+  totalStock: number;
+  outOfStockProducts: number;
+}
+
+export interface ChartData {
+  labels: string[];
+  datasets: {
+    label: string;
+    data: number[];
+    backgroundColor: string[];
+    borderColor: string[];
+    borderWidth: number;
+  }[];
 }
