@@ -5,7 +5,7 @@ import DeleteModal from "../../modal/DeleteModal";
 import EditProductModal from "../../modal/EditProductModal";
 import Pagination from "../../pagination/Pagination";
 import MyTable from "./Table";
-import AddProduct from "./AddProduct";
+import ProductsTableHeader from "./ProductsTableHeader";
 import { Product } from "../../interfaces/interface";
 
 interface ProductsTableProps {
@@ -15,6 +15,7 @@ interface ProductsTableProps {
 function ProductsTable({ products }: ProductsTableProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
+  const [searchQuery, setSearchQuery] = useState("");
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [productToDelete, setProductToDelete] = useState<number | null>(null);
@@ -68,13 +69,21 @@ function ProductsTable({ products }: ProductsTableProps) {
     }
   };
 
-  // Filter products by category
-  const filteredProducts =
-    selectedCategory === "همه"
-      ? products
-      : products.filter(
-          (product: Product) => product.category === selectedCategory
-        );
+  // Handle search
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    setCurrentPage(1);
+  };
+
+  // Filter products by category and search query
+  const filteredProducts = products.filter((product: Product) => {
+    const matchesCategory =
+      selectedCategory === "همه" || product.category === selectedCategory;
+    const matchesSearch = product.title
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
@@ -100,10 +109,11 @@ function ProductsTable({ products }: ProductsTableProps) {
   return (
     <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-64">
       {/* Filter Bar */}
-      <AddProduct
+      <ProductsTableHeader
         products={products}
         handleCategoryChange={handleCategoryChange}
         selectedCategory={selectedCategory}
+        onSearch={handleSearch}
       />
 
       {/* Product Table */}
