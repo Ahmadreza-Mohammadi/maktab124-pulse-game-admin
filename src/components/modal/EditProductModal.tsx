@@ -10,11 +10,7 @@ function EditProductModal({
 }: EditProductModalProps) {
   // Initialize images array properly
   const initialImages =
-    product.images && product.images.length > 0
-      ? [...product.images]
-      : product.img && product.img.length > 0
-      ? [...product.img]
-      : [""];
+    product.img && product.img.length > 0 ? [...product.img] : [""];
 
   const [formData, setFormData] = useState({
     title: product.title,
@@ -24,7 +20,7 @@ function EditProductModal({
     category: product.category,
     gameCategory: product.gameCategory,
     description: product.description,
-    images: initialImages,
+    img: initialImages,
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
@@ -42,25 +38,25 @@ function EditProductModal({
   };
 
   const handleImageChange = (index: number, value: string) => {
-    const newImages = [...formData.images];
+    const newImages = [...formData.img];
     newImages[index] = value;
     setFormData((prev) => ({
       ...prev,
-      images: newImages,
+      img: newImages,
     }));
   };
 
   const addImageField = () => {
     setFormData((prev) => ({
       ...prev,
-      images: [...prev.images, ""],
+      img: [...prev.img, ""],
     }));
   };
 
   const removeImageField = (index: number) => {
     setFormData((prev) => ({
       ...prev,
-      images: prev.images.filter((_, i) => i !== index),
+      img: prev.img.filter((_, i) => i !== index),
     }));
   };
 
@@ -77,8 +73,8 @@ function EditProductModal({
     if (!formData.category.trim())
       newErrors.category = "دسته بندی را وارد کنید.";
     if (!formData.description) newErrors.description = "توضیحات را وارد کنید.";
-    if (formData.images.some((img) => !img || !img.trim()))
-      newErrors.images = "لینک تصاویر را وارد کنید.";
+    if (formData.img.some((img) => !img || !img.trim()))
+      newErrors.img = "لینک تصاویر را وارد کنید.";
     if (formData.category === "game" && !formData.gameCategory.trim()) {
       newErrors.gameCategory = "لطفا دسته بندی بازی را انتخاب کنید";
     }
@@ -198,7 +194,7 @@ function EditProductModal({
             <label className="text-sm font-medium text-gray-200">
               تصاویر محصول:
             </label>
-            {formData.images.map((image, index) => (
+            {formData.img.map((image, index) => (
               <div key={index} className="flex gap-2 items-center">
                 <input
                   type="text"
@@ -225,8 +221,8 @@ function EditProductModal({
             >
               افزودن تصویر جدید
             </button>
-            {errors.images && (
-              <span className="text-sm text-red-500">{errors.images}</span>
+            {errors.img && (
+              <span className="text-sm text-red-500">{errors.img}</span>
             )}
           </div>
 

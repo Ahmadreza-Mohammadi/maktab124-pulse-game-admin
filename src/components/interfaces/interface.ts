@@ -45,6 +45,7 @@ export interface FormErrors {
   gameCategory?: string;
   description?: string;
   images?: string;
+  img?: string;
 }
 
 export interface Statistics {
