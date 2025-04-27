@@ -2,12 +2,13 @@ export interface Product {
   id: number;
   title: string;
   creator: string;
-  quantity: string;
+  quantity: string | number;
   releaseYear: string;
   category: string;
   gameCategory: string;
   description: string;
-  img: string;
+  img?: string[];
+  images?: string[];
   stock?: boolean;
 }
 
@@ -17,6 +18,10 @@ export interface InventoryProduct {
   quantity: number;
   category: string;
   stock?: boolean;
+}
+
+export interface AddProductModalProps {
+  onCancel: () => void;
 }
 
 export interface EditProductModalProps {
@@ -39,5 +44,34 @@ export interface FormErrors {
   category?: string;
   gameCategory?: string;
   description?: string;
+  images?: string;
   img?: string;
+}
+
+export interface Statistics {
+  totalProducts: number;
+  totalStock: number;
+  outOfStockProducts: number;
+}
+
+export interface ChartData {
+  labels: string[];
+  datasets: {
+    label: string;
+    data: number[];
+    backgroundColor: string[];
+    borderColor: string[];
+    borderWidth: number;
+  }[];
+}
+
+export interface ProductData {
+  title: string;
+  creator: string;
+  quantity: string;
+  releaseYear: string;
+  category: string;
+  gameCategory: string;
+  description: string;
+  images: string[];
 }

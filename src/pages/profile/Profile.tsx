@@ -1,4 +1,8 @@
-import { ACCESS_TOKEN, ADMIN_NAME, API_KEY, BASE_URL } from "../../components/api/api";
+import {
+  ACCESS_TOKEN,
+  API_KEY,
+  BASE_URL,
+} from "../../components/api/api";
 import axios from "axios";
 
 function Profile() {
@@ -12,13 +16,11 @@ function Profile() {
     });
 
     const user = await res.data;
-    localStorage.setItem("username",JSON.stringify(user.name))
+    localStorage.setItem("username", JSON.stringify(user.name));
   };
   getUserData();
   return (
-    <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-80">
-   
-    </div>
+    <div className="w-full min-h-screen bg-gray-700 flex flex-col items-center p-4 mr-80"></div>
   );
 }
 

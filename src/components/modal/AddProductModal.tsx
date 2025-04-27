@@ -1,32 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
 import { API_KEY, BASE_URL } from "../api/api";
-
-interface AddProductModalProps {
-  onCancel: () => void;
-}
-
-interface ProductData {
-  title: string;
-  creator: string;
-  quantity: string;
-  releaseYear: string;
-  category: string;
-  gameCategory: string;
-  description: string;
-  img: string;
-}
-
-interface FormErrors {
-  title?: string;
-  creator?: string;
-  quantity?: string;
-  releaseYear?: string;
-  category?: string;
-  gameCategory?: string;
-  description?: string;
-  img?: string;
-}
+import {
+  AddProductModalProps,
+  ProductData,
+  FormErrors,
+} from "../interfaces/interface";
 
 function AddProductModal({ onCancel }: AddProductModalProps) {
   const [formData, setFormData] = useState<ProductData>({
@@ -37,16 +16,43 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
     category: "",
     gameCategory: "",
     description: "",
-    img: "",
+    images: [""], // Initialize with one empty image field
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
+    }));
+  };
+
+  const handleImageChange = (index: number, value: string) => {
+    const newImages = [...formData.images];
+    newImages[index] = value;
+    setFormData((prev) => ({
+      ...prev,
+      images: newImages,
+    }));
+  };
+
+  const addImageField = () => {
+    setFormData((prev) => ({
+      ...prev,
+      images: [...prev.images, ""],
+    }));
+  };
+
+  const removeImageField = (index: number) => {
+    setFormData((prev) => ({
+      ...prev,
+      images: prev.images.filter((_, i) => i !== index),
     }));
   };
 
@@ -54,12 +60,17 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
     const newErrors: FormErrors = {};
 
     if (!formData.title.trim()) newErrors.title = "عنوان را وارد  کنید.";
-    if (!formData.creator.trim()) newErrors.creator = "نام سازنده را وارد کنید.";
+    if (!formData.creator.trim())
+      newErrors.creator = "نام سازنده را وارد کنید.";
     if (!formData.quantity.trim()) newErrors.quantity = "تعداد را وارد کنید.";
-    if (!formData.releaseYear.trim()) newErrors.releaseYear = "سال انتشار را وارد کنید.";
-    if (!formData.category.trim()) newErrors.category = "دسته بندی را وارد کنید.";
-    if (!formData.description.trim()) newErrors.description = "توضیحات را وارد کنید.";
-    if (!formData.img.trim()) newErrors.img = "لینک تصویر را وارد کنید.";
+    if (!formData.releaseYear.trim())
+      newErrors.releaseYear = "سال انتشار را وارد کنید.";
+    if (!formData.category.trim())
+      newErrors.category = "دسته بندی را وارد کنید.";
+    if (!formData.description.trim())
+      newErrors.description = "توضیحات را وارد کنید.";
+    if (formData.images.some((img) => !img.trim()))
+      newErrors.images = "لینک تصاویر را وارد کنید.";
     if (formData.category === "game" && !formData.gameCategory.trim()) {
       newErrors.gameCategory = "لطفا دسته بندی بازی را انتخاب کنید";
     }
@@ -72,12 +83,16 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
     if (!validateInputs()) return;
 
     try {
-      await axios.post(`${BASE_URL}/api/records/posts`, JSON.stringify(formData), {
-        headers: {
-          api_key: API_KEY,
-          "Content-Type": "application/json",
-        },
-      });
+      await axios.post(
+        `${BASE_URL}/api/records/posts`,
+        JSON.stringify(formData),
+        {
+          headers: {
+            api_key: API_KEY,
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       // Reset form
       setFormData({
@@ -88,15 +103,14 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
         category: "",
         gameCategory: "",
         description: "",
-        img: "",
+        images: [""],
       });
       setErrors({});
-      
-      // Close modal or show success message
+
+      // Close modal
       onCancel();
     } catch (error) {
       console.error("Error adding product:", error);
-      // Handle error (show error message, etc.)
     }
   }
 
@@ -167,19 +181,42 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
               <span className="text-sm text-red-500">{errors.releaseYear}</span>
             )}
           </div>
-          <div className="flex flex-col gap-1 w-full">
-            <label className="text-sm font-medium">لینک تصویر:</label>
-            <input
-              type="text"
-              name="img"
-              className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2"
-              value={formData.img}
-              onChange={handleInputChange}
-            />
-            {errors.img && (
-              <span className="text-sm text-red-500">{errors.img}</span>
+
+          {/* Multiple Image Inputs */}
+          <div className="flex flex-col gap-2 w-full">
+            <label className="text-sm font-medium">تصاویر محصول:</label>
+            {formData.images.map((image, index) => (
+              <div key={index} className="flex gap-2 items-center">
+                <input
+                  type="text"
+                  className="w-full rounded-md border border-gray-600 bg-gray-800 px-4 py-2"
+                  value={image}
+                  onChange={(e) => handleImageChange(index, e.target.value)}
+                  placeholder={`لینک تصویر ${index + 1}`}
+                />
+                {index > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => removeImageField(index)}
+                    className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md"
+                  >
+                    حذف
+                  </button>
+                )}
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={addImageField}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md self-start"
+            >
+              افزودن تصویر جدید
+            </button>
+            {errors.images && (
+              <span className="text-sm text-red-500">{errors.images}</span>
             )}
           </div>
+
           <div className="flex flex-col gap-1 w-full">
             <label className="text-sm font-medium">دسته بندی:</label>
             <select
@@ -204,9 +241,7 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
 
           {formData.category === "game" && (
             <div className="flex flex-col gap-1 w-full">
-              <label className="text-sm font-medium">
-                دسته بندی بازی:
-              </label>
+              <label className="text-sm font-medium">دسته بندی بازی:</label>
               <select
                 name="gameCategory"
                 value={formData.gameCategory}
@@ -225,7 +260,9 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
                 <option value="simulator">شبیه ساز</option>
               </select>
               {errors.gameCategory && (
-                <span className="text-sm text-red-500">{errors.gameCategory}</span>
+                <span className="text-sm text-red-500">
+                  {errors.gameCategory}
+                </span>
               )}
             </div>
           )}
@@ -249,13 +286,13 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
             onClick={onCancel}
             className="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-full cursor-pointer text-white font-semibold shadow-md transition duration-300"
           >
-            لغو
+            انصراف
           </button>
           <button
             onClick={AddProductHandler}
-            className="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-full cursor-pointer text-white font-semibold shadow-md transition duration-300"
+            className="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-full cursor-pointer text-white font-semibold shadow-md transition duration-300"
           >
-            تایید
+            افزودن محصول
           </button>
         </div>
       </div>
