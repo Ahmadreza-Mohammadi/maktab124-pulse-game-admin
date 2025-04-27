@@ -6,14 +6,19 @@ import EditProductModal from "../../modal/EditProductModal";
 import Pagination from "../../pagination/Pagination";
 import MyTable from "./Table";
 import AddProduct from "./AddProduct";
+import { Product } from "../../interfaces/interface";
 
-function ProductsTable({ products }: any) {
+interface ProductsTableProps {
+  products: Product[];
+}
+
+function ProductsTable({ products }: ProductsTableProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [productToDelete, setProductToDelete] = useState<number | null>(null);
-  const [productToEdit, setProductToEdit] = useState<any>(null);
+  const [productToEdit, setProductToEdit] = useState<Product | null>(null);
   const queryClient = useQueryClient();
   const productsPerPage = 10;
 
@@ -34,7 +39,7 @@ function ProductsTable({ products }: any) {
   };
 
   // Handle edit button click
-  const handleEditClick = (product: any) => {
+  const handleEditClick = (product: Product) => {
     setProductToEdit(product);
     setShowEditModal(true);
   };
@@ -68,7 +73,7 @@ function ProductsTable({ products }: any) {
     selectedCategory === "همه"
       ? products
       : products.filter(
-          (product: any) => product.category === selectedCategory
+          (product: Product) => product.category === selectedCategory
         );
 
   // Calculate pagination

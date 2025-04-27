@@ -7,7 +7,8 @@ export interface Product {
   category: string;
   gameCategory: string;
   description: string;
-  images: string[];
+  img?: string[];
+  images?: string[];
   stock?: boolean;
 }
 
