@@ -83,7 +83,6 @@ function InventoryTable({ products }: { products: InventoryProduct[] }) {
     updateProductMutation.mutate(updatedProduct);
   };
 
-  // Handle key press (Enter to save, Escape to cancel)
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
       handleSave();
@@ -93,7 +92,6 @@ function InventoryTable({ products }: { products: InventoryProduct[] }) {
     }
   };
 
-  // Get unique categories
   const categories = [
     "همه",
     ...new Set(products.map((product) => product.category)),

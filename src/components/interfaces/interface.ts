@@ -75,3 +75,36 @@ export interface ProductData {
   description: string;
   images: string[];
 }
+
+export interface EditModalContentProps {
+  formData: {
+    title: string;
+    creator: string;
+    quantity: number;
+    releaseYear: string | number;
+    category: string;
+    gameCategory?: string;
+    description: string;
+    img: string[];
+  };
+  errors: {
+    title?: string;
+    creator?: string;
+    quantity?: string;
+    releaseYear?: string;
+    category?: string;
+    gameCategory?: string;
+    description?: string;
+    img?: string;
+  };
+  handleInputChange: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => void;
+  handleImageChange: (index: number, value: string) => void;
+  addImageField: () => void;
+  removeImageField: (index: number) => void;
+  editProductHandler: () => void;
+  onCancel: () => void;
+}

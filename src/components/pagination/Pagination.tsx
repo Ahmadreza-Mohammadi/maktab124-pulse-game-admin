@@ -1,6 +1,6 @@
 import { digitsEnToFa } from "../utils/helper";
 
-function Pagination({currentPage, totalPages, setCurrentPage}) {
+function Pagination({currentPage, totalPages, setCurrentPage}:any) {
  function renderPageNumbers() {
     const pageNumbers = [];
     const maxVisiblePages = 5;
