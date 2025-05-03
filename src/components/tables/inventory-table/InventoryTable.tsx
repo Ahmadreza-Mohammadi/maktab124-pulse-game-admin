@@ -1,43 +1,16 @@
 import { useState } from "react";
 import { digitsEnToFa } from "../../utils/helper";
 import Pagination from "../../pagination/Pagination";
-import axios from "axios";
-import { API_KEY, BASE_URL } from "../../api/api";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { InventoryProduct } from "../../interfaces/interface";
+import { API_KEY, BASE_URL } from "../../api/api";
+import axios from "axios";
 
 function InventoryTable({ products }: { products: InventoryProduct[] }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
-  const [editingProduct, setEditingProduct] = useState<InventoryProduct | null>(
-    null
-  );
-  const [editValue, setEditValue] = useState<string>("");
+  const [editingProduct, setEditingProduct] = useState<InventoryProduct | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
   const productsPerPage = 10;
-  const queryClient = useQueryClient();
-
-  // Mutation to handle product updates
-  const updateProductMutation = useMutation({
-    mutationFn: async (updatedProduct: InventoryProduct) => {
-      const response = await axios.put(
-        `${BASE_URL}/api/records/products/${updatedProduct.id}`,
-        updatedProduct,
-        {
-          headers: {
-            api_key: API_KEY,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      return response.data;
-    },
-    onSuccess: () => {
-      // Invalidate and refetch products query
-      queryClient.invalidateQueries({ queryKey: ["products"] });
-      setEditingProduct(null);
-      setEditValue("");
-    },
-  });
 
   // Filter products only by category (include all stock values)
   const filteredProducts =
@@ -59,36 +32,47 @@ function InventoryTable({ products }: { products: InventoryProduct[] }) {
     setCurrentPage(1);
   };
 
-  // Handle double click to start editing
-  const handleDoubleClick = (product: InventoryProduct, field: "quantity") => {
+  // Handle product click
+  const handleProductClick = (product: InventoryProduct) => {
     setEditingProduct(product);
-    setEditValue(product[field].toString());
   };
 
-  // Handle input change while editing
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEditValue(e.target.value);
-  };
-
-  // Handle save after editing
-  const handleSave = async () => {
+  // Handle input change
+  const handleInputChange = (field: 'quantity' | 'price', value: string) => {
     if (!editingProduct) return;
-
-    const updatedProduct = {
+    setEditingProduct({
       ...editingProduct,
-      quantity: parseInt(editValue) || 0,
-      stock: parseInt(editValue) > 0,
-    };
-
-    updateProductMutation.mutate(updatedProduct);
+      [field]: parseInt(value) || 0
+    });
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      handleSave();
-    } else if (e.key === "Escape") {
-      setEditingProduct(null);
-      setEditValue("");
+  // Handle save
+  const handleSave = async () => {
+    if (!editingProduct || isSaving) return;
+    setIsSaving(true);
+
+    try {
+      const { id, ...productData } = editingProduct;
+      const response = await axios.put(
+        `${BASE_URL}/api/records/products/${id}`,
+        {
+          ...productData,
+          stock: productData.quantity > 0
+        },
+        {
+          headers: {
+            api_key: API_KEY,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log('Product updated:', response.data);
+      window.location.reload();
+    } catch (error) {
+      console.error('Error updating product:', error);
+      alert('خطا در ذخیره تغییرات. لطفا دوباره تلاش کنید.');
+    } finally {
+      setIsSaving(false);
     }
   };
 
@@ -121,6 +105,7 @@ function InventoryTable({ products }: { products: InventoryProduct[] }) {
             <tr>
               <th className="py-3 px-4 text-right">نام</th>
               <th className="py-3 px-4 text-right">تعداد موجود</th>
+              <th className="py-3 px-4 text-right">قیمت(تومان)</th>
               <th className="py-3 px-4 text-right">وضعیت</th>
             </tr>
           </thead>
@@ -128,44 +113,36 @@ function InventoryTable({ products }: { products: InventoryProduct[] }) {
             {currentProducts.map((product, index) => (
               <tr
                 key={`product-${index}`}
-                className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
+                className={`${index % 2 === 0 ? "bg-white" : "bg-gray-50"} ${
+                  editingProduct?.id === product.id ? "bg-yellow-50" : ""
+                } cursor-pointer hover:bg-gray-100`}
+                onClick={() => handleProductClick(product)}
               >
                 <td className="py-3 px-4 text-right">{product.title}</td>
-                <td
-                  className="py-3 px-4 text-right cursor-pointer"
-                  onDoubleClick={() => handleDoubleClick(product, "quantity")}
-                >
+                <td className="py-3 px-4 text-right">
                   {editingProduct?.id === product.id ? (
-                    <div className="flex items-center gap-2">
-                      <input
-                        type="number"
-                        value={editValue}
-                        onChange={handleInputChange}
-                        onKeyDown={handleKeyPress}
-                        className="w-20 px-2 py-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        autoFocus
-                      />
-                      <button
-                        onClick={handleSave}
-                        className="p-1 text-green-600 hover:text-green-700 transition-colors"
-                        title="تایید تغییرات"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </button>
-                    </div>
+                    <input
+                      type="number"
+                      value={editingProduct.quantity}
+                      onChange={(e) => handleInputChange('quantity', e.target.value)}
+                      className="w-20 px-2 py-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      onClick={(e) => e.stopPropagation()}
+                    />
                   ) : (
                     digitsEnToFa(product.quantity)
+                  )}
+                </td>
+                <td className="py-3 px-4 text-right">
+                  {editingProduct?.id === product.id ? (
+                    <input
+                      type="number"
+                      value={editingProduct.price}
+                      onChange={(e) => handleInputChange('price', e.target.value)}
+                      className="w-20 px-2 py-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      onClick={(e) => e.stopPropagation()}
+                    />
+                  ) : (
+                    digitsEnToFa(product.price)
                   )}
                 </td>
                 <td className="py-3 px-4 text-right">
@@ -184,6 +161,29 @@ function InventoryTable({ products }: { products: InventoryProduct[] }) {
           </tbody>
         </table>
       </div>
+
+      {/* Save Button */}
+      {editingProduct && (
+        <div className="flex gap-4 mb-4">
+          <button
+            onClick={handleSave}
+            disabled={isSaving}
+            className={`px-4 py-2 rounded ${
+              isSaving
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-green-600 hover:bg-green-700"
+            } text-white transition-colors`}
+          >
+            {isSaving ? "در حال ذخیره..." : "ذخیره تغییرات"}
+          </button>
+          <button
+            onClick={() => setEditingProduct(null)}
+            className="px-4 py-2 rounded bg-gray-600 hover:bg-gray-700 text-white transition-colors"
+          >
+            انصراف
+          </button>
+        </div>
+      )}
 
       {/* Pagination Controls */}
       <Pagination

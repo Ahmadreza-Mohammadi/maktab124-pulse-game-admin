@@ -16,6 +16,7 @@ export interface InventoryProduct {
   id: number;
   title: string;
   quantity: number;
+  price: number;
   category: string;
   stock?: boolean;
 }
