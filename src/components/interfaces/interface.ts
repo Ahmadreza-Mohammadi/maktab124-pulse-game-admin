@@ -109,3 +109,44 @@ export interface EditModalContentProps {
   editProductHandler: () => void;
   onCancel: () => void;
 }
+
+
+export interface UserInfo {
+  name: string;
+  email: string;
+  phone: string;
+}
+
+export interface OrderItem {
+  id: string;
+  title: string;
+  quantity: number;
+  price: number;
+}
+
+export interface Order {
+  id: string;
+  userInfo: UserInfo;
+  orderDate: string;
+  deliveryStatus: string;
+  payment: "paid" | "pending";
+  totalAmount: number;
+  status: "paid" | "pending";
+  items: OrderItem[];
+}
+
+export interface OrderDetailsModalProps {
+  order: {
+    id: string;
+    userInfo: {
+      name: string;
+      email: string;
+      phone: string;
+    };
+    orderDate: string;
+    payment: "paid" | "pending";
+    totalAmount: number;
+    status: "paid" | "pending";
+  };
+  onClose: () => void;
+}

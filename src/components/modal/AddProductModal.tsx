@@ -96,7 +96,7 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
         }
       );
 
-      // Reset form
+      // Reset formn
       setFormData({
         title: "",
         creator: "",
@@ -203,7 +203,7 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
                   <button
                     type="button"
                     onClick={() => removeImageField(index)}
-                    className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md cursor-pointer"
+                    className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md"
                   >
                     حذف
                   </button>
@@ -213,7 +213,7 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
             <button
               type="button"
               onClick={addImageField}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md self-start cursor-pointer"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md self-start"
             >
               افزودن تصویر جدید
             </button>

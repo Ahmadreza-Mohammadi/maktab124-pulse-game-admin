@@ -8,7 +8,9 @@ import axios from "axios";
 function InventoryTable({ products }: { products: InventoryProduct[] }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("همه");
-  const [editingProduct, setEditingProduct] = useState<InventoryProduct | null>(null);
+  const [editingProduct, setEditingProduct] = useState<InventoryProduct | null>(
+    null
+  );
   const [isSaving, setIsSaving] = useState(false);
   const productsPerPage = 10;
 
@@ -38,11 +40,11 @@ function InventoryTable({ products }: { products: InventoryProduct[] }) {
   };
 
   // Handle input change
-  const handleInputChange = (field: 'quantity' | 'price', value: string) => {
+  const handleInputChange = (field: "quantity" | "price", value: string) => {
     if (!editingProduct) return;
     setEditingProduct({
       ...editingProduct,
-      [field]: parseInt(value) || 0
+      [field]: parseInt(value) || 0,
     });
   };
 
@@ -57,7 +59,7 @@ function InventoryTable({ products }: { products: InventoryProduct[] }) {
         `${BASE_URL}/api/records/products/${id}`,
         {
           ...productData,
-          stock: productData.quantity > 0
+          stock: productData.quantity > 0,
         },
         {
           headers: {
@@ -66,11 +68,11 @@ function InventoryTable({ products }: { products: InventoryProduct[] }) {
           },
         }
       );
-      console.log('Product updated:', response.data);
+      console.log("Product updated:", response.data);
       window.location.reload();
     } catch (error) {
-      console.error('Error updating product:', error);
-      alert('خطا در ذخیره تغییرات. لطفا دوباره تلاش کنید.');
+      console.error("Error updating product:", error);
+      alert("خطا در ذخیره تغییرات. لطفا دوباره تلاش کنید.");
     } finally {
       setIsSaving(false);
     }
@@ -124,7 +126,9 @@ function InventoryTable({ products }: { products: InventoryProduct[] }) {
                     <input
                       type="number"
                       value={editingProduct.quantity}
-                      onChange={(e) => handleInputChange('quantity', e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("quantity", e.target.value)
+                      }
                       className="w-20 px-2 py-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                       onClick={(e) => e.stopPropagation()}
                     />
@@ -137,7 +141,9 @@ function InventoryTable({ products }: { products: InventoryProduct[] }) {
                     <input
                       type="number"
                       value={editingProduct.price}
-                      onChange={(e) => handleInputChange('price', e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("price", e.target.value)
+                      }
                       className="w-20 px-2 py-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                       onClick={(e) => e.stopPropagation()}
                     />
