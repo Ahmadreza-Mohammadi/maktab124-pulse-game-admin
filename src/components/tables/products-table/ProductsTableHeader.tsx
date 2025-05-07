@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { categoryLabels } from "../../utils/helper";
-import AddProductModal from "../../modal/AddProductModal";
+import AddProductModal from "../../modal/add-product/AddProductModal";
 import { Product } from "../../interfaces/interface";
 import SearchBar from "./SearchBar";
 

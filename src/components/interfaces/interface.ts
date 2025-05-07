@@ -150,3 +150,18 @@ export interface OrderDetailsModalProps {
   };
   onClose: () => void;
 }
+
+export interface ModalContentProps {
+  formData: ProductData;
+  errors: FormErrors;
+  handleInputChange: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => void;
+  handleImageChange: (index: number, value: string) => void;
+  addImageField: () => void;
+  removeImageField: (index: number) => void;
+  onCancel: () => void;
+  AddProductHandler: () => void;
+}
