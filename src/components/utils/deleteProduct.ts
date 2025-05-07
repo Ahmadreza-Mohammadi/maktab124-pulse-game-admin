@@ -3,7 +3,7 @@ import { ACCESS_TOKEN, API_KEY, BASE_URL } from "../api/api";
 
 export async function deleteProduct(id: number) {
   try {
-    const response = await axios.delete(`${BASE_URL}/api/records/my-products/${id}`, {
+    const response = await axios.delete(`${BASE_URL}/api/records/products/${id}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${ACCESS_TOKEN}`,

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { API_KEY, BASE_URL } from "../api/api";
 import {
   AddProductModalProps,
@@ -8,6 +9,7 @@ import {
 } from "../interfaces/interface";
 
 function AddProductModal({ onCancel }: AddProductModalProps) {
+  const queryClient = useQueryClient();
   const [formData, setFormData] = useState<ProductData>({
     title: "",
     creator: "",
@@ -84,7 +86,7 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
 
     try {
       await axios.post(
-        `${BASE_URL}/api/records/posts`,
+        `${BASE_URL}/api/records/products`,
         JSON.stringify(formData),
         {
           headers: {
@@ -94,7 +96,7 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
         }
       );
 
-      // Reset form
+      // Reset formn
       setFormData({
         title: "",
         creator: "",
@@ -106,6 +108,9 @@ function AddProductModal({ onCancel }: AddProductModalProps) {
         images: [""],
       });
       setErrors({});
+
+      // Invalidate and refetch products query
+      queryClient.invalidateQueries({ queryKey: ["products"] });
 
       // Close modal
       onCancel();
